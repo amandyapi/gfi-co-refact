@@ -17712,3 +17712,410 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 		font-size: 18px;
 	}
 }
+
+.rd-navbar-contact span, .rd-navbar-contact a{
+	color: black;
+}
+
+
+/* ============================================
+   MENU TRANSPARENT AVEC CONTACT EN HAUT
+   ============================================ */
+
+/* --- Menu de contact supérieur --- */
+.rd-navbar-contact {
+  display: flex !important;
+  align-items: center;
+  padding: 6px 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 100;
+}
+.rd-navbar-contact .container {
+  width: 100%;
+}
+.rd-navbar-contact .contact-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.rd-navbar-contact .contact-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.rd-navbar-contact .contact-item {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.rd-navbar-contact .contact-item .icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+.rd-navbar-contact .contact-item:hover {
+  color: #fff !important;
+}
+.rd-navbar-contact .social-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.rd-navbar-contact .social-item:hover {
+  background: rgba(175, 136, 85, 0.5);
+  color: #fff;
+}
+@media (max-width: 991.98px) {
+  .rd-navbar-contact {
+    display: none !important;
+  }
+}
+
+/* --- Menu principal transparent --- */
+.rd-navbar-minimal.rd-navbar-static {
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-main {
+  padding: 12px 0;
+}
+
+/* Liens du menu en BLANC */
+.rd-navbar-minimal.rd-navbar-static .rd-nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 14px;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-nav-link:hover,
+.rd-navbar-minimal.rd-navbar-static .rd-nav-item.active .rd-nav-link {
+  color: #d0b99a !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-search-toggle {
+  color: #fff !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-search-toggle:hover {
+  color: #d0b99a !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-submenu-toggle {
+  color: #fff !important;
+}
+
+/* --- Alignement du menu à droite --- */
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-nav-wrap {
+  display: flex;
+  justify-content: flex-end;
+  min-width: auto;
+  flex: 1;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-nav-item + .rd-nav-item {
+  margin-left: 0;
+}
+
+/* --- Menu en sticky (fond sombre) --- */
+.rd-navbar-minimal.rd-navbar-static.rd-navbar--is-stuck {
+  background: rgba(41, 41, 58, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.rd-navbar-minimal.rd-navbar-static.rd-navbar--is-stuck .rd-nav-link {
+  color: #fff !important;
+}
+
+/* --- Dropdown en fond sombre --- */
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-dropdown {
+  background: #151515 !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-dropdown-link {
+  color: #aeb1be !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-dropdown-link:hover {
+  color: #fff !important;
+}
+
+/* --- Ajustement de la largeur du menu de contact --- */
+.rd-navbar-contact .container {
+  max-width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.rd-navbar-contact .contact-left {
+  gap: 30px;
+}
+@media (max-width: 1199.98px) {
+  .rd-navbar-contact .contact-left {
+    gap: 20px;
+  }
+  .rd-navbar-contact .contact-item {
+    font-size: 12px;
+  }
+}
+
+/* ============================================
+   HEADER TRANSPARENT SUR LE SLIDER
+   ============================================ */
+
+/* Header en position absolue au-dessus du slider */
+.page-header {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1080 !important;
+  pointer-events: none;
+}
+.page-header > * {
+  pointer-events: auto;
+}
+
+/* Assurer que la section du slider est bien en dessous */
+.swiper-slider {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* --- Menu de contact supérieur --- */
+.rd-navbar-contact {
+  display: flex !important;
+  align-items: center;
+  padding: 6px 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 100;
+}
+.rd-navbar-contact .container {
+  width: 100%;
+}
+.rd-navbar-contact .contact-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.rd-navbar-contact .contact-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.rd-navbar-contact .contact-item {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.rd-navbar-contact .contact-item .icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+.rd-navbar-contact .contact-item:hover {
+  color: #fff !important;
+}
+.rd-navbar-contact .social-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.rd-navbar-contact .social-item:hover {
+  background: rgba(175, 136, 85, 0.5);
+  color: #fff;
+}
+@media (max-width: 991.98px) {
+  .rd-navbar-contact {
+    display: none !important;
+  }
+}
+
+/* --- Menu principal transparent --- */
+.rd-navbar-minimal.rd-navbar-static {
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-main {
+  padding: 12px 0;
+  background: transparent !important;
+}
+
+/* Liens du menu en BLANC */
+.rd-navbar-minimal.rd-navbar-static .rd-nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 14px;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-nav-link:hover,
+.rd-navbar-minimal.rd-navbar-static .rd-nav-item.active .rd-nav-link {
+  color: #d0b99a !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-search-toggle {
+  color: #fff !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-search-toggle:hover {
+  color: #d0b99a !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-submenu-toggle {
+  color: #fff !important;
+}
+
+/* --- Alignement du menu à droite --- */
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-nav-wrap {
+  display: flex;
+  justify-content: flex-end;
+  min-width: auto;
+  flex: 1;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-nav-item + .rd-nav-item {
+  margin-left: 0;
+}
+
+/* --- Menu en sticky (fond sombre) --- */
+.rd-navbar-minimal.rd-navbar-static.rd-navbar--is-stuck {
+  background: rgba(41, 41, 58, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.rd-navbar-minimal.rd-navbar-static.rd-navbar--is-stuck .rd-nav-link {
+  color: #fff !important;
+}
+
+/* --- Dropdown en fond sombre --- */
+.rd-navbar-minimal.rd-navbar-static .rd-navbar-dropdown {
+  background: #151515 !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-dropdown-link {
+  color: #aeb1be !important;
+}
+.rd-navbar-minimal.rd-navbar-static .rd-dropdown-link:hover {
+  color: #fff !important;
+}
+
+/* --- Ajustement de la largeur du menu de contact --- */
+.rd-navbar-contact .container {
+  max-width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.rd-navbar-contact .contact-left {
+  gap: 30px;
+}
+@media (max-width: 1199.98px) {
+  .rd-navbar-contact .contact-left {
+    gap: 20px;
+  }
+  .rd-navbar-contact .contact-item {
+    font-size: 12px;
+  }
+}
+
+/* Ajustement des slides du slider pour ne pas être masqués par le header */
+.swiper-slide-caption {
+  padding-top: 80px !important;
+}
+@media (min-width: 768px) {
+  .swiper-slide-caption {
+    padding-top: 120px !important;
+  }
+}
+@media (min-width: 992px) {
+  .swiper-slide-caption {
+    padding-top: 140px !important;
+  }
+}
+
+/* --- Menu de contact supérieur --- */
+.rd-navbar-contact {
+  display: flex !important;
+  align-items: center;
+  padding: 6px 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 100;
+}
+.rd-navbar-contact .container {
+  width: 100%;
+}
+.rd-navbar-contact .contact-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.rd-navbar-contact .contact-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.rd-navbar-contact .contact-item {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.rd-navbar-contact .contact-item .icon {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #ffffff !important; /* Icônes en blanc */
+}
+.rd-navbar-contact .contact-item:hover {
+  color: #ffffff !important;
+}
+.rd-navbar-contact .contact-item:hover .icon {
+  color: #ffffff !important;
+}
+.rd-navbar-contact .social-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff !important; /* Icônes sociales en blanc */
+  transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.rd-navbar-contact .social-item .icon {
+  color: #ffffff !important; /* Forcer les icônes sociales en blanc */
+}
+.rd-navbar-contact .social-item:hover {
+  background: rgba(175, 136, 85, 0.5);
+  color: #ffffff !important;
+}
+.rd-navbar-contact .social-item:hover .icon {
+  color: #ffffff !important;
+}
+@media (max-width: 991.98px) {
+  .rd-navbar-contact {
+    display: none !important;
+  }
+}
