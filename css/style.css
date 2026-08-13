@@ -18046,7 +18046,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 /* --- Menu en sticky (fond sombre) --- */
 .rd-navbar-minimal.rd-navbar-static.rd-navbar--is-stuck {
-  background: rgba(41, 41, 58, 0.95) !important;
+  background: rgba(5, 35, 76, 0.95) !important;
+  /*background: rgba(41, 41, 58, 0.95) !important;*/
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .rd-navbar-minimal.rd-navbar-static.rd-navbar--is-stuck .rd-nav-link {
