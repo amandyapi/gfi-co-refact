@@ -140,7 +140,8 @@
       <!-- Slider-->
       <section class="section swiper-container swiper-slider swiper-slider-business bg-gray-700" data-loop="true" data-slide-effect="fade" data-autoplay="5000" data-simulate-touch="false" data-custom-slide-effect="inter-leave-effect">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" data-slide-bg="images/slider-architecture-slide-1-1920x800.jpg">
+          <!-- Slide 1: Image (5s) -->
+          <div class="swiper-slide" data-slide-bg="images/slider-architecture-slide-1-0-1920x800.jpg" data-autoplay="5000">
             <div class="slide-inner">
               <div class="swiper-slide-caption">
                 <div class="container">
@@ -151,7 +152,9 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide" data-slide-bg="images/slider-architecture-slide-2-1920x800.jpg">
+          
+          <!-- Slide 2: Image (5s) -->
+          <div class="swiper-slide" data-slide-bg="images/slider-architecture-slide-2-0-1920x800.jpg" data-autoplay="5000">
             <div class="slide-inner">
               <div class="swiper-slide-caption">
                 <div class="container">
@@ -162,7 +165,9 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide" data-slide-bg="images/slider-architecture-slide-3-1920x800.jpg">
+          
+          <!-- Slide 3: Image (5s) -->
+          <div class="swiper-slide" data-slide-bg="images/slider-architecture-slide-3-0-1920x800.jpg" data-autoplay="5000">
             <div class="slide-inner">
               <div class="swiper-slide-caption">
                 <div class="container">
@@ -173,9 +178,20 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide" data-slide-bg="images/slider-architecture-slide-4-1920x800.jpg">
-            <div class="slide-inner">
-              <div class="swiper-slide-caption">
+          
+          <!-- Slide 4: VIDÉO (20s) -->
+          <div class="swiper-slide swiper-slide-video" data-autoplay="20000">
+            <div class="slide-inner" style="position:relative; overflow:hidden; width:100%; height:100%;">
+              <!-- Fallback image -->
+              <div class="video-fallback" style="position:absolute; top:0; left:0; width:100%; height:100%; background:url('images/slider-architecture-slide-4-1920x800.jpg') center/cover no-repeat; z-index:0;"></div>
+              <!-- Vidéo -->
+              <video id="slider-video" autoplay muted loop playsinline style="position:absolute; top:50%; left:50%; min-width:100%; min-height:100%; width:auto; height:auto; transform:translate(-50%, -50%); object-fit:cover; z-index:1;">
+                <source src="videos/slider-architecture-slide-4-1920x800.mp4" type="video/mp4">
+              </video>
+              <!-- Overlay -->
+              <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(41,41,58,0.3); z-index:2;"></div>
+              <!-- Contenu -->
+              <div class="swiper-slide-caption" style="position:relative; z-index:3;">
                 <div class="container">
                   <time class="slider-timeline wow-outer slideInDown text-uppercase" datetime="2024"><span class="wow" data-caption-animate="slideInDown" data-wow-delay=".5	s">Design & Architecture</span></time>
                   <h1 class="font-condensed wow-outer fw-bold"><span class="wow" data-caption-animate="slideInDown">L'émotion dans<br>chaque espace</span></h1>
@@ -538,5 +554,43 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      // Gestion de l'autoplay par slide
+      document.addEventListener('DOMContentLoaded', function() {
+        var swiperContainer = document.querySelector('.swiper-slider-business');
+        if (swiperContainer) {
+          // Attendre que Swiper soit initialisé
+          setTimeout(function() {
+            var swiper = swiperContainer.swiper;
+            if (swiper) {
+              var slides = swiperContainer.querySelectorAll('.swiper-slide');
+              var autoplayDurations = {};
+              
+              slides.forEach(function(slide, index) {
+                var duration = slide.getAttribute('data-autoplay');
+                if (duration) {
+                  autoplayDurations[index] = parseInt(duration, 10);
+                }
+              });
+              
+              // Changer la durée quand la slide change
+              swiper.on('slideChange', function() {
+                var activeIndex = this.realIndex;
+                var duration = autoplayDurations[activeIndex];
+                if (duration) {
+                  this.params.autoplay.delay = duration;
+                  this.autoplay.stop();
+                  this.autoplay.start();
+                } else {
+                  this.params.autoplay.delay = 5000;
+                  this.autoplay.stop();
+                  this.autoplay.start();
+                }
+              });
+            }
+          }, 500);
+        }
+      });
+    </script>
   </body>
 </html>
