@@ -1347,7 +1347,8 @@ html [class*='section-'].section-bottom-0 {
 
 .bg-darken {
 	/*background-color: #111111;*/
-	background-color: #031b38;
+	/*background-color: #031b38;*/
+	background-color: rgba(5, 35, 76, 1) !important;
 	border-top: 2px solid #020f1f;
 }
 
@@ -3162,6 +3163,7 @@ html .list-inline-md > * {
 	min-width: 25px;
 	content: '\f14f';
 	font: 400 14px 'Material Design Icons';
+	font: 400 14px;
 	line-height: inherit;
 	color: #aeb1be;
 }
@@ -6630,6 +6632,7 @@ html:not(.tablet):not(.mobile) .thumbnail-indigo:hover .thumbnail-indigo-caption
 	display: flex;
 	background-color: #29293a;
 	background-position: 20% 20%;
+	min-height: 75vh !important;
 }
 
 .breadcrumbs-custom .breadcrumbs-custom-subtitle {
@@ -18046,7 +18049,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 /* --- Menu en sticky (fond sombre) --- */
 .rd-navbar-minimal.rd-navbar-static.rd-navbar--is-stuck {
-  background: rgba(5, 35, 76, 0.95) !important;
+  background: rgba(5, 35, 76, 0.8) !important;
   /*background: rgba(41, 41, 58, 0.95) !important;*/
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -18168,3 +18171,75 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     display: none !important;
   }
 }
+
+/* Style pour la section téléchargement PDF */
+      .pdf-download-section {
+        background: #f8f9fa;
+        padding: 40px 0;
+        border-top: 1px solid #e9ecef;
+        border-bottom: 1px solid #e9ecef;
+      }
+      .pdf-download-section .pdf-icon {
+        font-size: 2.5rem;
+        color: #af8855;
+        color: #f68b1e;
+        margin-right: 15px;
+      }
+      .pdf-download-section .pdf-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        margin-bottom: 15px;
+        border-left: 4px solid #f68b1e;
+      }
+      .pdf-download-section .pdf-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      }
+      .pdf-download-section .pdf-item .pdf-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .pdf-download-section .pdf-item .pdf-info .pdf-name {
+        font-weight: 600;
+        color: #1a1a1a;
+        font-size: 1rem;
+      }
+      .pdf-download-section .pdf-item .pdf-info .pdf-size {
+        font-size: 0.8rem;
+        color: #888;
+      }
+      .pdf-download-section .pdf-item .pdf-download-btn {
+        background: #af8855;
+        background: #f68b1e;
+        color: #fff;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .pdf-download-section .pdf-item .pdf-download-btn:hover {
+        background: #8a6d42;
+        background: rgba(207, 153, 2, 1);
+        color: #fff;
+      }
+      .pdf-download-section .pdf-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
