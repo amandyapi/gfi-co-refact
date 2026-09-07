@@ -137,6 +137,12 @@
         </div>
       </header>
 
+      <div class="floating-btn-container">
+        <button class="floating-btn" onclick="openQuoteModal()">
+          <!-- <i class="fas fa-file-invoice" style="font-size: 18px;"></i>  -->Demande <br>de Devis
+        </button>
+      </div>
+
       <!-- Slider-->
       <section class="section swiper-container swiper-slider swiper-slider-business bg-gray-700" data-loop="true" data-slide-effect="fade" data-autoplay="5000" data-simulate-touch="false" data-custom-slide-effect="inter-leave-effect">
         <div class="swiper-wrapper">
@@ -682,6 +688,88 @@
         </div>
       </section>
       <!-- Page Footer-->
+
+      <!-- Modale personnalisée -->
+      <div id="quoteModal" class="modal-overlay">
+        <div class="modal-content">
+          <h3 class="font-condensed" style="text-align: center;white-space: nowrap;font-weight: 500;">Demandez votre étude gratuite</h3>
+          <p class="modal-subtitle font-roboto" style="text-align: center;">Veuillez remplir le formulaire ci-dessous</p>
+          <br>
+          <form id="quoteForm" onsubmit="submitForm(event)">
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label for="fullName">Prénom &amp; Nom *</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Votre prénom et nom">
+              </div>
+              
+              <div class="form-group col-sm-6">
+                <label for="phone">Téléphone / WhatsApp *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Votre numéro de téléphone">
+              </div>
+
+              <div class="form-group col-sm-6">
+                <label for="projectType">Type de projet *</label>
+                <select id="projectType" name="projectType" required>
+                  <option value="">Choisir...</option>
+                  <option value="Villa plain-pied">Villa plain-pied</option>
+                  <option value="Villa duplex (R+1)">Villa duplex (R+1)</option>
+                  <option value="Immeuble résidentiel">Immeuble résidentiel</option>
+                  <option value="Rénovation / Second œuvre">Rénovation / Second œuvre</option>
+                  <option value="Bureau / Local commercial">Bureau / Local commercial</option>
+                  <option value="Programme immobilier">Programme immobilier</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
+              
+              <div class="form-group col-sm-6">
+                <label for="landSize">Superficie du terrain (m²) *</label>
+                <select id="landSize" name="landSize" required>
+                  <option value="">Choisir...</option>
+                  <option value="Moins de 200 m²">Moins de 200 m²</option>
+                  <option value="200 – 400 m²">200 – 400 m²</option>
+                  <option value="400 – 600 m²">400 – 600 m²</option>
+                  <option value="600 – 1 000 m²">600 – 1 000 m²</option>
+                  <option value="1 000 – 2 500 m²">1 000 – 2 500 m²</option>
+                  <option value="Plus de 2 500 m²">Plus de 2 500 m²</option>
+                  <option value="Je n'ai pas encore de terrain">Je n'ai pas encore de terrain</option>
+                </select>
+              </div>
+              
+              <div class="form-group col-sm-6">
+                <label for="budget">Budget estimé (FCFA) *</label>
+                <select id="budget" name="budget" required>
+                  <option value="">Choisir...</option>
+                  <option value="Moins de 30 millions">Moins de 30 millions</option>
+                  <option value="30 à 60 millions">30 à 60 millions</option>
+                  <option value="60 à 100 millions">60 à 100 millions</option>
+                  <option value="100 à 200 millions">100 à 200 millions</option>
+                  <option value="Plus de 200 millions">Plus de 200 millions</option>
+                  <option value="Je ne sais pas encore">Je ne sais pas encore</option>
+                </select>
+              </div>
+              
+              <div class="form-group col-sm-6">
+                <label for="finishLevel">Niveau de finition *</label>
+                <select id="finishLevel" name="finishLevel" required>
+                  <option value="">Choisir...</option>
+                  <option value="Économique — Fonctionnel &amp; solide">Économique — Fonctionnel &amp; solide</option>
+                  <option value="Moyen standing — Confort &amp; qualité">Moyen standing — Confort &amp; qualité</option>
+                  <option value="Premium — Prestige &amp; matériaux haut de gamme">Premium — Prestige &amp; matériaux haut de gamme</option>
+                </select>
+              </div>
+              
+              <div class="form-group col-sm-12">
+                <label for="message">Votre message (optionnel)</label>
+                <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement votre projet..."></textarea>
+              </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Envoyer ma demande gratuite</button>
+            
+            <p class="modal-footer-text">Réponse sous 48h · Aucun engagement · Étude 100% gratuite</p>
+          </form>
+        </div>
+      </div>
        
       <!-- Page Footer -->
       <footer class="section footer-standard bg-darken">
@@ -773,5 +861,61 @@
         }
       });
     </script>
+    <script>
+      // Ouvrir la modale
+      function openQuoteModal() {
+        // Ajouter la classe pour cacher le header
+        document.querySelector('.page-header').classList.add('modal-open');
+        
+        // Afficher la modale
+        document.getElementById('quoteModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      // Fermer la modale
+      function closeQuoteModal() {
+        // Retirer la classe pour réafficher le header
+        document.querySelector('.page-header').classList.remove('modal-open');
+        
+        // Fermer la modale
+        document.getElementById('quoteModal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Fermer en cliquant à l'extérieur
+      document.getElementById('quoteModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeQuoteModal();
+        }
+      });
+
+      // Soumission du formulaire
+      function submitForm(event) {
+        event.preventDefault();
+        
+        // Récupération des valeurs
+        const formData = {
+          fullName: document.getElementById('fullName').value,
+          phone: document.getElementById('phone').value,
+          projectType: document.getElementById('projectType').value,
+          landSize: document.getElementById('landSize').value,
+          budget: document.getElementById('budget').value,
+          finishLevel: document.getElementById('finishLevel').value,
+          message: document.getElementById('message').value
+        };
+        
+        // Ici vous pouvez envoyer les données via AJAX/Fetch
+        console.log('Données du formulaire :', formData);
+        
+        // Message de succès
+        alert('✅ Votre demande a été envoyée avec succès !\nNous vous contacterons sous 48h.');
+        
+        // Fermer la modale après soumission
+        closeQuoteModal();
+        
+        // Réinitialiser le formulaire
+        document.getElementById('quoteForm').reset();
+      }
+      </script>
   </body>
 </html>
