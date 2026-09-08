@@ -1,0 +1,16 @@
+deployment:
+  tasks:
+    # 1. Définir le chemin de déploiement (le dossier de votre sous-domaine)
+    - export DEPLOYPATH=/home/gficonet/develop.gfi-co.net/
+    
+    # 2. Supprimer les anciens fichiers (optionnel mais conseillé pour éviter les résidus)
+    # Attention : Cela supprime tout le contenu du dossier de destination.
+    # Commentez ou supprimez cette ligne si vous avez des fichiers importants que vous ne voulez pas écraser.
+    # - /bin/rm -rf $DEPLOYPATH
+    
+    # 3. Copier le contenu du dossier "public" (ou ".") vers le dossier du sous-domaine
+    # Selon votre structure, vous aurez peut-être un dossier "public" ou "web" à la racine de votre projet Symfony.
+    - /bin/cp -R . $DEPLOYPATH
+    
+    # 4. (Optionnel) Si vous utilisez Symfony, vous pouvez vider le cache en environnement de développement
+    - cd $DEPLOYPATH && APP_ENV=dev php bin/console cache:clear
