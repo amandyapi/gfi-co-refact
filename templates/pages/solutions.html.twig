@@ -1,0 +1,98 @@
+{# templates/pages/solutions.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Nos solutions - Construction, rénovation & aménagement{% endblock %}
+
+{% block description %}GFI-CO GROUP vous propose des solutions clés en main pour vos projets immobiliers : construction, rénovation, aménagement intérieur, finitions haut de gamme.{% endblock %}
+
+{% block bread_subtitle %}Nos prestations{% endblock %}
+{% block bread_title %}Nos solutions{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_solutions') }}">Nos solutions</a></li>
+    <li class="active">Toutes nos prestations</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Solutions -->
+    <section class="section section-lg text-center">
+        <div class="container">
+            <h3 class="wow-outer">
+                <span class="wow slideInUp">Nos solutions</span>
+            </h3>
+            <div class="row row-50">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft">
+                        <div class="box-creative-icon linearicons-home"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Projet clé en main</a>
+                        </h4>
+                        <p>Construire ou rénover est un projet de vie. Avec GFI-CO, il devient simple : un interlocuteur unique, un budget maîtrisé, un résultat 100% personnalisé - prêt à habiter, prêt à exploiter et un suivi en temps réel GFI-CO Life</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".1s">
+                        <div class="box-creative-icon linearicons-hammer"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Rénovation & Réhabilitation</a>
+                        </h4>
+                        <p>Villa, immeuble, bureau, commerce : nous redonnons éclat, valeur et conformité à vos biens, avec le même soin que pour une construction neuve.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".2s">
+                        <div class="box-creative-icon linearicons-layers"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Revêtement Mural & Sol</a>
+                        </h4>
+                        <p>Carrelage, marbre, parquet, peinture : des finitions haut de gamme posée avec exigence, pour des murs et des sols qui racontent votre style.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft">
+                        <div class="box-creative-icon linearicons-apartment"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Cuisines & Dressings sur mesure</a>
+                        </h4>
+                        <p>Le cœur de la maison, pensé pour vous. Conception 3D, matériaux nobles, ergonomie parfaite : l'élégance au service du quotidien.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".1s">
+                        <div class="box-creative-icon linearicons-picture"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Staff & Placo</a>
+                        </h4>
+                        <p>Plafonds décoratifs, corniches, cloisons : nos artisans sculptent la lumière et le volume pour des intérieurs à la fois raffinés et fonctionnels.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".2s">
+                        <div class="box-creative-icon linearicons-wrench"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Plomberie & Électricité</a>
+                        </h4>
+                        <p>Le confort commence dans les fondations. Installations fiables, sécurisées, conformes aux normes - du gros œuvre à la dernière prise.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-lg bg-primary text-center" style="background:#f68b1e;">
+        <div class="container">
+            <h3 class="wow-outer" style="color:#fff;">
+                <span class="wow slideInDown">Vous êtes intéressé(e) par nos solutions ?</span>
+            </h3>
+            <p class="wow-outer" style="color:#fff; font-size:1.1rem; max-width:650px; margin:0 auto;">
+                <span class="wow slideInDown" data-wow-delay=".05s">Contactez-nous pour tous vos projets dans le domaine de l'immobilier.</span>
+            </p>
+            <div class="wow-outer" style="margin-top:30px;">
+                <a class="button button-lg button-black-outline button-winona wow slideInRight" href="{{ path('app_contact') }}" style="border-color:#fff; color:#fff; padding:12px 40px;">
+                    <i class="fa-solid fa-file-invoice" style="margin-right:10px;"></i> Demander un devis
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

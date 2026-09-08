@@ -1,0 +1,188 @@
+{# templates/pages/blog/blog.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Actualités - Blog immobilier{% endblock %}
+
+{% block description %}Retrouvez toutes les actualités de GFI-CO GROUP : projets immobiliers, partenariats, événements et innovations dans le secteur de la construction en Côte d'Ivoire et en Guinée.{% endblock %}
+
+{% block bread_subtitle %}Nos actualités{% endblock %}
+{% block bread_title %}Blog & actualités{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_blog') }}">Actualités</a></li>
+    <li class="active">Toutes nos actualités</li>
+{% endblock %}
+
+{% block page %}
+    <section class="section section-lg">
+        <div class="container">
+            <article class="blog-layout">
+                <div class="blog-layout-main">
+                    <div class="row row-50 row-xxl-70">
+                        <!-- Post 1: Al HABTOOR -->
+                        <div class="col-sm-6">
+                            <article class="post-classic">
+                                <a class="post-classic-media" href="{{ path('app_blog_single', {slug: 'al-habtoor'}) }}">
+                                    <img src="{{ asset('assets/images/sidebar-blog-1-370x264.jpg') }}" alt="Al HABTOOR" width="370" height="264"/>
+                                </a>
+                                <ul class="post-classic-meta">
+                                    <li><a class="button-winona" href="#">Actualité</a></li>
+                                    <li><time datetime="2021-12-29">29 déc. 2021 à 12h16</time></li>
+                                </ul>
+                                <h4 class="post-classic-title">
+                                    <a href="{{ path('app_blog_single', {slug: 'al-habtoor'}) }}">Al HABTOOR, le portefeuille de marques de GFI-CO</a>
+                                </h4>
+                            </article>
+                        </div>
+                        
+                        <!-- Post 2: Expo Dubaï -->
+                        <div class="col-sm-6">
+                            <article class="post-classic">
+                                <a class="post-classic-media" href="{{ path('app_blog_single', {slug: 'expo-dubai'}) }}">
+                                    <img src="{{ asset('assets/images/sidebar-blog-2-370x264.jpg') }}" alt="Expo Dubaï" width="370" height="264"/>
+                                </a>
+                                <ul class="post-classic-meta">
+                                    <li><a class="button-winona" href="#">Actualité</a></li>
+                                    <li><time datetime="2021-12-29">29 déc. 2021 à 11h28</time></li>
+                                </ul>
+                                <h4 class="post-classic-title">
+                                    <a href="{{ path('app_blog_single', {slug: 'expo-dubai'}) }}">Expo Dubaï 2020 : GFI-CO à la conquête de nouveaux marchés immobiliers</a>
+                                </h4>
+                            </article>
+                        </div>
+                        
+                        <!-- Post 3: Déjeuner d'Affaires -->
+                        <div class="col-sm-6">
+                            <article class="post-classic">
+                                <a class="post-classic-media" href="{{ path('app_blog_single', {slug: 'dejeuner-affaires'}) }}">
+                                    <img src="{{ asset('assets/images/sidebar-blog-3-370x264.jpg') }}" alt="Déjeuner d'Affaires" width="370" height="264"/>
+                                </a>
+                                <ul class="post-classic-meta">
+                                    <li><a class="button-winona" href="#">Actualité</a></li>
+                                    <li><time datetime="2021-12-29">29 déc. 2021 à 11h21</time></li>
+                                </ul>
+                                <h4 class="post-classic-title">
+                                    <a href="{{ path('app_blog_single', {slug: 'dejeuner-affaires'}) }}">Déjeuner d'Affaires</a>
+                                </h4>
+                            </article>
+                        </div>
+                        
+                        <!-- Post 4: Anniversaire -->
+                        <div class="col-sm-6">
+                            <article class="post-classic">
+                                <a class="post-classic-media" href="{{ path('app_blog_single', {slug: 'anniversaire'}) }}">
+                                    <img src="{{ asset('assets/images/sidebar-blog-4-370x264.jpg') }}" alt="Anniversaire GFI-CO" width="370" height="264"/>
+                                </a>
+                                <ul class="post-classic-meta">
+                                    <li><a class="button-winona" href="#">Actualité</a></li>
+                                    <li><time datetime="2021-12-29">29 déc. 2021 à 11h07</time></li>
+                                </ul>
+                                <h4 class="post-classic-title">
+                                    <a href="{{ path('app_blog_single', {slug: 'anniversaire'}) }}">Anniversaire GFI CO</a>
+                                </h4>
+                            </article>
+                        </div>
+                        
+                        <!-- Post 5: Partenariat -->
+                        <div class="col-sm-6">
+                            <article class="post-classic">
+                                <a class="post-classic-media" href="{{ path('app_blog_single', {slug: 'partenariat-archi-union'}) }}">
+                                    <img src="{{ asset('assets/images/sidebar-blog-5-370x264.jpg') }}" alt="Partenariat" width="370" height="264"/>
+                                </a>
+                                <ul class="post-classic-meta">
+                                    <li><a class="button-winona" href="#">Actualité</a></li>
+                                    <li><time datetime="2021-12-29">29 déc. 2021 à 10h56</time></li>
+                                </ul>
+                                <h4 class="post-classic-title">
+                                    <a href="{{ path('app_blog_single', {slug: 'partenariat-archi-union'}) }}">Partenariat GFI-CO SARL-Cabinet ARCHI-UNION</a>
+                                </h4>
+                            </article>
+                        </div>
+                        
+                        <!-- Post 6: Expo Dubaï 2 -->
+                        <div class="col-sm-6">
+                            <article class="post-classic">
+                                <a class="post-classic-media" href="{{ path('app_blog_single', {slug: 'expo-dubai-2'}) }}">
+                                    <img src="{{ asset('assets/images/sidebar-blog-6-370x264.jpg') }}" alt="Expo Dubaï" width="370" height="264"/>
+                                </a>
+                                <ul class="post-classic-meta">
+                                    <li><a class="button-winona" href="#">Actualité</a></li>
+                                    <li><time datetime="2021-12-24">24 déc. 2021 à 11h41</time></li>
+                                </ul>
+                                <h4 class="post-classic-title">
+                                    <a href="{{ path('app_blog_single', {slug: 'expo-dubai-2'}) }}">Expo Dubaï 2020 : GFI-CO à la conquête de nouveaux marchés immobiliers</a>
+                                </h4>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <div class="page-item active">
+                            <a class="page-link button-winona" href="{{ path('app_blog') }}">1</a>
+                        </div>
+                        <div class="page-item">
+                            <a class="page-link button-winona" href="{{ path('app_blog') }}?page=2">2</a>
+                        </div>
+                        <div class="page-item">
+                            <a class="page-link button-winona" href="{{ path('app_blog') }}?page=3">3</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="blog-layout-aside">
+                    <div class="blog-layout-aside-item">
+                        <p class="blog-layout-aside-title">Rechercher</p>
+                        <form class="rd-form rd-search rd-search-classic" action="{{ path('app_search') }}" method="GET">
+                            <div class="form-wrap">
+                                <input class="form-input" id="rd-search-form-input" type="text" name="s" autocomplete="off">
+                                <label class="form-label" for="rd-search-form-input">Rechercher</label>
+                            </div>
+                            <button class="rd-search-submit" type="submit"></button>
+                        </form>
+                    </div>
+                    
+                    <div class="blog-layout-aside-item">
+                        <p class="blog-layout-aside-title">Archives</p>
+                        <ul class="list-marked">
+                            <li><a href="#">Décembre 2021</a></li>
+                            <li><a href="#">Novembre 2021</a></li>
+                            <li><a href="#">Octobre 2021</a></li>
+                            <li><a href="#">Septembre 2021</a></li>
+                            <li><a href="#">Août 2021</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="blog-layout-aside-item">
+                        <p class="blog-layout-aside-title">À propos</p>
+                        <p>GFI-CO GROUP est un acteur majeur de la promotion et construction immobilière durable en Côte d'Ivoire et en Guinée. Découvrez nos actualités et nos réalisations.</p>
+                    </div>
+                    
+                    <div class="blog-layout-aside-item">
+                        <p class="blog-layout-aside-title">Catégories</p>
+                        <ul class="list-marked">
+                            <li><a href="#">Promotion immobilière</a></li>
+                            <li><a href="#">Construction</a></li>
+                            <li><a href="#">Design & Architecture</a></li>
+                            <li><a href="#">Investissement</a></li>
+                            <li><a href="#">Partenariats</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="blog-layout-aside-item">
+                        <p class="blog-layout-aside-title">Tags</p>
+                        <ul class="list-inline-comma">
+                            <li><a href="#">Actualité</a></li>
+                            <li><a href="#">Immobilier</a></li>
+                            <li><a href="#">Construction</a></li>
+                            <li><a href="#">Design</a></li>
+                            <li><a href="#">Architecture</a></li>
+                            <li><a href="#">Partenariat</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+{% endblock %}

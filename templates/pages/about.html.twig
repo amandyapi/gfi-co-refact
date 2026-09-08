@@ -1,85 +1,188 @@
-{% extends 'layout-multi.html.twig' %}
+{# templates/pages/about.html.twig #}
+{% extends 'layout-pages.html.twig' %}
 
-{% block title %}sol2u | À propos
+{% block title %}GFI-CO GROUP | À propos - Qui sommes-nous ?{% endblock %}
+
+{% block description %}GFI-CO GROUP - Découvrez notre histoire, notre vision et nos engagements pour une construction durable en Côte d'Ivoire et en Guinée.{% endblock %}
+
+{% block bread_subtitle %}Qui sommes-nous ?{% endblock %}
+{% block bread_title %}À propos de GFI-CO GROUP{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_about') }}">À propos</a></li>
+    <li class="active">Qui sommes-nous</li>
 {% endblock %}
 
-{% block main %}
-	<section id="hero" class="hero section dark-background">
+{% block page %}
+    <!-- Présentation -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between">
+                <div class="col-md-10 col-lg-6">
+                    <h3 class="wow-outer">
+                        <span class="wow slideInDown">GFI-CO GROUP</span>
+                    </h3>
+                    <p class="font-roboto wow-outer" style="text-align: justify;">
+                        <span class="wow slideInDown" data-wow-delay=".1s">Né en 2020 d'une conviction simple, GFI-CO GROUP est aujourd'hui un acteur reconnu de la promotion et de la construction immobilière en Afrique de l'Ouest. Agréé promoteur immobilier depuis juillet 2024, nous accompagnons particuliers, entreprises et investisseurs de la première esquisse à la remise des clés avec une exigence constante de qualité, de transparence et de durabilité environnementale.</span>
+                    </p>
+                    <p class="font-roboto wow-outer" style="text-align: justify;">
+                        <span class="wow slideInDown" data-wow-delay=".15s">De la conception de plans à la livraison clé en main, en passant par le bureau d'étude, le génie civil, l'aménagement et le second œuvre, nous maîtrisons chaque étape du cycle de vie d'un projet immobilier. Cette maîtrise de bout en bout, déjà éprouvée sur plus de <strong>12 projets réalisés en Côte d'Ivoire et en Guinée</strong>, est la garantie d'un interlocuteur unique, cohérent et responsable.</span>
+                    </p>
+                    <div class="group group-middle">
+                        <a class="button button-primary button-winona" href="#nos-valeurs">Nos valeurs</a>
+                        <a class="button button-black-outline button-winona" href="#notre-fondateur">Le fondateur</a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-5">
+                    <img class="img-responsive" src="{{ asset('assets/images/large-features-1-470x334.jpg') }}" alt="GFI-CO GROUP construction durable" width="470" height="334"/>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<div
-			id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-			<!-- ===== Carousel Item 2 : Services et expertises ===== -->
-			<div class="carousel-item active">
-				<img src="{{ asset('assets/img/hero-carousel/hero-carousel-3.jpg') }}" alt="">
-				<div class="carousel-container" style="position: relative;top: 70%;">
-					<h2>Qui sommes-nous?</h2>
-				</div>
-			</div>
-			<!-- End Carousel Item -->
+    <!-- Notre vision -->
+    <section class="section section-lg bg-gray-lighten">
+        <div class="container text-center">
+            <h3 class="wow-outer">
+                <span class="wow slideInDown">Notre vision — Horizon 2050</span>
+            </h3>
+            <p class="wow-outer">
+                <span class="wow slideInDown" data-wow-delay=".05s" style="max-width:800px; margin:0 auto;">D'ici 2050, chaque logement que nous construisons devra être climatiquement neutre et recyclable. Un cap ambitieux, jalonné d'objectifs concrets dès 2035 : moins de CO₂, plus d'économie circulaire, une empreinte pensée dès la conception.</span>
+            </p>
+        </div>
+    </section>
 
-		</div>
+    <!-- Engagement durable -->
+    <section class="section section-lg" id="nos-valeurs">
+        <div class="container">
+            <h3 class="text-center wow-outer">
+                <span class="wow slideInDown">Notre engagement durable</span>
+            </h3>
+            <div class="row row-30 text-center">
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".05s">
+                        <div class="icon icon-lg fa-solid fa-recycle text-primary"></div>
+                        <h5>Matériaux recyclés</h5>
+                        <p>Matériaux recyclés et éco-efficaces pour une empreinte réduite.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".1s">
+                        <div class="icon icon-lg fa-regular fa-sun text-primary"></div>
+                        <h5>Conception bioclimatique</h5>
+                        <p>Lumière et ventilation naturelles pour un confort optimal.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".15s">
+                        <div class="icon icon-lg fa-solid fa-solar-panel text-primary"></div>
+                        <h5>Énergies renouvelables</h5>
+                        <p>Solaire, éolien et géothermie intégrés à nos projets.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".2s">
+                        <div class="icon icon-lg fa-solid fa-trash text-primary"></div>
+                        <h5>Gestion des déchets</h5>
+                        <p>Valorisation et gestion responsable des déchets de chantier.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".25s">
+                        <div class="icon icon-lg fa-regular fa-leaf text-primary"></div>
+                        <h5>Air intérieur sain</h5>
+                        <p>Matériaux non toxiques pour un cadre de vie préservé.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".3s">
+                        <div class="icon icon-lg fa-solid fa-users text-primary"></div>
+                        <h5>Emploi local</h5>
+                        <p>Inclusion sociale et partage continu de savoir-faire durable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	</section>
-	<!-- /Hero Section -->
+    <!-- Nos valeurs -->
+    <section class="section section-lg bg-gray-lighten">
+        <div class="container text-center">
+            <h3 class="wow-outer">
+                <span class="wow slideInDown">Nos valeurs</span>
+            </h3>
+            <div class="row row-30">
+                <div class="col-sm-6 col-md-3 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".05s">
+                        <div class="icon icon-lg fa-solid fa-wheelchair text-primary"></div>
+                        <h5>Accessibilité pour tous</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".1s">
+                        <div class="icon icon-lg fa-regular fa-handshake text-primary"></div>
+                        <h5>Respect et transparence</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".15s">
+                        <div class="icon icon-lg fa-regular fa-star text-primary"></div>
+                        <h5>Excellence et innovation</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".2s">
+                        <div class="icon icon-lg fa-solid fa-link text-primary"></div>
+                        <h5>Partenariats durables</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<!-- About 2 Section -->
-	<section
-		id="about-2" class="about-2 section">
+    <!-- Notre fondateur -->
+    <section class="section section-lg" id="notre-fondateur">
+        <div class="container">
+            <h3 class="wow-outer text-center">
+                <span class="wow slideInDown">Notre fondateur</span>
+            </h3>
+            <div class="row row-50 justify-content-center justify-content-lg-between">
+                <div class="col-md-10 col-lg-6 order-lg-2">
+                    <p class="heading-subtitle wow-outer" style="margin: 15px 0;">
+                        <span class="wow slideInDown" data-wow-delay=".05s">Abdoul Wahab Magassouba</span>
+                    </p>
+                    <p class="font-roboto wow-outer" style="text-align: justify;">
+                        <span class="wow slideInDown" data-wow-delay=".1s">Entrepreneur visionnaire et bâtisseur engagé, <strong>Abdoul Wahab Magassouba</strong> est le Fondateur et Directeur Général de GFI-CO Group, une entreprise dédiée à des solutions immobilières durables, accessibles et clés en main en Côte d'Ivoire et en République de Guinée.</span>
+                    </p>
+                    <p class="font-roboto wow-outer" style="text-align: justify;">
+                        <span class="wow slideInDown" data-wow-delay=".15s">Titulaire d'un MBA en Banque, Finance et Assurance (IPG/ISTI, Dakar), il porte un parcours de plus de 15 ans entre finance, comptabilité, communication, assurance et production audiovisuelle, une vision globale au service d'une ambition claire : réinventer l'accès à l'immobilier par l'innovation, la qualité technique et la responsabilité écologique.</span>
+                    </p>
+                    <p class="font-roboto wow-outer" style="text-align: justify;">
+                        <span class="wow slideInDown" data-wow-delay=".2s">Sous sa direction, GFI-CO Group a déjà mené à bien plus d'une douzaine de projets et poursuit sa croissance avec le même leitmotiv : concevoir des projets structurés, inclusifs et orientés vers l'amélioration réelle du cadre de vie des populations.</span>
+                    </p>
+                    <blockquote class="wow-outer">
+                        <p class="wow slideInDown" data-wow-delay=".25s" style="font-style:italic; font-size:1.1rem; border-left:4px solid #f68b1e; padding-left:20px;">« Convaincu que la réussite est collective, je m'engage à bâtir des projets durables et accessibles. »</p>
+                    </blockquote>
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-5 order-lg-1">
+                    <img class="img-responsive" src="{{ asset('assets/images/team-1-370x368.png') }}" alt="Abdoul Wahab Magassouba - Fondateur GFI-CO GROUP" width="470" height="334" style="border-radius:8px;"/>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!-- Section Title -->
-		<div class="container section-title" data-aos="fade-up">
-			<h2>À Propos</h2>
-			<p>SOL2U : BI & IA Makers, Digital Makers</p>
-		</div>
-		<!-- End Section Title -->
-
-		<div class="container" data-aos="fade-up">
-
-			<div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
-
-				<div class="col-lg-5">
-					<div class="about-img">
-						<img src="{{ asset('assets/img/about-portrait.jpg') }}" class="img-fluid" alt="">
-					</div>
-				</div>
-
-				<div class="col-lg-7">
-					<h3 class="pt-0 pt-lg-5">SOL2U : BI & Digital Makers</h3>
-
-					<!-- Tabs -->
-					<!-- End Tabs -->
-
-					<!-- Tab Content -->
-						<div class="tab-content"> <div class="tab-pane fade show active" id="about-2-tab1">
-							<p class="fst-italic" style="text-align: justify;">
-								Nous sommes des "Digital Makers" : des architectes et des artisans de votre ambition numérique.
-							</p>
-							<br>
-							<p style="text-align: justify;">
-								Notre Approche : La Co-création, seul on va vite, ensemble on va loin. Nous allons au-delà du rôle d'une ESN classique. Nous nous immergeons dans vos défis pour co-créer des solutions digitales qui vous correspondent : flexibles, pérennes et sans dépendance technologique.
-								<br>Nous construisons votre projet avec vous, mais nous nous assurons surtout que vous puissiez vous l'approprier.
-							</p>
-							<br>
-							<p style="text-align: justify;">
-								SOL2U (Solution To You) est une Entreprise de Services Numériques (ESN) spécialisée dans la transformation digitale, l’intégration de solutions métiers et la valorisation des données.<br>
-								Nous accompagnons les entreprises et administrations dans la modernisation de leurs processus, l'automatisation, la digitalisation documentaire et l’analyse de données à grande échelle.
-							</p>
-							<br>
-							<p style="text-align: justify;">
-								Notre ambition est simple : apporter des solutions fiables, adaptées et évolutives, centrées sur les besoins réels de nos clients.
-							</p>
-						</div>
-
-					</div>
-					<!-- End Tab 1 Content -->
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
-
-</section>
-<!-- /About 2 Section -->{% endblock %}
+    <!-- CTA -->
+    <section class="section section-lg bg-primary text-center" style="background:#f68b1e;">
+        <div class="container">
+            <h3 class="wow-outer" style="color:#fff;">
+                <span class="wow slideInDown">Une approche collaborative</span>
+            </h3>
+            <p class="wow-outer" style="color:#fff; font-size:1.1rem; max-width:600px; margin:0 auto;">
+                <span class="wow slideInDown" data-wow-delay=".05s">Vous êtes investisseur, partenaire stratégique ou porteur de projet ? Construisons ensemble des solutions innovantes, responsables et à forte valeur ajoutée.</span>
+            </p>
+            <div class="wow-outer" style="margin-top:25px;">
+                <a class="button button-black-outline button-winona wow slideInRight" href="{{ path('app_contact') }}" style="border-color:#fff; color:#fff;">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

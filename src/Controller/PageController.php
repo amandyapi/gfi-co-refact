@@ -64,6 +64,15 @@ class PageController extends AbstractController
         ]);
     }
 
+    #[Route('/contact-submit', name: 'app_contact_submit')]
+    public function contactSubmit(): Response
+    {
+        return $this->render('pages/contact.html.twig', [
+            'bread_subtitle' => 'Nous contacter',
+            'bread_title' => 'Contactez-nous',
+        ]);
+    }
+
     #[Route('/mentions-legales', name: 'app_legal')]
     public function legal(): Response
     {
