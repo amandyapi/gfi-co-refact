@@ -12,5 +12,12 @@ deployment:
     # Selon votre structure, vous aurez peut-être un dossier "public" ou "web" à la racine de votre projet Symfony.
     - /bin/cp -R . $DEPLOYPATH
     
-    # 4. (Optionnel) Si vous utilisez Symfony, vous pouvez vider le cache en environnement de développement
-    - cd $DEPLOYPATH && APP_ENV=dev php bin/console cache:clear
+    # 4. Se déplacer dans le dossier de destination
+    - cd $DEPLOYPATH
+    
+    # 5. Installer les dépendances Composer en environnement de développement
+    # (ou --no-dev pour la production, mais pour un site de développement c'est bien)
+    - /usr/local/bin/php /usr/local/bin/composer install --no-interaction
+    
+    # 6. (Optionnel) Vider le cache Symfony en environnement de développement
+    - APP_ENV=dev php bin/console cache:clear
