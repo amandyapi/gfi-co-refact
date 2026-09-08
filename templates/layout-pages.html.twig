@@ -1,0 +1,30 @@
+{# templates/layout-pages.html.twig #}
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs-custom bg-image context-dark bg-overlay" 
+             style="background-image: url({{ asset('assets/images/bg-breadcrumbs.jpg') }});">
+        <div class="breadcrumbs-custom-inner">
+            <div class="container breadcrumbs-custom-container">
+                <div class="breadcrumbs-custom-main">
+                    <h6 class="breadcrumbs-custom-subtitle title-decorated">
+                        {% block bread_subtitle %}Qui sommes-nous ?{% endblock %}
+                    </h6>
+                    <h1 class="breadcrumbs-custom-title">
+                        {% block bread_title %}À propos{% endblock %}
+                    </h1>
+                </div>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="{{ path('app_home') }}">Accueil</a></li>
+                    {% block bread_items %}
+                        <li class="active">À propos</li>
+                    {% endblock %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenu principal de la page -->
+    {% block page %}{% endblock %}
+{% endblock %}

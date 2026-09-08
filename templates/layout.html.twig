@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="fr">
+    <head>
+        <title>{% block title %}GFI-CO GROUP | Gestion foncière & intermédiation commerciale{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="description" content="{% block description %}GFI-CO GROUP - Gestion foncière & intermédiation commerciale. Bâtir mieux, c'est bâtir pour durer.{% endblock %}">
+        <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Work+Sans:300,700,800%7CRoboto+Condensed:300,400,700%7CRoboto:300,400,500,700,900">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style-updated.css') }}">
+        
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="preloader-logo">
+                <img src="{{ asset('assets/images/logo-0.png') }}" alt="GFI-CO GROUP" width="109" height="27" srcset="{{ asset('assets/images/logo-0.png') }} 2x"/>
+            </div>
+            <div class="preloader-body">
+                <div id="loadingProgressG">
+                    <div class="loadingProgressG" id="loadingProgressG_1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <!-- Page Header -->
+            <header class="section page-header">
+                <!-- Menu de contact supérieur -->
+                <div class="rd-navbar-contact">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="contact-left">
+                                    <a href="tel:+2250143100250" class="contact-item">
+                                        <span class="icon mdi mdi-phone"></span>
+                                        (+225) 01 43 100 250 / (+225) 07 58 835 008
+                                    </a>
+                                    <a href="mailto:contact@gfi-co.net" class="contact-item">
+                                        <span class="icon mdi mdi-email"></span>
+                                        contact@gfi-co.net
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-right">
+                                    <a href="https://www.facebook.com/GFICoSarl?mibextid=wwXIfr&rdid=8lBIT30aK1UbGRck&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18HSjLkhZD%2F%3Fmibextid%3DwwXIfr#" class="social-item">
+                                        <span class="icon mdi mdi-facebook"></span>
+                                    </a>
+                                    <a href="https://youtube.com/@gfi-cogroup?si=AOC1mbex-TXbcuBj" class="social-item">
+                                        <span class="icon fa-brands fa-youtube"></span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/gfi-co-sarl/" class="social-item">
+                                        <span class="icon mdi mdi-linkedin"></span>
+                                    </a>
+                                    <a href="https://www.instagram.com/gif_co_sarl?igsi=MTM1MnR4bnplNG9sag%3D%3D&utm_source=qr" class="social-item">
+                                        <span class="icon mdi mdi-instagram"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RD Navbar -->
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                        <div class="rd-navbar-main-outer">
+                            <div class="rd-navbar-main">
+                                <!-- RD Navbar Panel -->
+                                <div class="rd-navbar-panel">
+                                    <!-- RD Navbar Toggle -->
+                                    <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                                    <!-- RD Navbar Brand -->
+                                    <a class="rd-navbar-brand" href="{{ path('app_home') }}">
+                                        <img src="{{ asset('assets/images/logo-0.png') }}" alt="GFI-CO GROUP" width="109" height="27" srcset="{{ asset('assets/images/logo-0.png') }} 2x" style="width: 110px; height: auto;"/>
+                                    </a>
+                                </div>
+                                <div class="rd-navbar-main-element">
+                                    <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                                        <!-- RD Navbar Nav -->
+                                        <ul class="rd-navbar-nav">
+                                            <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_home' ? 'active' : '' }}">
+                                                <a class="rd-nav-link" href="{{ path('app_home') }}">Accueil</a>
+                                            </li>
+                                            <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_about' ? 'active' : '' }}">
+                                                <a class="rd-nav-link" href="{{ path('app_about') }}">À propos</a>
+                                            </li>
+                                            <li class="rd-nav-item {{ app.request.attributes.get('_route') starts with 'app_branches_' ? 'active' : '' }}">
+                                                <a class="rd-nav-link" href="{{ path('app_branches_index') }}">Nos branches</a>
+                                                <ul class="rd-menu rd-navbar-dropdown">
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_promotion') }}">GFI-CO Développeur immobilier</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_construction') }}">GFI-CO Construction</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_design') }}">GFI-CO Design & Architecture</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_invest') }}">GFI-CO Invest</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_agency') }}">GFI-CO Agency</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_solutions' ? 'active' : '' }}">
+                                                <a class="rd-nav-link" href="{{ path('app_solutions') }}">Nos solutions</a>
+                                            </li>
+                                            <li class="rd-nav-item {{ app.request.attributes.get('_route') starts with 'app_projets_' ? 'active' : '' }}">
+                                                <a class="rd-nav-link" href="{{ path('app_projets_index') }}">Projets</a>
+                                                <ul class="rd-menu rd-navbar-dropdown">
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_conception') }}">Conception plans et projets</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_immobilier') }}">Projet programme immobilier</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_construction') }}">Construction</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_autres') }}">Autres travaux BTP</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_blog' ? 'active' : '' }}">
+                                                <a class="rd-nav-link" href="{{ path('app_blog') }}">Actualités</a>
+                                            </li>
+                                            <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_contact' ? 'active' : '' }}">
+                                                <a class="rd-nav-link" href="{{ path('app_contact') }}">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- RD Navbar Search -->
+                                    <div class="rd-navbar-search" id="rd-navbar-search-1">
+                                        <button class="rd-navbar-search-toggle rd-navbar-fixed-element-2" data-rd-navbar-toggle="#rd-navbar-search-1"><span></span></button>
+                                        <form class="rd-search" action="{{ path('app_search') }}" data-search-live="rd-search-results-live-1" method="GET">
+                                            <div class="form-wrap">
+                                                <label class="form-label" for="rd-navbar-search-form-input-1">Rechercher...</label>
+                                                <input class="form-input rd-navbar-search-form-input" id="rd-navbar-search-form-input-1" type="text" name="s" autocomplete="off">
+                                                <div class="rd-search-results-live" id="rd-search-results-live-1"></div>
+                                            </div>
+                                            <button class="rd-search-form-submit fa-search" type="submit"></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <!-- Floating Button -->
+            <div class="floating-btn-container">
+                <button class="floating-btn" onclick="openQuoteModal()">
+                    Demande <br>de Devis
+                </button>
+            </div>
+
+            <!-- Contenu principal -->
+            {% block main %}{% endblock %}
+
+            <!-- Modale personnalisée -->
+            <div id="quoteModal" class="modal-overlay">
+                <div class="modal-content">
+                    <h3 class="font-condensed" style="text-align: center;white-space: nowrap;font-weight: 500;">Demandez votre étude gratuite</h3>
+                    <p class="modal-subtitle font-roboto" style="text-align: center;">Veuillez remplir le formulaire ci-dessous</p>
+                    <br>
+                    <form id="quoteForm" onsubmit="submitForm(event)">
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label for="fullName">Prénom &amp; Nom *</label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Votre prénom et nom">
+                            </div>
+                            
+                            <div class="form-group col-sm-6">
+                                <label for="phone">Téléphone / WhatsApp *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="Votre numéro de téléphone">
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <label for="projectType">Type de projet *</label>
+                                <select id="projectType" name="projectType" required>
+                                    <option value="">Choisir...</option>
+                                    <option value="Villa plain-pied">Villa plain-pied</option>
+                                    <option value="Villa duplex (R+1)">Villa duplex (R+1)</option>
+                                    <option value="Immeuble résidentiel">Immeuble résidentiel</option>
+                                    <option value="Rénovation / Second œuvre">Rénovation / Second œuvre</option>
+                                    <option value="Bureau / Local commercial">Bureau / Local commercial</option>
+                                    <option value="Programme immobilier">Programme immobilier</option>
+                                    <option value="Autre">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group col-sm-6">
+                                <label for="landSize">Superficie du terrain (m²) *</label>
+                                <select id="landSize" name="landSize" required>
+                                    <option value="">Choisir...</option>
+                                    <option value="Moins de 200 m²">Moins de 200 m²</option>
+                                    <option value="200 – 400 m²">200 – 400 m²</option>
+                                    <option value="400 – 600 m²">400 – 600 m²</option>
+                                    <option value="600 – 1 000 m²">600 – 1 000 m²</option>
+                                    <option value="1 000 – 2 500 m²">1 000 – 2 500 m²</option>
+                                    <option value="Plus de 2 500 m²">Plus de 2 500 m²</option>
+                                    <option value="Je n'ai pas encore de terrain">Je n'ai pas encore de terrain</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group col-sm-6">
+                                <label for="budget">Budget estimé (FCFA) *</label>
+                                <select id="budget" name="budget" required>
+                                    <option value="">Choisir...</option>
+                                    <option value="Moins de 30 millions">Moins de 30 millions</option>
+                                    <option value="30 à 60 millions">30 à 60 millions</option>
+                                    <option value="60 à 100 millions">60 à 100 millions</option>
+                                    <option value="100 à 200 millions">100 à 200 millions</option>
+                                    <option value="Plus de 200 millions">Plus de 200 millions</option>
+                                    <option value="Je ne sais pas encore">Je ne sais pas encore</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group col-sm-6">
+                                <label for="finishLevel">Niveau de finition *</label>
+                                <select id="finishLevel" name="finishLevel" required>
+                                    <option value="">Choisir...</option>
+                                    <option value="Économique — Fonctionnel &amp; solide">Économique — Fonctionnel &amp; solide</option>
+                                    <option value="Moyen standing — Confort &amp; qualité">Moyen standing — Confort &amp; qualité</option>
+                                    <option value="Premium — Prestige &amp; matériaux haut de gamme">Premium — Prestige &amp; matériaux haut de gamme</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group col-sm-12">
+                                <label for="message">Votre message (optionnel)</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement votre projet..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Envoyer ma demande gratuite</button>
+                        
+                        <p class="modal-footer-text">Réponse sous 48h · Aucun engagement · Étude 100% gratuite</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Page Footer -->
+            <footer class="section footer-standard bg-darken">
+                <div class="footer-standard-main">
+                    <div class="container">
+                        <div class="row row-50">
+                            <div class="col-lg-4">
+                                <div class="inset-right-1">
+                                    <h5 class="font-condensed text-uppercase text-white fw-bold">Qui Sommes-nous</h5>
+                                    <p>Promotion et construction immobilière durable en Côte d'Ivoire et en Guinée. De la conception à la remise des clés, nous bâtissons pour durer.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-5 col-lg-4">
+                                <div class="box-1">
+                                    <h5 class="font-condensed text-uppercase text-white fw-bold">Coordonnées</h5>
+                                    <ul class="list-sm">
+                                        <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-white"></span><a class="link-default" href="{{ path('app_contact') }}">LT 18 IL 1 AKOUEDO TRIANGLE, Quartier 09 Secteur Palmeraie, Abidjan, Côte d'Ivoire</a></li>
+                                        <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-white"></span><a class="link-default" href="tel:+2250143100250">(+225) 01 43 100 250 /<br> (+225) 07 58 835 008</a></li>
+                                        <li class="object-inline"><span class="icon icon-md mdi mdi-email text-white"></span><a class="link-default" href="mailto:contact@gfi-co.net">contact@gfi-co.net</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-7 col-lg-4">
+                                <h5 class="font-condensed text-uppercase text-white fw-bold">Newsletter</h5>
+                                <p>Inscrivez-vous pour suivre nos actualités et nos projets.</p>
+                                <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="#">
+                                    <div class="form-wrap">
+                                        <input class="form-input" id="subscribe-form-2-email" type="email" name="email" data-constraints="@Email @Required">
+                                        <label class="form-label" for="subscribe-form-2-email">E-mail</label>
+                                    </div>
+                                    <div class="form-button">
+                                        <button class="button button-primary button-icon button-icon-only button-winona" type="submit" aria-label="submit"><span class="icon mdi mdi-email-outline"></span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="footer-standard-aside">
+                        <a class="brand" href="{{ path('app_home') }}">
+                            <img src="{{ asset('assets/images/logo-0.png') }}" alt="GFI-CO GROUP" width="109" height="27" srcset="{{ asset('assets/images/logo-0.png') }} 2x" style="width: 110px; height: auto;"/>
+                        </a>
+                        <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>GFI-CO GROUP - Tous droits réservés.</span><span>&nbsp;</span><br class="d-sm-none"/><a class="link-default" href="{{ path('app_privacy') }}">Politique de confidentialité</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Global Mailform Output -->
+        <div class="snackbars" id="form-output-global"></div>
+        
+        <!-- Javascript -->
+        <script src="{{ asset('assets/js/core.min.js') }}"></script>
+        <script src="{{ asset('assets/js/script.js') }}"></script>
+        
+        <script>
+            // Gestion de l'autoplay par slide
+            document.addEventListener('DOMContentLoaded', function() {
+                var swiperContainer = document.querySelector('.swiper-slider-business');
+                if (swiperContainer) {
+                    setTimeout(function() {
+                        var swiper = swiperContainer.swiper;
+                        if (swiper) {
+                            var slides = swiperContainer.querySelectorAll('.swiper-slide');
+                            var autoplayDurations = {};
+                            
+                            slides.forEach(function(slide, index) {
+                                var duration = slide.getAttribute('data-autoplay');
+                                if (duration) {
+                                    autoplayDurations[index] = parseInt(duration, 10);
+                                }
+                            });
+                            
+                            swiper.on('slideChange', function() {
+                                var activeIndex = this.realIndex;
+                                var duration = autoplayDurations[activeIndex];
+                                if (duration) {
+                                    this.params.autoplay.delay = duration;
+                                    this.autoplay.stop();
+                                    this.autoplay.start();
+                                } else {
+                                    this.params.autoplay.delay = 5000;
+                                    this.autoplay.stop();
+                                    this.autoplay.start();
+                                }
+                            });
+                        }
+                    }, 500);
+                }
+            });
+        </script>
+
+        <script>
+            // Ouvrir la modale
+            function openQuoteModal() {
+                document.querySelector('.page-header').classList.add('modal-open');
+                document.getElementById('quoteModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Fermer la modale
+            function closeQuoteModal() {
+                document.querySelector('.page-header').classList.remove('modal-open');
+                document.getElementById('quoteModal').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Fermer en cliquant à l'extérieur
+            document.getElementById('quoteModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeQuoteModal();
+                }
+            });
+
+            // Soumission du formulaire
+            function submitForm(event) {
+                event.preventDefault();
+                
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    phone: document.getElementById('phone').value,
+                    projectType: document.getElementById('projectType').value,
+                    landSize: document.getElementById('landSize').value,
+                    budget: document.getElementById('budget').value,
+                    finishLevel: document.getElementById('finishLevel').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // Envoyer via fetch
+                fetch('{{ path('app_quote_submit') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('✅ Votre demande a été envoyée avec succès !\nNous vous contacterons sous 48h.');
+                        closeQuoteModal();
+                        document.getElementById('quoteForm').reset();
+                    } else {
+                        alert('❌ Une erreur est survenue. Veuillez réessayer.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    alert('❌ Une erreur est survenue. Veuillez réessayer.');
+                });
+            }
+        </script>
+        
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

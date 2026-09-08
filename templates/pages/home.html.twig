@@ -1,0 +1,625 @@
+{# templates/pages/home.html.twig #}
+{% extends 'layout.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Gestion foncière & intermédiation commerciale{% endblock %}
+
+{% block description %}GFI-CO GROUP - Gestion foncière & intermédiation commerciale. Bâtir mieux, c'est bâtir pour durer.{% endblock %}
+
+{% block main %}
+    <!-- Slider -->
+    <section class="section swiper-container swiper-slider swiper-slider-business bg-gray-700" 
+             data-loop="true" 
+             data-slide-effect="fade" 
+             data-autoplay="5000" 
+             data-simulate-touch="false" 
+             data-custom-slide-effect="inter-leave-effect">
+        <div class="swiper-wrapper">
+            <!-- Slide 1: Image (5s) -->
+            <div class="swiper-slide" data-slide-bg="{{ asset('assets/images/slider-architecture-slide-1-0-1920x800.jpg') }}" data-autoplay="5000">
+                <div class="slide-inner">
+                    <div class="swiper-slide-caption">
+                        <div class="container">
+                            <time class="slider-timeline wow-outer slideInDown text-uppercase" datetime="2024">
+                                <span class="wow" data-caption-animate="slideInDown" data-wow-delay=".5s">Depuis 2020</span>
+                            </time>
+                            <h1 class="font-condensed wow-outer fw-bold">
+                                <span class="wow" data-caption-animate="slideInDown">Bâtir mieux,<br>c'est bâtir pour durer</span>
+                            </h1>
+                            <div class="wow-outer offset-top-1">
+                                <a class="button button-lg button-white-outline button-winona wow" href="{{ path('app_about') }}" data-caption-animate="slideInUp">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2: Image (5s) -->
+            <div class="swiper-slide" data-slide-bg="{{ asset('assets/images/slider-architecture-slide-2-0-1920x800.jpg') }}" data-autoplay="5000">
+                <div class="slide-inner">
+                    <div class="swiper-slide-caption">
+                        <div class="container">
+                            <time class="slider-timeline wow-outer slideInDown text-uppercase" datetime="2024">
+                                <span class="wow" data-caption-animate="slideInDown" data-wow-delay=".5s">Promotion immobilière</span>
+                            </time>
+                            <h1 class="font-condensed wow-outer fw-bold">
+                                <span class="wow" data-caption-animate="slideInDown">Construire des<br>communautés durables</span>
+                            </h1>
+                            <div class="wow-outer offset-top-1">
+                                <a class="button button-lg button-white-outline button-winona wow" href="{{ path('app_branches_index') }}" data-caption-animate="slideInUp">Découvrir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3: Image (5s) -->
+            <div class="swiper-slide" data-slide-bg="{{ asset('assets/images/slider-architecture-slide-3-0-1920x800.jpg') }}" data-autoplay="5000">
+                <div class="slide-inner">
+                    <div class="swiper-slide-caption">
+                        <div class="container">
+                            <time class="slider-timeline wow-outer slideInDown text-uppercase" datetime="2024">
+                                <span class="wow" data-caption-animate="slideInDown" data-wow-delay=".5s">Construction</span>
+                            </time>
+                            <h1 class="font-condensed wow-outer fw-bold">
+                                <span class="wow" data-caption-animate="slideInDown">Du plan<br>à la clé</span>
+                            </h1>
+                            <div class="wow-outer offset-top-1">
+                                <a class="button button-lg button-white-outline button-winona wow" href="{{ path('app_branches_construction') }}" data-caption-animate="slideInUp">Découvrir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4: VIDÉO (20s) -->
+            <div class="swiper-slide swiper-slide-video" data-autoplay="20000">
+                <div class="slide-inner">
+                    <!-- Fallback image -->
+                    <div class="video-fallback" style="background-image:url('{{ asset('assets/images/slider-architecture-slide-4-1920x800.jpg') }}');"></div>
+                    
+                    <!-- Vidéo -->
+                    <video id="slider-video" autoplay muted loop playsinline>
+                        <source src="{{ asset('assets/videos/slider-architecture-slide-4-1920x800.mp4') }}" type="video/mp4">
+                    </video>
+                    
+                    <!-- Overlay -->
+                    <div class="video-overlay"></div>
+                    
+                    <!-- Contenu -->
+                    <div class="swiper-slide-caption">
+                        <div class="container">
+                            <time class="slider-timeline wow-outer slideInDown text-uppercase" datetime="2024">
+                                <span class="wow" data-caption-animate="slideInDown" data-wow-delay=".5s">Design & Architecture</span>
+                            </time>
+                            <h1 class="font-condensed wow-outer fw-bold">
+                                <span class="wow" data-caption-animate="slideInDown">L'émotion dans<br>chaque espace</span>
+                            </h1>
+                            <div class="wow-outer offset-top-1">
+                                <a class="button button-lg button-white-outline button-winona wow" href="{{ path('app_branches_design') }}" data-caption-animate="slideInUp">Découvrir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slider-nav container">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <!-- A Few Words About Us -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="inset-right-3">
+                        <h3 class="font-condensed wow-outer">
+                            <span class="wow slideInDown">GFI-CO GROUP — Construire aujourd'hui, préserver demain</span>
+                        </h3>
+                        <p class="font-roboto wow-outer">
+                            <span class="wow slideInDown" data-wow-delay=".1s">GFI-CO GROUP conçoit et bâtit des maisons, villas et programmes immobiliers en Côte d'Ivoire et en Guinée avec l'exigence d'un promoteur agréé et la conscience d'un bâtisseur engagé pour l'avenir.</span>
+                        </p>
+                        <ul class="list-marked font-condensed">
+                            <span style="font-size: 24px;">Trois piliers</span>
+                            <li>Clé en main - un seul interlocuteur, aucune mauvaise surprise, un projet livré prêt à vivre.</li>
+                            <li>Construction responsable - des matériaux choisis, une empreinte pensée, un cadre de vie sain.</li>
+                            <li>Confiance vérifiable - promoteur agréé N°24-00052/MCLU/DGLCV/CAPPI/OGLA, plus de 12 projets déjà livrés.</li>
+                        </ul>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-lg button-black-outline button-winona wow slideInDown" data-wow-delay=".1s" href="{{ path('app_about') }}">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="svg-box wow slideInDown" style="background-image:url({{ asset('assets/images/box-expiriens.png') }})">
+                        <div class="svg-box-content">
+                            <svg class="expiriens" width="120" height="120" viewBox="0 0 120 120">
+                                <defs>
+                                    <mask id="mask" x="0" y="0" width="100%" height="100%">
+                                        <rect id="alpha" x="0" y="0" width="100%" height="100%" fill="white"></rect>
+                                        <text id="title" x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-size="72" font-weight="700" fill="black">6</text>
+                                    </mask>
+                                </defs>
+                                <rect id="base" x="0" y="0" width="100%" height="100%" fill="#c9a84c" mask="url(#mask)"></rect>
+                            </svg>
+                            <span class="box-subtitle">Années d'expérience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Projects -->
+    <section class="section section-lg bg-gray-lighten text-center">
+        <div class="container">
+            <h3 class="wow-outer">
+                <span class="wow slideInDown">NOS PROJETS</span>
+            </h3>
+            <p class="wow-outer" style="max-width:700px; margin:0 auto;">
+                <span class="wow slideInDown" data-wow-delay=".05s">+ 12 projets livrés — conception de plans, bureaux d'études, génie civil, travaux d'aménagement et de second œuvre, dressings et cuisines sur mesure, constructions clé en main.</span>
+            </p>
+            <br>
+
+            <!-- Filtres -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="*">Tous</button>
+                <button class="filter-btn" data-filter=".conception">Conception</button>
+                <button class="filter-btn" data-filter=".immobilier">Programme immobilier</button>
+                <button class="filter-btn" data-filter=".construction">Construction</button>
+                <button class="filter-btn" data-filter=".btp">Autres travaux BTP</button>
+            </div>
+
+            <div class="isotope offset-top-2" data-isotope-layout="masonry">
+                <div class="row row-30">
+                    
+                    <!-- Projet 1: Villa Duplex R+1 - Construction -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item construction wow-outer">
+                        <article class="thumbnail-corporate wow slideInDown">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/1-conception/duplex-bingerville/2.jpg') }}" alt="Villa Duplex R+1" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Villa Duplex R+1</p>
+                                <a href="{{ path('app_projets_construction') }}">
+                                    <span class="thumbnail-badge">Construction</span>
+                                </a>
+                                <br>
+                                <p>Un projet résidentiel haut de gamme alliant élégance, confort et fonctionnalité.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_construction') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 2: Villa plain-pied THE PEARL - Conception -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item conception wow-outer">
+                        <article class="thumbnail-corporate wow slideInDown">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/1-conception/the-pearl/1.jpg') }}" alt="Villa plain-pied THE PEARL" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Villa plain-pied THE PEARL</p>
+                                <a href="{{ path('app_projets_conception') }}">
+                                    <span class="thumbnail-badge">Conception plan et projets</span>
+                                </a>
+                                <br>
+                                <p>Une villa de plain-pied alliant élégance et fonctionnalité.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_conception') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 3: Eco-Terra City - Immobilier -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item immobilier wow-outer">
+                        <article class="thumbnail-corporate wow slideInDown">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/2-immobilier/eco-terra-city/8.jpg') }}" alt="Eco-Terra City" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Eco-Terra City</p>
+                                <a href="{{ path('app_projets_immobilier') }}">
+                                    <span class="thumbnail-badge">Projet programme immobilier</span>
+                                </a>
+                                <br>
+                                <p>Un programme immobilier innovant alliant écologie et modernité.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_immobilier') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 4: Portes, Cuisines, Dressing - BTP -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item btp wow-outer">
+                        <article class="thumbnail-corporate wow thumbnail-corporate-lg slideInDown">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/4-autres/confection/4.jpg') }}" alt="Portes, Cuisines, Dressing" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Portes, Cuisines &amp; Dressing</p>
+                                <a href="{{ path('app_projets_autres') }}">
+                                    <span class="thumbnail-badge">Autres travaux BTP</span>
+                                </a>
+                                <br>
+                                <p>Des ouvrages de menuiserie sur mesure alliant esthétique, fonctionnalité et durabilité.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_autres') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 5: Projet Villa Duplex à Bingerville - Conception -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item conception wow-outer">
+                        <article class="thumbnail-corporate wow slideInDown">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/1-conception/duplex-bingerville/2.jpg') }}" alt="Villa Duplex à Bingerville" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Villa Duplex à Bingerville</p>
+                                <a href="{{ path('app_projets_conception') }}">
+                                    <span class="thumbnail-badge">Conception plan et projets</span>
+                                </a>
+                                <br>
+                                <p>Un projet de villa duplex situé à Bingerville, alliant design et cadre verdoyant.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_conception') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 6: Programme Nestlé CI - Immobilier -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item immobilier wow-outer">
+                        <article class="thumbnail-corporate wow thumbnail-corporate-lg slideInUp">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/2-immobilier/nestle/1.jpg') }}" alt="Programme Nestlé CI" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Programme Nestlé CI</p>
+                                <a href="{{ path('app_projets_immobilier') }}">
+                                    <span class="thumbnail-badge">Projet programme immobilier</span>
+                                </a>
+                                <br>
+                                <p>Un programme immobilier d'envergure pour les collaborateurs de Nestlé CI.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_immobilier') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 7: Villa duplex R+1 THE BIG PEARL - Conception -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item conception wow-outer">
+                        <article class="thumbnail-corporate wow slideInDown">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/1-conception/the-big-pearl/1.jpg') }}" alt="Villa duplex R+1 THE BIG PEARL" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Villa duplex R+1 THE BIG PEARL</p>
+                                <a href="{{ path('app_projets_conception') }}">
+                                    <span class="thumbnail-badge">Conception plan et projets</span>
+                                </a>
+                                <br>
+                                <p>Un duplex moderne et spacieux, pensé pour le confort et la distinction.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_conception') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 8: Harmenien de OCI - Construction -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item construction wow-outer">
+                        <article class="thumbnail-corporate wow slideInDown">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/3-construction/oci/6.jpg') }}" alt="Harmenien de OCI" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Harmenien de OCI</p>
+                                <a href="{{ path('app_projets_construction') }}">
+                                    <span class="thumbnail-badge">Construction</span>
+                                </a>
+                                <br>
+                                <p>Une réalisation témoignant du savoir-faire de GFI-CO en matière de construction de grands ensembles.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_construction') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 9: Bureau GIZ - BTP -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item btp wow-outer">
+                        <article class="thumbnail-corporate wow slideInUp">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/4-autres/giz/9.jpg') }}" alt="Bureau GIZ" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Aménagement Bureau GIZ</p>
+                                <a href="{{ path('app_projets_autres') }}">
+                                    <span class="thumbnail-badge">Autres travaux BTP</span>
+                                </a>
+                                <br>
+                                <p>Des travaux d'aménagement pour une institution internationale, dans le respect des normes et des délais.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_autres') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 10: Projet Villa Duplex R+1 à Bingerville - Conception -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item conception wow-outer">
+                        <article class="thumbnail-corporate wow slideInDown">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/1-conception/duplex-r+1-bingerville/1.jpg') }}" alt="Villa Duplex R+1 à Bingerville" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Villa Duplex R+1 à Bingerville</p>
+                                <a href="{{ path('app_projets_conception') }}">
+                                    <span class="thumbnail-badge">Conception plan et projets</span>
+                                </a>
+                                <br>
+                                <p>Un duplex de standing avec étage, conçu pour offrir espace et lumière.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_conception') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 11: Villa Palmera - Construction -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item construction wow-outer">
+                        <article class="thumbnail-corporate wow slideInUp">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/3-construction/villa-palmera/1.jpg') }}" alt="Villa Palmera" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Villa Palmera</p>
+                                <a href="{{ path('app_projets_construction') }}">
+                                    <span class="thumbnail-badge">Construction</span>
+                                </a>
+                                <br>
+                                <p>Une villa de prestige alliant esthétique contemporaine et finitions haut de gamme.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_construction') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 12: Projet Villa Plain Pied à Bingerville - Conception -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item conception wow-outer">
+                        <article class="thumbnail-corporate wow slideInDown">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/1-conception/villa-plain-pieds-bingerville/1.jpg') }}" alt="Villa Plain Pied à Bingerville" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Villa Plain Pied à Bingerville</p>
+                                <a href="{{ path('app_projets_conception') }}">
+                                    <span class="thumbnail-badge">Conception plan et projets</span>
+                                </a>
+                                <br>
+                                <p>Une villa de plain-pied dans un cadre paisible, idéale pour une vie moderne et sereine.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_conception') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                    <!-- Projet 13: Génie civil PK18 - BTP -->
+                    <div class="col-12 col-sm-6 col-lg-4 isotope-item btp wow-outer">
+                        <article class="thumbnail-corporate wow slideInUp">
+                            <img class="thumbnail-corporate-image" src="{{ asset('assets/images/projets/4-autres/pk18/3.jpeg') }}" alt="PK18" width="370" height="256"/>
+                            <div class="thumbnail-corporate-caption">
+                                <p class="thumbnail-corporate-title">Travaux de Génie civil PK18</p>
+                                <a href="{{ path('app_projets_autres') }}">
+                                    <span class="thumbnail-badge">Autres travaux BTP</span>
+                                </a>
+                                <br>
+                                <p>Une réalisation majeure démontrant le savoir-faire de GFI-CO dans les infrastructures lourdes.</p>
+                                <a class="thumbnail-corporate-link" href="{{ path('app_projets_autres') }}">
+                                    <span class="icon mdi mdi-plus"></span><span class="icon mdi mdi-plus"></span>
+                                </a>
+                            </div>
+                            <div class="thumbnail-corporate-dummy"></div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section-lg text-center">
+        <div class="container">
+            <h3 class="font-condensed wow-outer">
+                <span class="wow slideInUp">Nos solutions</span>
+            </h3>
+            <div class="row row-50">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft">
+                        <div class="box-creative-icon linearicons-home"></div>
+                        <h4 class="font-condensed box-creative-title">
+                            <a href="{{ path('app_solutions') }}">Projet clé en main</a>
+                        </h4>
+                        <p>Un interlocuteur unique, un budget maîtrisé, un résultat 100% personnalisé - prêt à habiter, prêt à exploiter.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".1s">
+                        <div class="box-creative-icon linearicons-hammer"></div>
+                        <h4 class="font-condensed box-creative-title">
+                            <a href="{{ path('app_solutions') }}">Rénovation & Réhabilitation</a>
+                        </h4>
+                        <p>Nous redonnons éclat, valeur et conformité à vos biens, avec le même soin que pour une construction neuve.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".2s">
+                        <div class="box-creative-icon linearicons-layers"></div>
+                        <h4 class="font-condensed box-creative-title">
+                            <a href="{{ path('app_solutions') }}">Revêtement Mural & Sol</a>
+                        </h4>
+                        <p>Carrelage, marbre, parquet, peinture : des finitions haut de gamme pour des murs et des sols qui racontent votre style.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft">
+                        <div class="box-creative-icon linearicons-apartment"></div>
+                        <h4 class="font-condensed box-creative-title">
+                            <a href="{{ path('app_solutions') }}">Cuisines & Dressings sur mesure</a>
+                        </h4>
+                        <p>Conception 3D, matériaux nobles, ergonomie parfaite : l'élégance au service du quotidien.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".1s">
+                        <div class="box-creative-icon linearicons-picture"></div>
+                        <h4 class="font-condensed box-creative-title">
+                            <a href="{{ path('app_solutions') }}">Staff & Placo</a>
+                        </h4>
+                        <p>Plafonds décoratifs, corniches, cloisons : nos artisans sculptent la lumière et le volume.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".2s">
+                        <div class="box-creative-icon linearicons-wrench"></div>
+                        <h4 class="font-condensed box-creative-title">
+                            <a href="{{ path('app_solutions') }}">Plomberie & Électricité</a>
+                        </h4>
+                        <p>Installations fiables, sécurisées, conformes aux normes - du gros œuvre à la dernière prise.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-xl bg-gray-700 bg-image bg-image-1 bg-owl" style="background-image: url({{ asset('assets/images/bg-testimonials-1920x679.jpg') }});">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h3 class="font-condensed text-white text-center">Témoignages</h3>
+                <div class="col-md-12 offset-top-2">
+                    <div class="owl-carousel" data-items="1" data-md-items="2" data-dots="true" data-nav="false" data-loop="true" data-margin="30" data-stage-padding="0" data-mouse-drag="false">
+                        <div class="wow-outer">
+                            <blockquote class="quote-modern quote-modern-big wow slideInLeft">
+                                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
+                                    <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
+                                </svg>
+                                <div class="quote-modern-text">
+                                    <p>Ce qui m'a convaincu, c'est la transparence. Chaque semaine, j'avais les photos du chantier depuis Paris. Quand je suis arrivé à la livraison, c'était exactement ce que j'avais vu sur les photos. Aucune surprise.</p>
+                                </div>
+                                <div class="quote-modern-meta">
+                                    <div class="quote-modern-avatar">
+                                        <img src="{{ asset('assets/images/testimonials-person-5-96x96.jpg') }}" alt="" width="96" height="96"/>
+                                    </div>
+                                    <div class="quote-modern-info">
+                                        <cite class="quote-modern-cite">Alphonse K.</cite>
+                                        <p class="quote-modern-caption">Diaspora ivoirienne · Lyon, France · Villa R+1, Bingerville</p>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="wow-outer">
+                            <blockquote class="quote-modern quote-modern-big wow slideInLeft">
+                                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
+                                    <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
+                                </svg>
+                                <div class="quote-modern-text">
+                                    <p>Ce qui m'a convaincu, c'est la transparence. Chaque semaine, j'avais les photos du chantier depuis Paris. Quand je suis arrivé à la livraison, c'était exactement ce que j'avais vu sur les photos. Aucune surprise.</p>
+                                </div>
+                                <div class="quote-modern-meta">
+                                    <div class="quote-modern-avatar">
+                                        <img src="{{ asset('assets/images/testimonials-person-1-96x96.jpg') }}" alt="" width="96" height="96"/>
+                                    </div>
+                                    <div class="quote-modern-info">
+                                        <cite class="quote-modern-cite">Clémentine Y.</cite>
+                                        <p class="quote-modern-caption">Diaspora ivoirienne · Lyon, France · Villa R+1, Bingerville</p>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="wow-outer">
+                            <blockquote class="quote-modern quote-modern-big wow slideInLeft">
+                                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
+                                    <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
+                                </svg>
+                                <div class="quote-modern-text">
+                                    <p>J'étais à Paris quand les travaux ont commencé. Les rapports photos chaque semaine m'ont tout montré. À la livraison, rien à redire — exactement comme les plans.</p>
+                                </div>
+                                <div class="quote-modern-meta">
+                                    <div class="quote-modern-avatar">
+                                        <img src="{{ asset('assets/images/testimonials-person-3-96x96.jpg') }}" alt="" width="96" height="96"/>
+                                    </div>
+                                    <div class="quote-modern-info">
+                                        <cite class="quote-modern-cite">Kouassi D.</cite>
+                                        <p class="quote-modern-caption">Villa duplex R+1 · Bingerville · Diaspora France</p>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="wow-outer">
+                            <blockquote class="quote-modern quote-modern-big wow slideInLeft">
+                                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
+                                    <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
+                                </svg>
+                                <div class="quote-modern-text">
+                                    <p>Terrain à Bassam, aucune idée par où commencer. GFI-CO a tout géré — ACD, permis, construction, cuisines sur mesure. Un interlocuteur du début à la fin.</p>
+                                </div>
+                                <div class="quote-modern-meta">
+                                    <div class="quote-modern-avatar">
+                                        <img src="{{ asset('assets/images/testimonials-person-2-96x96.jpg') }}" alt="" width="96" height="96"/>
+                                    </div>
+                                    <div class="quote-modern-info">
+                                        <cite class="quote-modern-cite">Seydou F.</cite>
+                                        <p class="quote-modern-caption">Villa Palmera · Grand-Bassam · Diaspora Belgique</p>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="section section-sm text-center">
+        <div class="container">
+            <div class="owl-carousel owl-carousel-1" data-items="2" data-sm-items="3" data-md-items="4" data-lg-items="5" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
+                <div class="item wow-outer">
+                    <div class="wow slideInLeft">
+                        <a class="link-image" href="#">
+                            <img src="{{ asset('assets/images/logo-1.png') }}" alt="Partenaire 1" width="135" height="87"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="item wow-outer">
+                    <div class="wow slideInLeft" data-wow-delay=".05s">
+                        <a class="link-image" href="#">
+                            <img src="{{ asset('assets/images/logo-2.jpg') }}" alt="Partenaire 2" width="134" height="104"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="item wow-outer">
+                    <div class="wow slideInLeft" data-wow-delay=".1s">
+                        <a class="link-image" href="#">
+                            <img src="{{ asset('assets/images/logo-3.png') }}" alt="Partenaire 3" width="132" height="87"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="item wow-outer">
+                    <div class="wow slideInLeft" data-wow-delay=".15s">
+                        <a class="link-image" href="#">
+                            <img src="{{ asset('assets/images/logo-4.jpeg') }}" alt="Partenaire 4" width="143" height="85"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="item wow-outer">
+                    <div class="wow slideInLeft" data-wow-delay=".2s">
+                        <a class="link-image" href="#">
+                            <img src="{{ asset('assets/images/logo-6.jpeg') }}" alt="Partenaire 5" width="111" height="85"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
