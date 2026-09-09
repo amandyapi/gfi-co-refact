@@ -125,4 +125,135 @@ class Constants
             'tags' => ['Exposition', 'Immobilier', 'Dubaï', 'International']
         ]
     ];
+
+    /**
+     * Retourne tous les articles du blog
+     */
+    public static function getBlogPosts(): array
+    {
+        return self::BLOG_POSTS;
+    }
+
+    /**
+     * Retourne un article par son slug
+     */
+    public static function getBlogPost(string $slug): ?array
+    {
+        return self::BLOG_POSTS[$slug] ?? null;
+    }
+
+    /**
+     * Retourne les articles paginés
+     */
+    public static function getBlogPostsPaginated(int $page = 1, int $limit = 6): array
+    {
+        $posts = self::BLOG_POSTS;
+        $total = count($posts);
+        $offset = ($page - 1) * $limit;
+        
+        return array_slice($posts, $offset, $limit, true);
+    }
+
+    /**
+     * Retourne le nombre total d'articles
+     */
+    public static function getTotalBlogPosts(): int
+    {
+        return count(self::BLOG_POSTS);
+    }
+
+    /**
+     * Retourne les catégories uniques
+     */
+    public static function getBlogCategories(): array
+    {
+        $categories = [];
+        foreach (self::BLOG_POSTS as $post) {
+            // On prend la version française par défaut pour les catégories
+            $category = is_array($post['category']) ? $post['category']['fr'] : $post['category'];
+            if (!in_array($category, $categories)) {
+                $categories[] = $category;
+            }
+        }
+        return $categories;
+    }
+
+    /**
+     * Retourne tous les tags uniques
+     */
+    public static function getBlogTags(): array
+    {
+        $tags = [];
+        foreach (self::BLOG_POSTS as $post) {
+            if (isset($post['tags'])) {
+                foreach ($post['tags'] as $tag) {
+                    if (!in_array($tag, $tags)) {
+                        $tags[] = $tag;
+                    }
+                }
+            }
+        }
+        return $tags;
+    }
+
+    /**
+     * Retourne les articles par catégorie
+     */
+    public static function getBlogPostsByCategory(string $category): array
+    {
+        $posts = [];
+        foreach (self::BLOG_POSTS as $slug => $post) {
+            $postCategory = is_array($post['category']) ? $post['category']['fr'] : $post['category'];
+            if ($postCategory === $category) {
+                $posts[$slug] = $post;
+            }
+        }
+        return $posts;
+    }
+
+    /**
+     * Retourne les articles par tag
+     */
+    public static function getBlogPostsByTag(string $tag): array
+    {
+        $posts = [];
+        foreach (self::BLOG_POSTS as $slug => $post) {
+            if (isset($post['tags']) && in_array($tag, $post['tags'])) {
+                $posts[$slug] = $post;
+            }
+        }
+        return $posts;
+    }
+
+    /**
+     * Retourne le titre d'un article dans la langue demandée
+     */
+    public static function getPostTitle(array $post, string $locale = 'fr'): string
+    {
+        return is_array($post['title']) ? ($post['title'][$locale] ?? $post['title']['fr']) : $post['title'];
+    }
+
+    /**
+     * Retourne la catégorie d'un article dans la langue demandée
+     */
+    public static function getPostCategory(array $post, string $locale = 'fr'): string
+    {
+        return is_array($post['category']) ? ($post['category'][$locale] ?? $post['category']['fr']) : $post['category'];
+    }
+
+    /**
+     * Retourne l'extrait d'un article dans la langue demandée
+     */
+    public static function getPostExcerpt(array $post, string $locale = 'fr'): string
+    {
+        return is_array($post['excerpt']) ? ($post['excerpt'][$locale] ?? $post['excerpt']['fr']) : $post['excerpt'];
+    }
+
+    /**
+     * Retourne le contenu d'un article dans la langue demandée
+     */
+    public static function getPostContent(array $post, string $locale = 'fr'): string
+    {
+        return is_array($post['content']) ? ($post['content'][$locale] ?? $post['content']['fr']) : $post['content'];
+    }
 }

@@ -1,0 +1,135 @@
+{# templates/pages/branches/branches-fr.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Nos branches d'expertise{% endblock %}
+
+{% block description %}Découvrez les 5 pôles d'excellence de GFI-CO GROUP : Développeur immobilier, Construction, Design & Architecture, Invest, Agency.{% endblock %}
+
+{% block bread_subtitle %}Nos branches{% endblock %}
+{% block bread_title %}Nos branches d'expertise{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_branches_index', {_locale: 'fr'}) }}">Nos branches</a></li>
+    <li class="active">Toutes nos branches</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Introduction -->
+    <section class="section section-sm text-center">
+        <div class="container">
+            <h3 class="wow-outer">
+                <span class="wow slideInDown">NOS BRANCHES D'EXPERTISE</span>
+            </h3>
+            <p class="wow-outer" style="max-width:700px; margin:0 auto;">
+                <span class="wow slideInDown" data-wow-delay=".05s">5 pôles d'excellence pour répondre à tous vos besoins immobiliers, de la conception à la livraison, en passant par l'investissement et la gestion.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Séparateur visuel -->
+    <div style="height:40px; background:linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);"></div>
+
+    <!-- Nos branches -->
+    <section class="section section-lg text-center">
+        <div class="container">
+            <div class="branches-grid">
+                <!-- Ligne 1 : 3 branches -->
+                <div class="branches-row">
+                    <!-- Branche 1 -->
+                    <div class="wow-outer">
+                        <article class="box-creative wow slideInLeft">
+                            <a href="{{ path('app_branches_promotion', {_locale: 'fr'}) }}">
+                                <div class="box-creative-icon linearicons-home"></div>
+                            </a>
+                            <h4 class="box-creative-title">
+                                <a href="{{ path('app_branches_promotion', {_locale: 'fr'}) }}">GFI-CO Développeur immobilier</a>
+                            </h4>
+                            <p>Bâtir une communauté durable. L'immobilier de demain ne peut plus se construire sur les modèles d'hier.</p>
+                            <a href="{{ path('app_branches_promotion', {_locale: 'fr'}) }}">
+                                <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                            </a>
+                        </article>
+                    </div>
+                    <!-- Branche 2 -->
+                    <div class="wow-outer">
+                        <article class="box-creative wow slideInLeft" data-wow-delay=".1s">
+                            <a href="{{ path('app_branches_construction', {_locale: 'fr'}) }}">
+                                <div class="box-creative-icon linearicons-hammer"></div>
+                            </a>
+                            <h4 class="box-creative-title">
+                                <a href="{{ path('app_branches_construction', {_locale: 'fr'}) }}">GFI-CO Construction</a>
+                            </h4>
+                            <p>Du plan à la clé. Conception architecturale, gestion de projet, exécution soignée et sur mesure.</p>
+                            <a href="{{ path('app_branches_construction', {_locale: 'fr'}) }}">
+                                <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                            </a>
+                        </article>
+                    </div>
+                    <!-- Branche 3 -->
+                    <div class="wow-outer">
+                        <article class="box-creative wow slideInLeft" data-wow-delay=".2s">
+                            <a href="{{ path('app_branches_design', {_locale: 'fr'}) }}">
+                                <div class="box-creative-icon linearicons-layers"></div>
+                            </a>
+                            <h4 class="box-creative-title">
+                                <a href="{{ path('app_branches_design', {_locale: 'fr'}) }}">GFI-CO Design & Architecture</a>
+                            </h4>
+                            <p>L'émotion dans chaque espace. Entre tradition, artisanat et modernité.</p>
+                            <a href="{{ path('app_branches_design', {_locale: 'fr'}) }}">
+                                <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+                <!-- Ligne 2 : 2 branches centrées -->
+                <div class="branches-row branches-row-bottom">
+                    <!-- Branche 4 -->
+                    <div class="wow-outer">
+                        <article class="box-creative wow slideInLeft" data-wow-delay=".3s">
+                            <a href="{{ path('app_branches_invest', {_locale: 'fr'}) }}">
+                                <div class="box-creative-icon linearicons-apartment"></div>
+                            </a>
+                            <h4 class="box-creative-title">
+                                <a href="{{ path('app_branches_invest', {_locale: 'fr'}) }}">GFI-CO Invest</a>
+                            </h4>
+                            <p>Investir avec méthode. Des rendements durables, pensés sur le long terme.</p>
+                            <a href="{{ path('app_branches_invest', {_locale: 'fr'}) }}">
+                                <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                            </a>
+                        </article>
+                    </div>
+                    <!-- Branche 5 -->
+                    <div class="wow-outer">
+                        <article class="box-creative wow slideInLeft" data-wow-delay=".4s">
+                            <a href="{{ path('app_branches_agency', {_locale: 'fr'}) }}">
+                                <div class="box-creative-icon linearicons-layers"></div>
+                            </a>
+                            <h4 class="box-creative-title">
+                                <a href="{{ path('app_branches_agency', {_locale: 'fr'}) }}">GFI-CO Agency</a>
+                            </h4>
+                            <p>L'immobilier, simplifié. Transaction, gestion locative, support après-vente.</p>
+                            <a href="{{ path('app_branches_agency', {_locale: 'fr'}) }}">
+                                <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-lg bg-primary text-center" style="background:#f68b1e;">
+        <div class="container">
+            <h3 class="wow-outer" style="color:#fff;">
+                <span class="wow slideInDown">Une question sur nos branches ?</span>
+            </h3>
+            <p class="wow-outer" style="color:#fff; font-size:1.1rem; max-width:600px; margin:0 auto;">
+                <span class="wow slideInDown" data-wow-delay=".05s">Notre équipe est à votre écoute pour vous guider dans le choix de la branche la mieux adaptée à votre projet.</span>
+            </p>
+            <div class="wow-outer" style="margin-top:25px;">
+                <a class="button button-black-outline button-winona wow slideInRight" href="{{ path('app_contact', {_locale: 'fr'}) }}" style="border-color:#fff; color:#fff;">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

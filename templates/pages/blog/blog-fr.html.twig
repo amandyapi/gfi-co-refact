@@ -1,5 +1,5 @@
 {# templates/pages/blog/blog.html.twig #}
-{% extends 'layout-pages.html.twig' %}
+{% extends 'layout-pages-fr.html.twig' %}
 
 {% block title %}GFI-CO GROUP | Actualités - Blog immobilier{% endblock %}
 
@@ -9,7 +9,7 @@
 {% block bread_title %}Blog & actualités{% endblock %}
 
 {% block bread_items %}
-    <li><a href="{{ path('app_blog') }}">Actualités</a></li>
+    <li><a href="{{ path('app_blog_index') }}">Actualités</a></li>
     <li class="active">Toutes nos actualités</li>
 {% endblock %}
 
@@ -119,13 +119,13 @@
                     <!-- Pagination -->
                     <div class="pagination">
                         <div class="page-item active">
-                            <a class="page-link button-winona" href="{{ path('app_blog') }}">1</a>
+                            <a class="page-link button-winona" href="{{ path('app_blog_index') }}">1</a>
                         </div>
                         <div class="page-item">
-                            <a class="page-link button-winona" href="{{ path('app_blog') }}?page=2">2</a>
+                            <a class="page-link button-winona" href="{{ path('app_blog_index') }}?page=2">2</a>
                         </div>
                         <div class="page-item">
-                            <a class="page-link button-winona" href="{{ path('app_blog') }}?page=3">3</a>
+                            <a class="page-link button-winona" href="{{ path('app_blog_index') }}?page=3">3</a>
                         </div>
                     </div>
                 </div>

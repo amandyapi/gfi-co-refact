@@ -1,0 +1,101 @@
+{# templates/pages/branches/branche-invest-fr.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO Invest | Investissement immobilier et gestion de patrimoine{% endblock %}
+
+{% block description %}GFI-CO Invest vous accompagne dans vos investissements immobiliers en Côte d'Ivoire et en Guinée. Stratégie, acquisition, gestion des risques et transparence.{% endblock %}
+
+{% block bread_subtitle %}Nos branches{% endblock %}
+{% block bread_title %}GFI-CO Invest{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_branches_index', {_locale: 'fr'}) }}">Nos branches</a></li>
+    <li class="active">Invest</li>
+{% endblock %}
+
+{% block page %}
+    <!-- About This Service -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="inset-right-3">
+                        <h3>GFI-CO Invest</h3>
+                        <h5 style="text-align: justify;">Investir avec méthode</h5>
+                        <p style="text-align: justify;">Identification d'opportunités, acquisition, gestion rigoureuse des actifs et des risques : des rendements durables, pensés sur le long terme. Notre branche investissement couvre les secteurs résidentiel, commercial et industriel, avec une transparence totale à chaque étape de la démarche.</p>
+                        <p style="text-align: justify;">Nous accompagnons les investisseurs particuliers et institutionnels dans la constitution et la gestion de leurs portefeuilles immobiliers, en privilégiant des stratégies patrimoniales solides et adaptées à leurs objectifs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive" src="{{ asset('assets/images/branches/invest/2.jpg') }}" alt="GFI-CO Invest" width="551" height="385"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre démarche -->
+    <section class="section section-lg bg-gray-100">
+        <div class="container">
+            <h3 class="text-center wow-outer">
+                <span class="wow slideInDown">Notre démarche</span>
+            </h3>
+            <div class="row row-30">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-bullseye wow fadeIn"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown">Stratégie d'investissement</h4>
+                            <p class="wow fadeInUpSmall">Nous définissons une stratégie sur mesure qui prend en compte vos objectifs, votre horizon de placement et votre appétence au risque.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-magnifying-glass-chart wow fadeIn" data-wow-delay=".1s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".1s">La recherche et l'analyse</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".1s">Une analyse approfondie du marché pour identifier les meilleures opportunités et évaluer leur potentiel de rendement.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-file-invoice-dollar wow fadeIn" data-wow-delay=".2s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".2s">L'acquisition de biens immobiliers</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".2s">Un accompagnement complet dans le processus d'acquisition, de la négociation à la signature, en passant par les aspects juridiques et financiers.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-shield-halved wow fadeIn" data-wow-delay=".3s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".3s">La gestion des risques</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".3s">Une évaluation rigoureuse des risques et la mise en place de stratégies de diversification pour sécuriser votre patrimoine.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-comments wow fadeIn" data-wow-delay=".4s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".4s">La transparence et la communication</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".4s">Des rapports clairs et réguliers sur la performance de vos investissements et une communication fluide à chaque étape.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-md bg-primary text-center">
+        <div class="container">
+            <div class="box-cta-1">
+                <h3>Vous souhaitez investir dans l'immobilier ? <span class="fw-bold">Construisons votre stratégie</span></h3>
+                <a class="button button-lg button-black-outline button-winona" href="{{ path('app_contact', {_locale: 'fr'}) }}">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

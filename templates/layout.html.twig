@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="fr">
+<html class="wide wow-animation" lang="{{ app.request.locale|default('fr') }}">
     <head>
         <title>{% block title %}GFI-CO GROUP | Gestion foncière & intermédiation commerciale{% endblock %}</title>
         <meta charset="utf-8">
@@ -80,61 +80,99 @@
                                     <!-- RD Navbar Toggle -->
                                     <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
                                     <!-- RD Navbar Brand -->
-                                    <a class="rd-navbar-brand" href="{{ path('app_home') }}">
+                                    <a class="rd-navbar-brand" href="{{ path('app_home', {_locale: app.request.locale|default('fr')}) }}">
                                         <img src="{{ asset('assets/images/logo-0.png') }}" alt="GFI-CO GROUP" width="109" height="27" srcset="{{ asset('assets/images/logo-0.png') }} 2x" style="width: 110px; height: auto;"/>
                                     </a>
                                 </div>
                                 <div class="rd-navbar-main-element">
                                     <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                                         <!-- RD Navbar Nav -->
+                                        {% set current_locale = app.request.locale|default('fr') %}
                                         <ul class="rd-navbar-nav">
                                             <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_home' ? 'active' : '' }}">
-                                                <a class="rd-nav-link" href="{{ path('app_home') }}">Accueil</a>
+                                                <a class="rd-nav-link" href="{{ path('app_home', {_locale: current_locale}) }}">
+                                                    {% if current_locale == 'en' %}Home{% else %}Accueil{% endif %}
+                                                </a>
                                             </li>
                                             <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_about' ? 'active' : '' }}">
-                                                <a class="rd-nav-link" href="{{ path('app_about') }}">À propos</a>
+                                                <a class="rd-nav-link" href="{{ path('app_about', {_locale: current_locale}) }}">
+                                                    {% if current_locale == 'en' %}About{% else %}À propos{% endif %}
+                                                </a>
                                             </li>
                                             <li class="rd-nav-item {{ app.request.attributes.get('_route') starts with 'app_branches_' ? 'active' : '' }}">
-                                                <a class="rd-nav-link" href="{{ path('app_branches_index') }}">Nos branches</a>
+                                                <a class="rd-nav-link" href="{{ path('app_branches_index', {_locale: current_locale}) }}">
+                                                    {% if current_locale == 'en' %}Our branches{% else %}Nos branches{% endif %}
+                                                </a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_promotion') }}">GFI-CO Développeur immobilier</a></li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_construction') }}">GFI-CO Construction</a></li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_design') }}">GFI-CO Design & Architecture</a></li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_invest') }}">GFI-CO Invest</a></li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_agency') }}">GFI-CO Agency</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_promotion', {_locale: current_locale}) }}">
+                                                        {% if current_locale == 'en' %}GFI-CO Real Estate Developer{% else %}GFI-CO Développeur immobilier{% endif %}
+                                                    </a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_construction', {_locale: current_locale}) }}">
+                                                        {% if current_locale == 'en' %}GFI-CO Construction{% else %}GFI-CO Construction{% endif %}
+                                                    </a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_design', {_locale: current_locale}) }}">
+                                                        {% if current_locale == 'en' %}GFI-CO Design & Architecture{% else %}GFI-CO Design & Architecture{% endif %}
+                                                    </a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_invest', {_locale: current_locale}) }}">
+                                                        {% if current_locale == 'en' %}GFI-CO Invest{% else %}GFI-CO Invest{% endif %}
+                                                    </a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_branches_agency', {_locale: current_locale}) }}">
+                                                        {% if current_locale == 'en' %}GFI-CO Agency{% else %}GFI-CO Agency{% endif %}
+                                                    </a></li>
                                                 </ul>
                                             </li>
                                             <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_solutions' ? 'active' : '' }}">
-                                                <a class="rd-nav-link" href="{{ path('app_solutions') }}">Nos solutions</a>
+                                                <a class="rd-nav-link" href="{{ path('app_solutions', {_locale: current_locale}) }}">
+                                                    {% if current_locale == 'en' %}Our solutions{% else %}Nos solutions{% endif %}
+                                                </a>
                                             </li>
                                             <li class="rd-nav-item {{ app.request.attributes.get('_route') starts with 'app_projets_' ? 'active' : '' }}">
-                                                <a class="rd-nav-link" href="{{ path('app_projets_index') }}">Projets</a>
+                                                <a class="rd-nav-link" href="{{ path('app_projets_index', {_locale: current_locale}) }}">
+                                                    {% if current_locale == 'en' %}Projects{% else %}Projets{% endif %}
+                                                </a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_conception') }}">Conception plans et projets</a></li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_immobilier') }}">Projet programme immobilier</a></li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_construction') }}">Construction</a></li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_autres') }}">Autres travaux BTP</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_conception', {_locale: current_locale}) }}">
+                                                        {% if current_locale == 'en' %}Design and project planning{% else %}Conception plans et projets{% endif %}
+                                                    </a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_immobilier', {_locale: current_locale}) }}">
+                                                        {% if current_locale == 'en' %}Real estate program{% else %}Projet programme immobilier{% endif %}
+                                                    </a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_construction', {_locale: current_locale}) }}">
+                                                        {% if current_locale == 'en' %}Construction{% else %}Construction{% endif %}
+                                                    </a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ path('app_projets_autres', {_locale: current_locale}) }}">
+                                                        {% if current_locale == 'en' %}Interior & Finishing Works{% else %}Second Œuvre & Aménagements{% endif %}
+                                                    </a></li>
                                                 </ul>
                                             </li>
-                                            <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_blog' ? 'active' : '' }}">
-                                                <a class="rd-nav-link" href="{{ path('app_blog') }}">Actualités</a>
+                                            <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_blog_index' ? 'active' : '' }}">
+                                                <a class="rd-nav-link" href="{{ path('app_blog_index', {_locale: current_locale}) }}">
+                                                    {% if current_locale == 'en' %}News{% else %}Actualités{% endif %}
+                                                </a>
                                             </li>
                                             <li class="rd-nav-item {{ app.request.attributes.get('_route') == 'app_contact' ? 'active' : '' }}">
-                                                <a class="rd-nav-link" href="{{ path('app_contact') }}">Contact</a>
+                                                <a class="rd-nav-link" href="{{ path('app_contact', {_locale: current_locale}) }}">
+                                                    {% if current_locale == 'en' %}Contact{% else %}Contact{% endif %}
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <!-- RD Navbar Search -->
-                                    <div class="rd-navbar-search" id="rd-navbar-search-1">
-                                        <button class="rd-navbar-search-toggle rd-navbar-fixed-element-2" data-rd-navbar-toggle="#rd-navbar-search-1"><span></span></button>
-                                        <form class="rd-search" action="{{ path('app_search') }}" data-search-live="rd-search-results-live-1" method="GET">
-                                            <div class="form-wrap">
-                                                <label class="form-label" for="rd-navbar-search-form-input-1">Rechercher...</label>
-                                                <input class="form-input rd-navbar-search-form-input" id="rd-navbar-search-form-input-1" type="text" name="s" autocomplete="off">
-                                                <div class="rd-search-results-live" id="rd-search-results-live-1"></div>
-                                            </div>
-                                            <button class="rd-search-form-submit fa-search" type="submit"></button>
-                                        </form>
+                                    <!-- RD Navbar Language -->
+                                    <div class="rd-navbar-language" id="rd-navbar-language-1">
+                                        {% set current_route = app.request.attributes.get('_route') %}
+                                        {% set current_params = app.request.attributes.get('_route_params')|default({}) %}
+                                        {% set current_locale = app.request.locale|default('fr') %}
+                                        
+                                        <div class="language-selector">
+                                            <select class="language-select" onchange="window.location.href = this.value">
+                                                <option value="{{ path(current_route, current_params|merge({_locale: 'fr'})) }}" {% if current_locale == 'fr' %}selected{% endif %}>
+                                                    <span class="icon mdi mdi-earth"></span> FR
+                                                </option>
+                                                <option value="{{ path(current_route, current_params|merge({_locale: 'en'})) }}" {% if current_locale == 'en' %}selected{% endif %}>
+                                                    <span class="icon mdi mdi-earth"></span> EN
+                                                </option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -156,81 +194,106 @@
             <!-- Modale personnalisée -->
             <div id="quoteModal" class="modal-overlay">
                 <div class="modal-content">
-                    <h3 class="font-condensed" style="text-align: center;white-space: nowrap;font-weight: 500;">Demandez votre étude gratuite</h3>
-                    <p class="modal-subtitle font-roboto" style="text-align: center;">Veuillez remplir le formulaire ci-dessous</p>
+                    <h3 class="font-condensed" style="text-align: center;white-space: nowrap;font-weight: 500;">
+                        {% if current_locale == 'en' %}Request your free study{% else %}Demandez votre étude gratuite{% endif %}
+                    </h3>
+                    <p class="modal-subtitle font-roboto" style="text-align: center;">
+                        {% if current_locale == 'en' %}Please fill in the form below{% else %}Veuillez remplir le formulaire ci-dessous{% endif %}
+                    </p>
                     <br>
                     <form id="quoteForm" onsubmit="submitForm(event)">
                         <div class="row">
                             <div class="form-group col-sm-6">
-                                <label for="fullName">Prénom &amp; Nom *</label>
-                                <input type="text" id="fullName" name="fullName" required placeholder="Votre prénom et nom">
+                                <label for="fullName">
+                                    {% if current_locale == 'en' %}First name & Last name *{% else %}Prénom &amp; Nom *{% endif %}
+                                </label>
+                                <input type="text" id="fullName" name="fullName" required 
+                                       placeholder="{% if current_locale == 'en' %}Your first and last name{% else %}Votre prénom et nom{% endif %}">
                             </div>
                             
                             <div class="form-group col-sm-6">
-                                <label for="phone">Téléphone / WhatsApp *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="Votre numéro de téléphone">
+                                <label for="phone">
+                                    {% if current_locale == 'en' %}Phone / WhatsApp *{% else %}Téléphone / WhatsApp *{% endif %}
+                                </label>
+                                <input type="tel" id="phone" name="phone" required 
+                                       placeholder="{% if current_locale == 'en' %}Your phone number{% else %}Votre numéro de téléphone{% endif %}">
                             </div>
 
                             <div class="form-group col-sm-6">
-                                <label for="projectType">Type de projet *</label>
+                                <label for="projectType">
+                                    {% if current_locale == 'en' %}Project type *{% else %}Type de projet *{% endif %}
+                                </label>
                                 <select id="projectType" name="projectType" required>
-                                    <option value="">Choisir...</option>
-                                    <option value="Villa plain-pied">Villa plain-pied</option>
-                                    <option value="Villa duplex (R+1)">Villa duplex (R+1)</option>
-                                    <option value="Immeuble résidentiel">Immeuble résidentiel</option>
-                                    <option value="Rénovation / Second œuvre">Rénovation / Second œuvre</option>
-                                    <option value="Bureau / Local commercial">Bureau / Local commercial</option>
-                                    <option value="Programme immobilier">Programme immobilier</option>
-                                    <option value="Autre">Autre</option>
+                                    <option value="">{% if current_locale == 'en' %}Choose...{% else %}Choisir...{% endif %}</option>
+                                    <option value="Villa plain-pied">{% if current_locale == 'en' %}Single-storey villa{% else %}Villa plain-pied{% endif %}</option>
+                                    <option value="Villa duplex (R+1)">{% if current_locale == 'en' %}Duplex villa (R+1){% else %}Villa duplex (R+1){% endif %}</option>
+                                    <option value="Immeuble résidentiel">{% if current_locale == 'en' %}Residential building{% else %}Immeuble résidentiel{% endif %}</option>
+                                    <option value="Rénovation / Second œuvre">{% if current_locale == 'en' %}Renovation / Interior works{% else %}Rénovation / Second œuvre{% endif %}</option>
+                                    <option value="Bureau / Local commercial">{% if current_locale == 'en' %}Office / Commercial space{% else %}Bureau / Local commercial{% endif %}</option>
+                                    <option value="Programme immobilier">{% if current_locale == 'en' %}Real estate program{% else %}Programme immobilier{% endif %}</option>
+                                    <option value="Autre">{% if current_locale == 'en' %}Other{% else %}Autre{% endif %}</option>
                                 </select>
                             </div>
                             
                             <div class="form-group col-sm-6">
-                                <label for="landSize">Superficie du terrain (m²) *</label>
+                                <label for="landSize">
+                                    {% if current_locale == 'en' %}Land area (m²) *{% else %}Superficie du terrain (m²) *{% endif %}
+                                </label>
                                 <select id="landSize" name="landSize" required>
-                                    <option value="">Choisir...</option>
-                                    <option value="Moins de 200 m²">Moins de 200 m²</option>
+                                    <option value="">{% if current_locale == 'en' %}Choose...{% else %}Choisir...{% endif %}</option>
+                                    <option value="Moins de 200 m²">{% if current_locale == 'en' %}Less than 200 m²{% else %}Moins de 200 m²{% endif %}</option>
                                     <option value="200 – 400 m²">200 – 400 m²</option>
                                     <option value="400 – 600 m²">400 – 600 m²</option>
                                     <option value="600 – 1 000 m²">600 – 1 000 m²</option>
                                     <option value="1 000 – 2 500 m²">1 000 – 2 500 m²</option>
-                                    <option value="Plus de 2 500 m²">Plus de 2 500 m²</option>
-                                    <option value="Je n'ai pas encore de terrain">Je n'ai pas encore de terrain</option>
+                                    <option value="Plus de 2 500 m²">{% if current_locale == 'en' %}More than 2,500 m²{% else %}Plus de 2 500 m²{% endif %}</option>
+                                    <option value="Je n'ai pas encore de terrain">{% if current_locale == 'en' %}I don't have land yet{% else %}Je n'ai pas encore de terrain{% endif %}</option>
                                 </select>
                             </div>
                             
                             <div class="form-group col-sm-6">
-                                <label for="budget">Budget estimé (FCFA) *</label>
+                                <label for="budget">
+                                    {% if current_locale == 'en' %}Estimated budget (FCFA) *{% else %}Budget estimé (FCFA) *{% endif %}
+                                </label>
                                 <select id="budget" name="budget" required>
-                                    <option value="">Choisir...</option>
-                                    <option value="Moins de 30 millions">Moins de 30 millions</option>
-                                    <option value="30 à 60 millions">30 à 60 millions</option>
-                                    <option value="60 à 100 millions">60 à 100 millions</option>
-                                    <option value="100 à 200 millions">100 à 200 millions</option>
-                                    <option value="Plus de 200 millions">Plus de 200 millions</option>
-                                    <option value="Je ne sais pas encore">Je ne sais pas encore</option>
+                                    <option value="">{% if current_locale == 'en' %}Choose...{% else %}Choisir...{% endif %}</option>
+                                    <option value="Moins de 30 millions">{% if current_locale == 'en' %}Less than 30 million{% else %}Moins de 30 millions{% endif %}</option>
+                                    <option value="30 à 60 millions">30 – 60 million</option>
+                                    <option value="60 à 100 millions">60 – 100 million</option>
+                                    <option value="100 à 200 millions">100 – 200 million</option>
+                                    <option value="Plus de 200 millions">{% if current_locale == 'en' %}More than 200 million{% else %}Plus de 200 millions{% endif %}</option>
+                                    <option value="Je ne sais pas encore">{% if current_locale == 'en' %}I don't know yet{% else %}Je ne sais pas encore{% endif %}</option>
                                 </select>
                             </div>
                             
                             <div class="form-group col-sm-6">
-                                <label for="finishLevel">Niveau de finition *</label>
+                                <label for="finishLevel">
+                                    {% if current_locale == 'en' %}Finish level *{% else %}Niveau de finition *{% endif %}
+                                </label>
                                 <select id="finishLevel" name="finishLevel" required>
-                                    <option value="">Choisir...</option>
-                                    <option value="Économique — Fonctionnel &amp; solide">Économique — Fonctionnel &amp; solide</option>
-                                    <option value="Moyen standing — Confort &amp; qualité">Moyen standing — Confort &amp; qualité</option>
-                                    <option value="Premium — Prestige &amp; matériaux haut de gamme">Premium — Prestige &amp; matériaux haut de gamme</option>
+                                    <option value="">{% if current_locale == 'en' %}Choose...{% else %}Choisir...{% endif %}</option>
+                                    <option value="Économique — Fonctionnel &amp; solide">{% if current_locale == 'en' %}Economy — Functional & solid{% else %}Économique — Fonctionnel &amp; solide{% endif %}</option>
+                                    <option value="Moyen standing — Confort &amp; qualité">{% if current_locale == 'en' %}Mid-range — Comfort & quality{% else %}Moyen standing — Confort &amp; qualité{% endif %}</option>
+                                    <option value="Premium — Prestige &amp; matériaux haut de gamme">{% if current_locale == 'en' %}Premium — Prestige & high-end materials{% else %}Premium — Prestige &amp; matériaux haut de gamme{% endif %}</option>
                                 </select>
                             </div>
                             
                             <div class="form-group col-sm-12">
-                                <label for="message">Votre message (optionnel)</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement votre projet..."></textarea>
+                                <label for="message">
+                                    {% if current_locale == 'en' %}Your message (optional){% else %}Votre message (optionnel){% endif %}
+                                </label>
+                                <textarea id="message" name="message" rows="4" 
+                                          placeholder="{% if current_locale == 'en' %}Briefly describe your project...{% else %}Décrivez brièvement votre projet...{% endif %}"></textarea>
                             </div>
                         </div>
                         
-                        <button type="submit" class="submit-btn">Envoyer ma demande gratuite</button>
+                        <button type="submit" class="submit-btn">
+                            {% if current_locale == 'en' %}Send my free request{% else %}Envoyer ma demande gratuite{% endif %}
+                        </button>
                         
-                        <p class="modal-footer-text">Réponse sous 48h · Aucun engagement · Étude 100% gratuite</p>
+                        <p class="modal-footer-text">
+                            {% if current_locale == 'en' %}Response within 48h · No commitment · 100% free study{% else %}Réponse sous 48h · Aucun engagement · Étude 100% gratuite{% endif %}
+                        </p>
                     </form>
                 </div>
             </div>
@@ -242,27 +305,39 @@
                         <div class="row row-50">
                             <div class="col-lg-4">
                                 <div class="inset-right-1">
-                                    <h5 class="font-condensed text-uppercase text-white fw-bold">Qui Sommes-nous</h5>
-                                    <p>Promotion et construction immobilière durable en Côte d'Ivoire et en Guinée. De la conception à la remise des clés, nous bâtissons pour durer.</p>
+                                    <h5 class="font-condensed text-uppercase text-white fw-bold">
+                                        {% if current_locale == 'en' %}Who we are{% else %}Qui Sommes-nous{% endif %}
+                                    </h5>
+                                    <p>
+                                        {% if current_locale == 'en' %}Sustainable real estate promotion and construction in Côte d'Ivoire and Guinea. From design to handover, we build to last.{% else %}Promotion et construction immobilière durable en Côte d'Ivoire et en Guinée. De la conception à la remise des clés, nous bâtissons pour durer.{% endif %}
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-5 col-lg-4">
                                 <div class="box-1">
-                                    <h5 class="font-condensed text-uppercase text-white fw-bold">Coordonnées</h5>
+                                    <h5 class="font-condensed text-uppercase text-white fw-bold">
+                                        {% if current_locale == 'en' %}Contact details{% else %}Coordonnées{% endif %}
+                                    </h5>
                                     <ul class="list-sm">
-                                        <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-white"></span><a class="link-default" href="{{ path('app_contact') }}">LT 18 IL 1 AKOUEDO TRIANGLE, Quartier 09 Secteur Palmeraie, Abidjan, Côte d'Ivoire</a></li>
+                                        <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-white"></span><a class="link-default" href="{{ path('app_contact', {_locale: current_locale}) }}">LT 18 IL 1 AKOUEDO TRIANGLE, Quartier 09 Secteur Palmeraie, Abidjan, Côte d'Ivoire</a></li>
                                         <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-white"></span><a class="link-default" href="tel:+2250143100250">(+225) 01 43 100 250 /<br> (+225) 07 58 835 008</a></li>
                                         <li class="object-inline"><span class="icon icon-md mdi mdi-email text-white"></span><a class="link-default" href="mailto:contact@gfi-co.net">contact@gfi-co.net</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-7 col-lg-4">
-                                <h5 class="font-condensed text-uppercase text-white fw-bold">Newsletter</h5>
-                                <p>Inscrivez-vous pour suivre nos actualités et nos projets.</p>
+                                <h5 class="font-condensed text-uppercase text-white fw-bold">
+                                    {% if current_locale == 'en' %}Newsletter{% else %}Newsletter{% endif %}
+                                </h5>
+                                <p>
+                                    {% if current_locale == 'en' %}Subscribe to follow our news and projects.{% else %}Inscrivez-vous pour suivre nos actualités et nos projets.{% endif %}
+                                </p>
                                 <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="#">
                                     <div class="form-wrap">
                                         <input class="form-input" id="subscribe-form-2-email" type="email" name="email" data-constraints="@Email @Required">
-                                        <label class="form-label" for="subscribe-form-2-email">E-mail</label>
+                                        <label class="form-label" for="subscribe-form-2-email">
+                                            {% if current_locale == 'en' %}Email{% else %}E-mail{% endif %}
+                                        </label>
                                     </div>
                                     <div class="form-button">
                                         <button class="button button-primary button-icon button-icon-only button-winona" type="submit" aria-label="submit"><span class="icon mdi mdi-email-outline"></span></button>
@@ -274,10 +349,17 @@
                 </div>
                 <div class="container">
                     <div class="footer-standard-aside">
-                        <a class="brand" href="{{ path('app_home') }}">
+                        <a class="brand" href="{{ path('app_home', {_locale: current_locale}) }}">
                             <img src="{{ asset('assets/images/logo-0.png') }}" alt="GFI-CO GROUP" width="109" height="27" srcset="{{ asset('assets/images/logo-0.png') }} 2x" style="width: 110px; height: auto;"/>
                         </a>
-                        <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>GFI-CO GROUP - Tous droits réservés.</span><span>&nbsp;</span><br class="d-sm-none"/><a class="link-default" href="{{ path('app_privacy') }}">Politique de confidentialité</a></p>
+                        <p class="rights">
+                            <span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span>
+                            <span>GFI-CO GROUP - {% if current_locale == 'en' %}All rights reserved.{% else %}Tous droits réservés.{% endif %}</span>
+                            <span>&nbsp;</span><br class="d-sm-none"/>
+                            <a class="link-default" href="{{ path('app_privacy', {_locale: current_locale}) }}">
+                                {% if current_locale == 'en' %}Privacy policy{% else %}Politique de confidentialité{% endif %}
+                            </a>
+                        </p>
                     </div>
                 </div>
             </footer>
@@ -374,16 +456,16 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        alert('✅ Votre demande a été envoyée avec succès !\nNous vous contacterons sous 48h.');
+                        alert('✅ {% if current_locale == 'en' %}Your request has been sent successfully! We will contact you within 48 hours.{% else %}Votre demande a été envoyée avec succès ! Nous vous contacterons sous 48h.{% endif %}');
                         closeQuoteModal();
                         document.getElementById('quoteForm').reset();
                     } else {
-                        alert('❌ Une erreur est survenue. Veuillez réessayer.');
+                        alert('❌ {% if current_locale == 'en' %}An error occurred. Please try again.{% else %}Une erreur est survenue. Veuillez réessayer.{% endif %}');
                     }
                 })
                 .catch(error => {
                     console.error('Erreur:', error);
-                    alert('❌ Une erreur est survenue. Veuillez réessayer.');
+                    alert('❌ {% if current_locale == 'en' %}An error occurred. Please try again.{% else %}Une erreur est survenue. Veuillez réessayer.{% endif %}');
                 });
             }
         </script>

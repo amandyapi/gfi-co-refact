@@ -1,0 +1,268 @@
+{# templates/pages/branches/agency-fr.html.twig #}
+
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | GFI-CO Agency{% endblock %}
+
+{% block description %}
+    GFI-CO Agency accompagne propriétaires, locataires et investisseurs dans leurs projets immobiliers : transaction, recherche de biens, gestion locative et support après-vente.
+{% endblock %}
+
+{% block bread_subtitle %}
+    Nos branches
+{% endblock %}
+
+{% block bread_title %}
+    GFI-CO Agency
+{% endblock %}
+
+{% block bread_items %}
+
+    <li>
+        <a href="{{ path('app_branches_index', {'_locale': 'fr'}) }}">
+            Nos branches
+        </a>
+    </li>
+
+    <li class="active">
+        Agency
+    </li>
+
+{% endblock %}
+
+{% block page %}
+
+    <!-- Présentation de GFI-CO Agency -->
+    <section class="section section-lg">
+        <div class="container">
+
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+
+                <!-- Texte -->
+                <div class="col-lg-6 col-xl-5">
+                    <div class="inset-right-3">
+
+                        <h3 class="wow-outer">
+                            <span class="wow slideInDown">
+                                GFI-CO Agency
+                            </span>
+                        </h3>
+
+                        <h5 class="wow-outer" style="text-align: justify;">
+                            <span class="wow slideInDown" data-wow-delay=".05s">
+                                L'immobilier, simplifié
+                            </span>
+                        </h5>
+
+                        <p class="wow-outer" style="text-align: justify;">
+                            <span class="wow fadeInUpSmall">
+                                Transaction, recherche ciblée, gestion locative, support après-vente :
+                                notre agence pilote chaque étape de votre parcours immobilier avec une
+                                écoute attentive et une transparence totale. Grâce à des outils modernes
+                                et des visites digitales, nous rendons chaque démarche fluide, sécurisée
+                                et sans surprise.
+                            </span>
+                        </p>
+
+                        <p class="wow-outer" style="text-align: justify;">
+                            <span class="wow fadeInUpSmall" data-wow-delay=".1s">
+                                Que vous soyez propriétaire, locataire ou investisseur, nous mettons notre
+                                expertise et notre réseau à votre service pour concrétiser vos projets
+                                immobiliers dans les meilleures conditions.
+                            </span>
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="col-lg-6 wow-outer">
+                    <img
+                        class="img-responsive wow slideInLeft"
+                        src="{{ asset('assets/images/branches/agency/1.jpg') }}"
+                        alt="GFI-CO Agency"
+                        width="551"
+                        height="385"
+                    />
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Nos services -->
+    <section class="section section-lg bg-gray-100">
+        <div class="container">
+
+            <h3 class="text-center wow-outer">
+                <span class="wow slideInDown">
+                    Nos services
+                </span>
+            </h3>
+
+            <div class="row row-30">
+
+                <!-- Gestion des transactions -->
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+
+                        <div class="box-minimal-icon fa-solid fa-handshake wow fadeIn"></div>
+
+                        <div class="box-minimal-main wow-outer">
+
+                            <h4 class="box-minimal-title wow slideInDown">
+                                Gestion des transactions
+                            </h4>
+
+                            <p class="wow fadeInUpSmall">
+                                Un accompagnement personnalisé pour chaque transaction immobilière,
+                                de la négociation à la signature, en toute sérénité.
+                            </p>
+
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- Recherche ciblée de biens -->
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+
+                        <div
+                            class="box-minimal-icon fa-solid fa-magnifying-glass-location wow fadeIn"
+                            data-wow-delay=".1s">
+                        </div>
+
+                        <div class="box-minimal-main wow-outer">
+
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".1s">
+                                Recherche ciblée de biens
+                            </h4>
+
+                            <p class="wow fadeInUpSmall" data-wow-delay=".1s">
+                                Une recherche sur mesure pour trouver le bien qui correspond parfaitement
+                                à vos critères et à vos attentes.
+                            </p>
+
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- Personnalisation -->
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+
+                        <div
+                            class="box-minimal-icon fa-solid fa-user-gear wow fadeIn"
+                            data-wow-delay=".2s">
+                        </div>
+
+                        <div class="box-minimal-main wow-outer">
+
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".2s">
+                                Personnalisation selon les besoins du client
+                            </h4>
+
+                            <p class="wow fadeInUpSmall" data-wow-delay=".2s">
+                                Une approche sur mesure qui prend en compte vos besoins spécifiques
+                                pour vous proposer des solutions adaptées.
+                            </p>
+
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- Support après-vente -->
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+
+                        <div
+                            class="box-minimal-icon fa-solid fa-headset wow fadeIn"
+                            data-wow-delay=".3s">
+                        </div>
+
+                        <div class="box-minimal-main wow-outer">
+
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".3s">
+                                Support après-vente
+                            </h4>
+
+                            <p class="wow fadeInUpSmall" data-wow-delay=".3s">
+                                Un accompagnement continu même après la transaction pour vous assurer
+                                une entière satisfaction.
+                            </p>
+
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- Visites digitales -->
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+
+                        <div
+                            class="box-minimal-icon fa-solid fa-laptop wow fadeIn"
+                            data-wow-delay=".4s">
+                        </div>
+
+                        <div class="box-minimal-main wow-outer">
+
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".4s">
+                                Visites digitales et technologies modernes
+                            </h4>
+
+                            <p class="wow fadeInUpSmall" data-wow-delay=".4s">
+                                Des outils innovants pour découvrir les biens à distance et simplifier
+                                chaque étape de votre projet immobilier.
+                            </p>
+
+                        </div>
+
+                    </article>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="section section-md bg-primary text-center">
+        <div class="container">
+
+            <div class="box-cta-1">
+
+                <h3 class="wow-outer">
+                    <span class="wow slideInDown">
+                        Vous cherchez un bien ou souhaitez vendre ?
+                        <span class="fw-bold">
+                            Simplifiez-vous la vie avec nous
+                        </span>
+                    </span>
+                </h3>
+
+                <div class="wow-outer">
+                    <a
+                        class="button button-lg button-black-outline button-winona wow slideInRight"
+                        href="{{ path('app_contact', {'_locale': 'fr'}) }}"
+                    >
+                        Nous contacter
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

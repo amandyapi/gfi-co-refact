@@ -8,104 +8,116 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PageController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
-    public function index(): Response
+    #[Route('/{_locale}/home', name: 'app_home', requirements: ['_locale' => 'fr|en'])]
+    public function index(string $_locale = 'fr'): Response
     {
-        return $this->render('pages/home.html.twig');
+        return $this->render('pages/home-' . $_locale . '.html.twig');
     }
 
-    #[Route('/a-propos', name: 'app_about')]
-    public function about(): Response
+    #[Route('/{_locale}/a-propos', name: 'app_about', requirements: ['_locale' => 'fr|en'])]
+    public function about(string $_locale = 'fr'): Response
     {
-        return $this->render('pages/about.html.twig', [
+        $data = $_locale === 'en' ? [
+            'bread_subtitle' => 'Who are we?',
+            'bread_title' => 'About GFI-CO GROUP',
+        ] : [
             'bread_subtitle' => 'Qui sommes-nous ?',
             'bread_title' => 'À propos de GFI-CO GROUP',
-        ]);
+        ];
+        
+        return $this->render('pages/about-' . $_locale . '.html.twig', $data);
     }
 
-    #[Route('/nos-solutions', name: 'app_solutions')]
-    public function solutions(): Response
+    #[Route('/{_locale}/nos-solutions', name: 'app_solutions', requirements: ['_locale' => 'fr|en'])]
+    public function solutions(string $_locale = 'fr'): Response
     {
-        return $this->render('pages/solutions.html.twig', [
+        $data = $_locale === 'en' ? [
+            'bread_subtitle' => 'Our services',
+            'bread_title' => 'Our solutions',
+        ] : [
             'bread_subtitle' => 'Nos prestations',
             'bread_title' => 'Nos solutions',
-        ]);
-    }
-
-    #[Route('/actualites', name: 'app_blog')]
-    public function blog(): Response
-    {
-        return $this->render('pages/blog/blog.html.twig', [
-            'bread_subtitle' => 'Nos actualités',
-            'bread_title' => 'Blog & actualités',
-        ]);
-    }
-
-    #[Route('/actualites/{slug}', name: 'app_blog_single')]
-    public function blogSingle(string $slug): Response
-    {
-        // Récupérer l'article via son slug
-        // $article = $this->blogRepository->findOneBySlug($slug);
+        ];
         
-        return $this->render('pages/blog/blog-single.html.twig', [
-            'bread_subtitle' => 'Article',
-            'bread_title' => 'Lire l\'article',
-            'slug' => $slug,
-            // 'article' => $article,
-        ]);
+        return $this->render('pages/solutions-' . $_locale . '.html.twig', $data);
     }
 
-    #[Route('/contact', name: 'app_contact')]
-    public function contact(): Response
+    #[Route('/{_locale}/contact', name: 'app_contact', requirements: ['_locale' => 'fr|en'])]
+    public function contact(string $_locale = 'fr'): Response
     {
-        return $this->render('pages/contact.html.twig', [
+        $data = $_locale === 'en' ? [
+            'bread_subtitle' => 'Contact us',
+            'bread_title' => 'Contact us',
+        ] : [
             'bread_subtitle' => 'Nous contacter',
             'bread_title' => 'Contactez-nous',
-        ]);
+        ];
+        
+        return $this->render('pages/contact-' . $_locale . '.html.twig', $data);
     }
 
-    #[Route('/contact-submit', name: 'app_contact_submit')]
-    public function contactSubmit(): Response
+    #[Route('/{_locale}/contact-submit', name: 'app_contact_submit', methods: ['POST'], requirements: ['_locale' => 'fr|en'])]
+    public function contactSubmit(string $_locale = 'fr'): Response
     {
-        return $this->render('pages/contact.html.twig', [
-            'bread_subtitle' => 'Nous contacter',
-            'bread_title' => 'Contactez-nous',
-        ]);
+        // Traitement du formulaire
+        $message = $_locale === 'en' ? 'Your message has been sent!' : 'Votre message a été envoyé !';
+        $this->addFlash('success', $message);
+        return $this->redirectToRoute('app_contact', ['_locale' => $_locale]);
     }
 
-    #[Route('/mentions-legales', name: 'app_legal')]
-    public function legal(): Response
+    #[Route('/{_locale}/mentions-legales', name: 'app_legal', requirements: ['_locale' => 'fr|en'])]
+    public function legal(string $_locale = 'fr'): Response
     {
-        return $this->render('pages/legal.html.twig', [
+        $data = $_locale === 'en' ? [
+            'bread_subtitle' => 'Legal information',
+            'bread_title' => 'Legal notice',
+        ] : [
             'bread_subtitle' => 'Informations légales',
             'bread_title' => 'Mentions légales',
-        ]);
+        ];
+        
+        return $this->render('pages/legal-' . $_locale . '.html.twig', $data);
     }
 
-    #[Route('/politique-de-confidentialite', name: 'app_privacy')]
-    public function privacy(): Response
+    #[Route('/{_locale}/politique-de-confidentialite', name: 'app_privacy', requirements: ['_locale' => 'fr|en'])]
+    public function privacy(string $_locale = 'fr'): Response
     {
-        return $this->render('pages/privacy.html.twig', [
+        $data = $_locale === 'en' ? [
+            'bread_subtitle' => 'Data protection',
+            'bread_title' => 'Privacy policy',
+        ] : [
             'bread_subtitle' => 'Protection des données',
             'bread_title' => 'Politique de confidentialité',
-        ]);
+        ];
+        
+        return $this->render('pages/privacy-' . $_locale . '.html.twig', $data);
     }
 
-    #[Route('/recherche', name: 'app_search')]
-    public function search(): Response
+    #[Route('/{_locale}/recherche', name: 'app_search', requirements: ['_locale' => 'fr|en'])]
+    public function search(string $_locale = 'fr'): Response
     {
-        return $this->render('pages/search.html.twig', [
+        $data = $_locale === 'en' ? [
+            'bread_subtitle' => 'Search',
+            'bread_title' => 'Search results',
+        ] : [
             'bread_subtitle' => 'Recherche',
             'bread_title' => 'Résultats de recherche',
-        ]);
+        ];
+        
+        return $this->render('pages/search-' . $_locale . '.html.twig', $data);
     }
 
-    #[Route('/devis', name: 'app_quote_submit')]
+    #[Route('/devis', name: 'app_quote_submit', methods: ['POST'])]
     public function devis(): Response
     {
-        return $this->render('pages/search.html.twig', [
-            'bread_subtitle' => 'Recherche',
-            'bread_title' => 'Résultats de recherche',
-        ]);
+        // Traitement du formulaire de devis
+        return $this->json(['success' => true]);
+    }
+
+    // Route de redirection pour la racine (redirige vers FR par défaut)
+    #[Route('/', name: 'app_home_redirect')]
+    public function homeRedirect(): Response
+    {
+        return $this->redirectToRoute('app_home', ['_locale' => 'fr']);
     }
 }

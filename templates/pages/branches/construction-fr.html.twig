@@ -1,0 +1,110 @@
+{# templates/pages/branches/branche-construction-fr.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO Construction | Construction et génie civil sur mesure{% endblock %}
+
+{% block description %}GFI-CO Construction vous accompagne de la conception à la livraison clé en main. Conception architecturale, génie civil, second œuvre et finitions de qualité.{% endblock %}
+
+{% block bread_subtitle %}Nos branches{% endblock %}
+{% block bread_title %}GFI-CO Construction{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_branches_index', {_locale: 'fr'}) }}">Nos branches</a></li>
+    <li class="active">Construction</li>
+{% endblock %}
+
+{% block page %}
+    <!-- About This Service -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="inset-right-3">
+                        <h3>GFI-CO Construction</h3>
+                        <h5 style="text-align: justify;">Du plan à la clé</h5>
+                        <p style="text-align: justify;">Conception architecturale, gestion de projet, exécution soignée : nous transformons chaque cahier des charges en bâtiment qui vous ressemble. De la construction sur mesure aux travaux de second œuvre et de génie civil, notre équipe pluridisciplinaire garantit une exécution de haute qualité, un choix rigoureux des matériaux et une expérience client exceptionnelle à chaque étape.</p>
+                        <p style="text-align: justify;">Notre approche repose sur une collaboration étroite avec nos clients, une maîtrise technique éprouvée et une exigence constante de qualité. Chaque projet est mené avec la même rigueur, du premier coup de crayon à la remise des clés.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive" src="{{ asset('assets/images/branches/construction/1.jpg') }}" alt="GFI-CO Construction" width="551" height="385"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre mission -->
+    <section class="section section-lg bg-gray-100">
+        <div class="container">
+            <h3 class="text-center wow-outer">
+                <span class="wow slideInDown">Notre mission</span>
+            </h3>
+            <div class="row row-30">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-pencil-ruler wow fadeIn"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown">La conception personnalisée</h4>
+                            <p class="wow fadeInUpSmall">Chaque projet est unique. Nous concevons des solutions sur mesure qui répondent parfaitement à vos besoins et à votre vision.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-clipboard-list wow fadeIn" data-wow-delay=".1s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".1s">Étude des lots techniques</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".1s">Une analyse approfondie des aspects techniques pour garantir la faisabilité et la performance de chaque projet.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-cubes wow fadeIn" data-wow-delay=".2s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".2s">Le choix des matériaux et des finitions</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".2s">Une sélection rigoureuse de matériaux durables et de finitions soignées pour un résultat à la hauteur de vos attentes.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-helmet-safety wow fadeIn" data-wow-delay=".3s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".3s">Exécution et suivi des travaux</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".3s">Un suivi rigoureux du chantier pour garantir le respect des délais, du budget et de la qualité.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-handshake wow fadeIn" data-wow-delay=".4s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".4s">Assistance à maîtrise d'ouvrage</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".4s">Un accompagnement personnalisé pour vous guider dans toutes vos décisions et vous assurer une sérénité totale.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-star wow fadeIn" data-wow-delay=".5s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".5s">L'expérience client exceptionnelle</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".5s">Une relation de confiance bâtie sur l'écoute, la transparence et un engagement sans faille.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-md bg-primary text-center">
+        <div class="container">
+            <div class="box-cta-1">
+                <h3>Vous avez un projet de construction ? <span class="fw-bold">Parlons-en ensemble</span></h3>
+                <a class="button button-lg button-black-outline button-winona" href="{{ path('app_contact', {_locale: 'fr'}) }}">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

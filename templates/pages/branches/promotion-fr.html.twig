@@ -1,0 +1,92 @@
+{# templates/pages/branches/branche-promotion-fr.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO Développeur immobilier | Promotion immobilière durable{% endblock %}
+
+{% block description %}GFI-CO Développeur immobilier - Promoteur agréé. Concevez des cadres de vie durables alliant performance environnementale, accessibilité financière et excellence architecturale.{% endblock %}
+
+{% block bread_subtitle %}Nos branches{% endblock %}
+{% block bread_title %}GFI-CO Développeur immobilier{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_branches_index', {_locale: 'fr'}) }}">Nos branches</a></li>
+    <li class="active">Promotion immobilière</li>
+{% endblock %}
+
+{% block page %}
+    <!-- About This Service -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="inset-right-3">
+                        <h3>GFI-CO Développeur immobilier</h3>
+                        <h5 style="text-align: justify;">L'immobilier de demain ne peut plus se construire sur les modèles d'hier.</h5>
+                        <p style="text-align: justify;">Chez GFI-CO, nous réinventons l'art de bâtir en Afrique subsaharienne. Promoteur immobilier agréé depuis juillet 2024, nous concevons des cadres de vie qui concilient haute performance environnementale, accessibilité financière et excellence architecturale.</p>
+                        <p style="text-align: justify;">Nous prouvons chaque jour qu'il est possible de loger durablement nos populations tout en préservant notre écosystème.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive" src="{{ asset('assets/images/branches/developpeur-immobilier/3.jpg') }}" alt="GFI-CO Développeur immobilier" width="551" height="385"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 Piliers -->
+    <section class="section section-lg bg-gray-100">
+        <div class="container">
+            <h3 class="text-center wow-outer">
+                <span class="wow slideInDown">4 Piliers qui changent la donne</span>
+            </h3>
+            <div class="row row-30">
+                <div class="col-sm-6 col-lg-3 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-mountain wow fadeIn"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown">La terre comme matériau d'avenir</h4>
+                            <p class="wow fadeInUpSmall">Utilisation de matériaux locaux et écologiques pour une empreinte carbone réduite.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-3 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-solar-panel wow fadeIn" data-wow-delay=".1s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".1s">Autonomie et sobriété énergétique</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".1s">Intégration de solutions énergétiques renouvelables pour des bâtiments autonomes.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-3 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-paint-roller wow fadeIn" data-wow-delay=".2s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".2s">Maîtrise totale du second œuvre</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".2s">Finitions soignées et qualité d'exécution à chaque étape du chantier.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-3 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-calendar-check wow fadeIn" data-wow-delay=".3s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".3s">Culture de la livraison</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".3s">Respect des délais et des engagements pris avec nos clients.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-md bg-primary text-center">
+        <div class="container">
+            <div class="box-cta-1">
+                <h3>Prêt à bâtir votre projet ? <span class="fw-bold">Contactez-nous dès maintenant</span></h3>
+                <a class="button button-lg button-black-outline button-winona" href="{{ path('app_contact', {_locale: 'fr'}) }}">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
