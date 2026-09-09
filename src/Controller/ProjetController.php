@@ -224,7 +224,30 @@ class ProjetController extends AbstractController
         return $this->render('pages/projets/construction/harmenien-oci-' . $_locale . '.html.twig', $data);
     }
 
-    #[Route('/construction/villa-palmera', name: 'construction_palmera')]
+
+
+    // ============================================
+    // GROUPE 4 : AUTRES TRAVAUX BTP
+    // ============================================
+
+
+    #[Route('/second-oeuvre-amenagements', name: 'autres')]
+    public function autres(string $_locale = 'fr'): Response
+    {
+        $data = $_locale === 'en' ? [
+            'bread_subtitle' => 'Specialized works',
+            'bread_title' => 'Other construction works',
+            'groupe' => 'Interior & Finishing Works',
+        ] : [
+            'bread_subtitle' => 'Travaux spécialisés',
+            'bread_title' => 'Autres travaux BTP',
+            'groupe' => 'Second Œuvre & Aménagements',
+        ];
+        
+        return $this->render('pages/projets/autres/index-' . $_locale . '.html.twig', $data);
+    }
+
+    #[Route('/autres/villa-palmera', name: 'autres_palmera')]
     public function constructionPalmera(string $_locale = 'fr'): Response
     {
         $data = $_locale === 'en' ? [
@@ -237,29 +260,10 @@ class ProjetController extends AbstractController
             'projet' => 'villa-palmera',
         ];
         
-        return $this->render('pages/projets/construction/villa-palmera-' . $_locale . '.html.twig', $data);
+        return $this->render('pages/projets/autres/villa-palmera-' . $_locale . '.html.twig', $data);
     }
 
-    // ============================================
-    // GROUPE 4 : AUTRES TRAVAUX BTP
-    // ============================================
-    #[Route('/autres-travaux', name: 'autres')]
-    public function autres(string $_locale = 'fr'): Response
-    {
-        $data = $_locale === 'en' ? [
-            'bread_subtitle' => 'Specialized works',
-            'bread_title' => 'Other construction works',
-            'groupe' => 'autres',
-        ] : [
-            'bread_subtitle' => 'Travaux spécialisés',
-            'bread_title' => 'Autres travaux BTP',
-            'groupe' => 'autres',
-        ];
-        
-        return $this->render('pages/projets/autres/index-' . $_locale . '.html.twig', $data);
-    }
-
-    #[Route('/autres-travaux/confection-portes-cuisines-dressing', name: 'autres_confection')]
+    #[Route('/second-oeuvre-amenagements/confection-portes-cuisines-dressing', name: 'autres_confection')]
     public function autresConfection(string $_locale = 'fr'): Response
     {
         $data = $_locale === 'en' ? [
@@ -275,7 +279,7 @@ class ProjetController extends AbstractController
         return $this->render('pages/projets/autres/confection-' . $_locale . '.html.twig', $data);
     }
 
-    #[Route('/autres-travaux/amenagement-bureau-giz', name: 'autres_giz')]
+    #[Route('/second-oeuvre-amenagements/amenagement-bureau-giz', name: 'autres_giz')]
     public function autresGiz(string $_locale = 'fr'): Response
     {
         $data = $_locale === 'en' ? [
@@ -291,7 +295,7 @@ class ProjetController extends AbstractController
         return $this->render('pages/projets/autres/amenagement-bureau-giz-' . $_locale . '.html.twig', $data);
     }
 
-    #[Route('/autres-travaux/genie-civil-pk18', name: 'autres_pk18')]
+    #[Route('/second-oeuvre-amenagements/genie-civil-pk18', name: 'autres_pk18')]
     public function autresPk18(string $_locale = 'fr'): Response
     {
         $data = $_locale === 'en' ? [
