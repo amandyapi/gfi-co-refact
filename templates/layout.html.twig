@@ -157,19 +157,41 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    
                                     <!-- RD Navbar Language -->
                                     <div class="rd-navbar-language" id="rd-navbar-language-1">
                                         {% set current_route = app.request.attributes.get('_route') %}
                                         {% set current_params = app.request.attributes.get('_route_params')|default({}) %}
                                         {% set current_locale = app.request.locale|default('fr') %}
                                         
+                                        {# Filtrer les paramètres pour ne garder que ceux qui ne sont pas '_locale' #}
+                                        {% set filtered_params = {} %}
+                                        {% for key, value in current_params %}
+                                            {% if key != '_locale' %}
+                                                {% set filtered_params = filtered_params|merge({(key): value}) %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        
+                                        {# Gestion des cas où la route est null (pages d'erreur) #}
+                                        {% if current_route is null or current_route == '' %}
+                                            {% set current_route = 'app_home' %}
+                                            {% set filtered_params = {} %}
+                                        {% endif %}
+                                        
+                                        {# Liste des routes autorisées - éviter les routes qui n'existent pas #}
+                                        {% set allowed_routes = ['app_home', 'app_about', 'app_solutions', 'app_blog', 'app_contact', 'app_legal', 'app_privacy', 'app_search', 'app_branches_index', 'app_projets_index'] %}
+                                        {% if current_route not in allowed_routes and current_route starts with 'app_branches_' == false and current_route starts with 'app_projets_' == false %}
+                                            {% set current_route = 'app_home' %}
+                                            {% set filtered_params = {} %}
+                                        {% endif %}
+                                        
                                         <div class="language-selector">
                                             <select class="language-select" onchange="window.location.href = this.value">
-                                                <option value="{{ path(current_route, current_params|merge({_locale: 'fr'})) }}" {% if current_locale == 'fr' %}selected{% endif %}>
-                                                    <span class="icon mdi mdi-earth"></span> FR
+                                                <option value="{{ path(current_route, filtered_params|merge({_locale: 'fr'})) }}" {% if current_locale == 'fr' %}selected{% endif %}>
+                                                    🇫🇷 FR
                                                 </option>
-                                                <option value="{{ path(current_route, current_params|merge({_locale: 'en'})) }}" {% if current_locale == 'en' %}selected{% endif %}>
-                                                    <span class="icon mdi mdi-earth"></span> EN
+                                                <option value="{{ path(current_route, filtered_params|merge({_locale: 'en'})) }}" {% if current_locale == 'en' %}selected{% endif %}>
+                                                    🇬🇧 EN
                                                 </option>
                                             </select>
                                         </div>

@@ -120,4 +120,12 @@ class PageController extends AbstractController
     {
         return $this->redirectToRoute('app_home', ['_locale' => 'fr']);
     }
+
+    #[Route('/{_locale}/404', name: 'app_404', requirements: ['_locale' => 'fr|en'])]
+    public function error404(string $_locale = 'fr'): Response
+    {
+        $template = 'pages/404-' . $_locale . '.html.twig';
+        
+        return $this->render($template);
+    }   
 }

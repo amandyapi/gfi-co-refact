@@ -1,0 +1,59 @@
+{# templates/pages/404.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Page non trouvée{% endblock %}
+
+{% block description %}La page que vous recherchez n'existe pas ou a été déplacée. Retournez à l'accueil de GFI-CO GROUP.{% endblock %}
+
+{% block bread_subtitle %}Erreur 404{% endblock %}
+{% block bread_title %}Page non trouvée{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_home', {_locale: current_locale|default('fr')}) }}">Accueil</a></li>
+    <li class="active">404</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Page content -->
+    <section class="section section-single bg-gray-800 bg-overlay-1" style="background-image: url({{ asset('assets/images/bg-image-3.jpg') }});">
+        <div class="section-single-inner">
+            <div class="section-single-dummy"></div>
+            <div class="section-single-main">
+                <div class="container"> 
+                    <div class="row row-30">
+                        <div class="col-sm-6 text-center text-sm-start">
+                            <p class="text-extra-large">404</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="section-single-main-content">
+                                <h6 class="title-decorated title-decorated-lg">
+                                    {% if app.request.locale|default('fr') == 'en' %}
+                                        Page not found
+                                    {% else %}
+                                        Page non trouvée
+                                    {% endif %}
+                                </h6>
+                                <p>
+                                    {% if app.request.locale|default('fr') == 'en' %}
+                                        Sorry, the page you are looking for does not exist or has been moved.<br>
+                                        Please return to our homepage.
+                                    {% else %}
+                                        Désolé, la page que vous recherchez n'existe pas ou a été déplacée.<br>
+                                        Veuillez retourner sur notre page d'accueil.
+                                    {% endif %}
+                                </p>
+                                <a class="button button-lg button-primary button-winona" href="{{ path('app_home', {_locale: app.request.locale|default('fr')}) }}">
+                                    {% if app.request.locale|default('fr') == 'en' %}
+                                        Back to home page
+                                    {% else %}
+                                        Retour à l'accueil
+                                    {% endif %}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
