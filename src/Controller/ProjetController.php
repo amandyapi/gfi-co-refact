@@ -114,12 +114,28 @@ class ProjetController extends AbstractController
             'bread_title' => 'Single-storey Villa in Bingerville',
             'projet' => 'plain-pied-bingerville',
         ] : [
-            'bread_subtitle' => 'Villa plain-pied',
+            'bread_subtitle' => 'Villa plain-pied Bingerville',
             'bread_title' => 'Villa Plain Pied à Bingerville',
             'projet' => 'plain-pied-bingerville',
         ];
         
         return $this->render('pages/projets/conception/villa-plain-pied-bingerville-' . $_locale . '.html.twig', $data);
+    }
+
+    #[Route('/conception/villa-plain-pied', name: 'conception_villa_plain_pied')]
+    public function conceptionPlainPied(string $_locale = 'fr'): Response
+    {
+        $data = $_locale === 'en' ? [
+            'bread_subtitle' => 'Single-storey villa',
+            'bread_title' => 'Single-storey Villa',
+            'projet' => 'plain-pied-bingerville',
+        ] : [
+            'bread_subtitle' => 'Villa plain-pied',
+            'bread_title' => 'Villa Plain Pied',
+            'projet' => 'plain-pied',
+        ];
+        
+        return $this->render('pages/projets/conception/villa-plain-pied' . $_locale . '.html.twig', $data);
     }
 
     // ============================================

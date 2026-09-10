@@ -1,0 +1,92 @@
+{# templates/pages/projets/immobilier/index-fr.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Programme immobilier{% endblock %}
+
+{% block description %}Découvrez nos programmes immobiliers : Eco-Terra City en Guinée et le programme Nestlé CI à Songon. Des projets d'envergure pour un avenir durable.{% endblock %}
+
+{% block bread_subtitle %}Projets{% endblock %}
+{% block bread_title %}Programme Immobilier{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'fr'}) }}">Projets</a></li>
+    <li class="active">Programme Immobilier</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Projet 1: Eco-Terra City -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Eco-Terra City — Redéfinir l'habitat en Afrique subsaharienne</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Programme immobilier · République de Guinée</h5>
+                        <p style="text-align: justify;">Et si l'habitat de demain se construisait aujourd'hui, en terre compressée ? C'est le pari d'Eco-Terra City, programme immobilier ambitieux qui entend redéfinir les standards du logement en Afrique subsaharienne. Conçu autour de villas mixtes : plain-pied F4 et duplex F4/F5, le projet mobilise principalement la brique de terre compressée stabilisée (BTCS) pour allier performance énergétique, esthétique contemporaine et respect de l'environnement.</p>
+                        <br>
+                        <a href="{{ path('app_projets_immobilier_eco_terra', {_locale: 'fr'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/2-immobilier/eco-terra-city/9.jpg') }}" alt="Projet Eco-Terra City" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section image fixe avec effet parallax -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-1-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Programme Immobilier</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">Des programmes immobiliers d'envergure pour un avenir durable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projet 2: Programme Immobilier Nestlé CI -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Programme Immobilier Nestlé CI - 300 logements pour les collaborateurs de MUNEST</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Programme immobilier · Songon, Côte d'Ivoire · 250 à 300 logements</h5>
+                        <p style="text-align: justify;">Quand une grande entreprise fait confiance à GFI-CO pour loger ses équipes, c'est tout un programme immobilier qui prend forme. Baptisé « Belle Côte », ce projet résidentiel a été développé en maîtrise d'ouvrage pour le compte de la mutuelle des employés de Nestlé CI (MUNEST), à Songon, dans le cadre d'une convention notariée signée en 2022.</p>
+                        <br>
+                        <a href="{{ path('app_projets_immobilier_nestle', {_locale: 'fr'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/2-immobilier/nestle/5.jpg') }}" alt="Programme Immobilier Nestlé CI" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer">
+                            <span class="wow slideInRight">Vous avez un projet immobilier ? <span class="fw-bold">Parlons-en ensemble</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'fr'}) }}">Nous contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

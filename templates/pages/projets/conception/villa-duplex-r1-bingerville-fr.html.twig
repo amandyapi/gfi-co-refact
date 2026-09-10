@@ -1,0 +1,114 @@
+{# templates/pages/projets/conception/villa-duplex-r1-bingerville-fr.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Villa Duplex R+1 à Bingerville - 500 m² d'excellence{% endblock %}
+
+{% block description %}Découvrez le projet de conception d'une villa duplex R+1 premium à Bingerville : 8 pièces sur 500 m² de terrain. Études APS et DQE par GFI-CO.{% endblock %}
+
+{% block bread_subtitle %}Conception plans et projets{% endblock %}
+{% block bread_title %}Villa Duplex R+1 à Bingerville - 500 m² d'excellence architecturale{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'fr'}) }}">Projets</a></li>
+    <li><a href="{{ path('app_projets_conception', {_locale: 'fr'}) }}">Conception plans et projets</a></li>
+    <li class="active">Villa Duplex R+1 à Bingerville</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Overview -->
+    <section class="section section-sm bg-gray-100">
+        <div class="container">
+            <div class="owl-carousel owl-carousel-centered-pagination" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-dots="true" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
+                <div class="item">
+                    <h4>Client</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Particulier</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Localisation</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Bingerville, Abidjan - Côte d'Ivoire</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Nature des travaux</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Projet de construction d'une villa duplex de 8 pièces, premium</a></li>
+                        <li><a href="#">Terrain de 500 m²</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Prestations</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Élaboration des plans architecturaux</a></li>
+                        <li><a href="#">Étude APS (Avant-Projet Sommaire)</a></li>
+                        <li><a href="#">DQE (Devis Quantitatif Estimatif)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About This Project -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h3>À propos de ce projet</h3>
+                        <h5 style="text-align: justify; font-style: italic;">Études & conception · Bingerville · 8 pièces · 500 m²</h5>
+                        <p style="text-align: justify;">Huit pièces, 500 m² de terrain, une ambition : concevoir une résidence duplex à la hauteur des standards internationaux. Pour ce projet premium à Bingerville, les équipes de GFI-CO ont mené une étude complète, de l'Avant-Projet Sommaire (APS) au Devis Quantitatif Estimatif (DQE), afin de définir avec précision volumes, matériaux et budget.</p>
+                        <p style="text-align: justify;">Cette rigueur méthodologique est la marque de fabrique de GFI-CO : chaque plan est pensé pour anticiper les coûts, sécuriser les délais et garantir un résultat fidèle à la vision du client, avant même le premier coup de pioche.</p>
+                        <p style="text-align: justify; font-weight: 500;">Un projet qui témoigne du savoir-faire de GFI-CO dans la conception de villas duplex haut de gamme et la maîtrise des études techniques.</p>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <div class="thumbnail-video-1 bg-gray-700">
+                        <div class="ratio ratio-16x9">
+                            <video width="570" height="320" controls>
+                                <source src="{{ asset('assets/videos/projets/1-conception/duplex-r+1-bingerville/3.mp4') }}" type="video/mp4">
+                                Votre navigateur ne supporte pas la lecture de vidéos.
+                            </video>
+                        </div>
+                        <div class="thumbnail-video__overlay video-overlay" style="background-image: url({{ asset('assets/images/projets/1-conception/the-pearl/1.jpg') }})">
+                            <div class="button-video"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="section swiper-container swiper-slider swiper-slider-tiny text-center" data-loop="true" data-slide-effect="fade" data-autoplay="false" data-simulate-touch="true"> 
+        <div class="swiper-wrapper">
+            {% for i in 1..8 %}
+                <div class="swiper-slide vertical" data-slide-bg="{{ asset('assets/images/projets/1-conception/duplex-r+1-bingerville/' ~ i ~ '.jpg') }}">
+                    <div class="swiper-slide-caption"><div class="container"></div></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination-outer container">
+            <div class="swiper-pagination swiper-pagination-modern swiper-pagination-marked" data-index-bullet="true"></div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer" style="color:#fff;">
+                            <span class="wow slideInRight">Vous avez un projet similaire ? <span class="fw-bold" style="color:#fff;">Parlons-en ensemble</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-lg button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'fr'}) }}" style="border-color:#fff; color:#fff;">Nous contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

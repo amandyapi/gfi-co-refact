@@ -1,0 +1,200 @@
+{# templates/pages/projets/immobilier/eco-terra-city-fr.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Eco-Terra City - Programme immobilier durable{% endblock %}
+
+{% block description %}Découvrez Eco-Terra City, programme immobilier innovant en République de Guinée. Villas en brique de terre compressée stabilisée pour un habitat durable.{% endblock %}
+
+{% block bread_subtitle %}Projet programme immobilier{% endblock %}
+{% block bread_title %}Eco-Terra City — Redéfinir l'habitat en Afrique subsaharienne{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'fr'}) }}">Projets</a></li>
+    <li><a href="{{ path('app_projets_immobilier', {_locale: 'fr'}) }}">Programme immobilier</a></li>
+    <li class="active">Eco-Terra City</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Overview -->
+    <section class="section section-sm bg-gray-100">
+        <div class="container">
+            <div class="owl-carousel owl-carousel-centered-pagination" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-dots="true" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
+                <div class="item">
+                    <h4>Nature</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Promotion immobilière résidentielle et économique</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Maître d'ouvrage</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">MUNEST (Mutuelle des Employés de Nestlé CI)</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Typologies</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Villas Simplexe F4 Jumelée (200 m²)</a></li>
+                        <li><a href="#">Villa F3 Jumelée (160 m²)</a></li>
+                        <li><a href="#">Villa F3 en Bande (150 m²)</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Surfaces bâties</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">65 m² à 97 m² par unité</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Mission</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Structuration du programme immobilier résidentiel de 250 logements à Songon, projet cédé à Interbat-CI en 2023.</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Positionnement</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Résidence sécurisée, espaces verts, parking – cadre de vie harmonieux</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Rôle de GFI-CO</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Maîtrise d'ouvrage</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About This Project -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h3>À propos de ce projet</h3>
+                        <h5 style="text-align: justify; font-style: italic;">Programme immobilier · République de Guinée</h5>
+                        <p style="text-align: justify;">Et si l'habitat de demain se construisait aujourd'hui, en terre compressée ? C'est le pari d'Eco-Terra City, programme immobilier ambitieux qui entend redéfinir les standards du logement en Afrique subsaharienne. Conçu autour de villas mixtes : plain-pied F4 et duplex F4/F5, le projet mobilise principalement la brique de terre compressée stabilisée (BTCS) pour allier performance énergétique, esthétique contemporaine et respect de l'environnement.</p>
+                        <p style="text-align: justify;">Porté par GFI-CO, développeur et constructeur immobilier agréé, Eco-Terra City traduit une conviction forte : créer des espaces bâtis qui répondent aux besoins actuels des populations tout en préservant les ressources pour les générations futures.</p>
+                        <p style="text-align: justify; font-weight: 500;">Localisation : République de Guinée — Découvrir le programme Eco-Terra City.</p>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/2-immobilier/eco-terra-city/9.jpg') }}" alt="Projet Eco-Terra City" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Téléchargement PDF -->
+    <section class="pdf-download-section">
+        <div class="container">
+            <div class="text-center">
+                <h3>Télécharger les documents du projet</h3>
+                <p style="color:#666; max-width:600px; margin:0 auto 30px;">Retrouvez ci-dessous les documents techniques et administratifs relatifs au projet Eco-Terra City.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- PDF 1 -->
+                    <div class="pdf-item">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <div>
+                                <div style="font-weight: 600;">Présentation du projet Eco-Terra City</div>
+                                <div class="pdf-size">PDF • 2.4 Mo</div>
+                            </div>
+                        </div>
+                        <a href="{{ asset('assets/images/projets/2-immobilier/eco-terra-city/1.pdf') }}" class="pdf-download-btn" download>
+                            <i class="fa-solid fa-download"></i> Télécharger
+                        </a>
+                    </div>
+                    <!-- PDF 2 -->
+                    <div class="pdf-item">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <div>
+                                <div style="font-weight: 600;">Plan Villa basse F3</div>
+                                <div class="pdf-size">PDF • 3.1 Mo</div>
+                            </div>
+                        </div>
+                        <a href="{{ asset('assets/images/projets/2-immobilier/eco-terra-city/2.jpg') }}" class="pdf-download-btn" download>
+                            <i class="fa-solid fa-download"></i> Télécharger
+                        </a>
+                    </div>
+                    <!-- PDF 3 -->
+                    <div class="pdf-item">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <div>
+                                <div style="font-weight: 600;">Plan Villa Basse F4</div>
+                                <div class="pdf-size">PDF • 1.8 Mo</div>
+                            </div>
+                        </div>
+                        <a href="{{ asset('assets/images/projets/2-immobilier/eco-terra-city/3.jpg') }}" class="pdf-download-btn" download>
+                            <i class="fa-solid fa-download"></i> Télécharger
+                        </a>
+                    </div>
+                    <!-- PDF 4 -->
+                    <div class="pdf-item">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <div>
+                                <div style="font-weight: 600;">Plan Duplex F4</div>
+                                <div class="pdf-size">PDF • 1.8 Mo</div>
+                            </div>
+                        </div>
+                        <a href="{{ asset('assets/images/projets/2-immobilier/eco-terra-city/4.jpg') }}" class="pdf-download-btn" download>
+                            <i class="fa-solid fa-download"></i> Télécharger
+                        </a>
+                    </div>
+                    <!-- PDF 5 -->
+                    <div class="pdf-item">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <div>
+                                <div style="font-weight: 600;">Plan Duplex F5</div>
+                                <div class="pdf-size">PDF • 1.8 Mo</div>
+                            </div>
+                        </div>
+                        <a href="{{ asset('assets/images/projets/2-immobilier/eco-terra-city/5.jpg') }}" class="pdf-download-btn" download>
+                            <i class="fa-solid fa-download"></i> Télécharger
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="section swiper-container swiper-slider swiper-slider-tiny text-center" data-loop="true" data-slide-effect="fade" data-autoplay="false" data-simulate-touch="true"> 
+        <div class="swiper-wrapper">
+            {% for i in 6..9 %}
+                <div class="swiper-slide vertical" data-slide-bg="{{ asset('assets/images/projets/2-immobilier/eco-terra-city/' ~ i ~ '.jpg') }}">
+                    <div class="swiper-slide-caption"><div class="container"></div></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination-outer container">
+            <div class="swiper-pagination swiper-pagination-modern swiper-pagination-marked" data-index-bullet="true"></div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer" style="color:#fff;">
+                            <span class="wow slideInRight">Vous avez un projet similaire ? <span class="fw-bold" style="color:#fff;">Parlons-en ensemble</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-lg button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'fr'}) }}" style="border-color:#fff; color:#fff;">Nous contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

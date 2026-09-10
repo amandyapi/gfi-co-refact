@@ -1,0 +1,106 @@
+{# templates/pages/projets/construction/index-fr.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Construction{% endblock %}
+
+{% block description %}Découvrez nos projets de construction : génie civil, pylônes télécoms, villas duplex. GFI-CO construit des projets durables et de qualité.{% endblock %}
+
+{% block bread_subtitle %}Projets{% endblock %}
+{% block bread_title %}Construction{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'fr'}) }}">Projets</a></li>
+    <li class="active">Construction</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Projet 1: Harmenien de OCI -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Projet Hamanien de OCI - 17 sites de pylônes télécoms, du bureau d'études aux travaux</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Génie civil & infrastructures · Côte d'Ivoire · Mission de 5 mois</h5>
+                        <p style="text-align: justify;">Au-delà de l'immobilier résidentiel, GFI-CO met son expertise technique au service des infrastructures télécoms. Mandatée par NGSER pour le compte d'OCI, notre équipe a assuré une mission complète de bureau d'études et de génie civil pour la construction de 17 sites de pylônes, hauts de 40 à 60 mètres.</p>
+                        <br>
+                        <a href="{{ path('app_projets_construction_oci', {_locale: 'fr'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/3-construction/oci/6.jpg') }}" alt="Projet Harmenien de OCI" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section image fixe avec effet parallax -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-3-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Construction</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">Des constructions sur mesure, alliant qualité et durabilité</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projet 2: Villa Duplex R+1 -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Villa Duplex R+1 à Bingerville - De l'étude à l'exécution, un même engagement</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Construction · Bingerville · Gros œuvre & second œuvre</h5>
+                        <p style="text-align: justify;">Après la conception des plans et l'obtention du permis de construire, place à l'exécution. GFI-CO poursuit sa mission de maîtrise d'ouvrage sur cette villa duplex R+1 à Bingerville, en engageant les travaux de gros œuvre, bientôt suivis du second œuvre.</p>
+                        <br>
+                        <a href="{{ path('app_projets_construction_villa_duplex', {_locale: 'fr'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/3-construction/villa-duplex/2.jpg') }}" alt="Projet Villa Duplex R+1" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section image fixe avec effet parallax 2 -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-1-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Construction</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">Des constructions sur mesure, alliant qualité et durabilité</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer">
+                            <span class="wow slideInRight">Vous avez un projet de construction ? <span class="fw-bold">Parlons-en ensemble</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'fr'}) }}">Nous contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

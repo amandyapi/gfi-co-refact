@@ -1,0 +1,165 @@
+{# templates/pages/projets/autres/index-fr.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Second Œuvre & Aménagements{% endblock %}
+
+{% block description %}Découvrez nos projets de second œuvre et aménagements : finitions haut de gamme, cuisines sur mesure, dressings, aménagement de bureaux.{% endblock %}
+
+{% block bread_subtitle %}Projets{% endblock %}
+{% block bread_title %}Second Œuvre & Aménagements{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'fr'}) }}">Projets</a></li>
+    <li class="active">Second Œuvre & Aménagements</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Projet 0: Villas Palmera -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Villas Palmera — Les finitions haut de gamme de 5 villas duplex à Grand-Bassam</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Second œuvre · Grand-Bassam · 5 villas duplex</h5>
+                        <p style="text-align: justify;">Mandatée par le cabinet JC Architecture pour le compte de SIDI Immobilier, GFI-CO a réalisé l'ensemble des travaux de second œuvre de 5 villas duplex du programme Villas Palmera, à Grand-Bassam.</p>
+                        <p style="text-align: justify;">Placoplâtre, revêtements muraux et de sol, menuiserie bois et aluminium, cuisines équipées sur mesure, dressings et placards : chaque villa a bénéficié de finitions haut de gamme, livrées dans le respect des délais et des exigences du maître d'ouvrage.</p>
+                        <br>
+                        <a href="{{ path('app_projets_autres_palmera', {_locale: 'fr'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/3-construction/villa-palmera/1.jpg') }}" alt="Projet Villa Palmera" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section image fixe avec effet parallax -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-2-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Second Œuvre & Aménagements</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">Des prestations BTP diversifiées, réalisées avec excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projet 1: Confection de Portes, Cuisines et Dressing -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Confection de Portes, Cuisines et Dressings - L'aménagement sur mesure à Abatta et Grand-Bassam</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Second œuvre & agencement · Abatta, Grand-Bassam</h5>
+                        <p style="text-align: justify;">Sur un ensemble de villas duplex situées à Abatta et Grand-Bassam, GFI-CO a orchestré les travaux de finition et d'aménagement intérieur : pose de placoplâtre, menuiserie bois et aluminium, ainsi que l'aménagement complet de cuisines équipées sur mesure et la confection de dressings et placards.</p>
+                        <br>
+                        <a href="{{ path('app_projets_autres_confection', {_locale: 'fr'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/4-autres/confection/1.jpg') }}" alt="Confection de Portes, Cuisines et Dressing" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section image fixe avec effet parallax -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-2-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Second Œuvre & Aménagements</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">Des prestations BTP diversifiées, réalisées avec excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projet 2: Travaux Aménagement Bureau GIZ -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Aménagement Bureau GIZ - Une rénovation complète pour Invest For Jobs, Riviera 2</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Aménagement tertiaire · Riviera 2, Abidjan</h5>
+                        <p style="text-align: justify;">À l'issue d'un appel d'offres, nous avons été retenus pour la rénovation complète des nouveaux bureaux d'Invest For Jobs, à Riviera 2, Abidjan. Un chantier tertiaire mené pour répondre aux exigences fonctionnelles et esthétiques d'une organisation internationale.</p>
+                        <br>
+                        <a href="{{ path('app_projets_autres_giz', {_locale: 'fr'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/4-autres/giz/9.jpg') }}" alt="Travaux Aménagement Bureau GIZ" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section image fixe avec effet parallax 2 -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-3-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Second Œuvre & Aménagements</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">Des prestations BTP diversifiées, réalisées avec excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projet 3: Travaux de Génie civil PK18 -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Génie Civil PK18 - Une plateforme livrée en 6 jours pour une cérémonie officielle</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Génie civil · Abobo, PK18 · Délai : 6 jours</h5>
+                        <p style="text-align: justify;">Certains chantiers n'admettent aucun retard. Mandatée par l'entreprise Le Bâtisseur pour le compte de PARU, GFI-CO a réalisé les travaux de génie civil préparatoires à la cérémonie de pose de la première pierre d'une unité de traitement des eaux usées à Abobo PK18, présidée par Son Excellence le Premier Ministre, M. Patrick Achi.</p>
+                        <br>
+                        <a href="{{ path('app_projets_autres_pk18', {_locale: 'fr'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">En savoir plus →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/4-autres/pk18/7.jpeg') }}" alt="Travaux de Génie civil PK18" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer">
+                            <span class="wow slideInRight">Vous avez un projet BTP ? <span class="fw-bold">Parlons-en ensemble</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'fr'}) }}">Nous contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

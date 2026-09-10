@@ -1,0 +1,116 @@
+{# templates/pages/projets/conception/villa-duplex-bingerville-fr.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Villa Duplex à Bingerville - Accompagnement diaspora{% endblock %}
+
+{% block description %}Découvrez le projet de villa duplex à Bingerville : accompagnement clé en main pour la diaspora, de l'acquisition foncière à la livraison.{% endblock %}
+
+{% block bread_subtitle %}Conception plans et projets{% endblock %}
+{% block bread_title %}Villa Duplex à Bingerville - L'accompagnement clé en main pour la diaspora{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'fr'}) }}">Projets</a></li>
+    <li><a href="{{ path('app_projets_conception', {_locale: 'fr'}) }}">Conception plans et projets</a></li>
+    <li class="active">Villa Duplex à Bingerville</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Overview -->
+    <section class="section section-sm bg-gray-100">
+        <div class="container">
+            <div class="owl-carousel owl-carousel-centered-pagination" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-dots="true" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
+                <div class="item">
+                    <h4>Client</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Particulier (diaspora)</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Localisation</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Bingerville, Abidjan - Côte d'Ivoire</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Nature des travaux</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Achat du foncier - ACD</a></li>
+                        <li><a href="#">Conception plan + Permis de construire</a></li>
+                        <li><a href="#">Études géotechnique et structure</a></li>
+                        <li><a href="#">Construction : Gros et Seconds Œuvres</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Scope</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Construction clé en main d'une villa duplex R+1, 10 pièces, moyen standing</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Durée d'exécution</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">12 mois</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Rôle de GFI-CO</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Maîtrise d'ouvrage</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About This Project -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h3>À propos de ce projet</h3>
+                        <h5 style="text-align: justify; font-style: italic;">Maîtrise d'ouvrage déléguée · Bingerville</h5>
+                        <p style="text-align: justify;">Piloter un projet immobilier depuis l'étranger n'a rien d'un parcours du combattant lorsque GFI-CO en assure la maîtrise d'ouvrage. Pour ce client de la diaspora, notre équipe a pris en charge l'intégralité du processus : de l'acquisition du foncier à la livraison de la villa duplex R+1, clé en main.</p>
+                        <p style="text-align: justify;">Un interlocuteur unique, un suivi rigoureux à chaque étape et une totale transparence : c'est l'assurance donnée à nos clients expatriés de mener à bien leur projet en toute sérénité, où qu'ils se trouvent dans le monde.</p>
+                        <p style="text-align: justify; font-weight: 500;">Ce projet illustre la capacité de GFI-CO à porter, du premier au dernier jour, des projets résidentiels sur mesure pour les Ivoiriens de l'étranger.</p>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/1-conception/duplex-bingerville/2.jpg') }}" alt="Projet Villa Duplex à Bingerville" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="section swiper-container swiper-slider swiper-slider-tiny text-center" data-loop="true" data-slide-effect="fade" data-autoplay="false" data-simulate-touch="true"> 
+        <div class="swiper-wrapper">
+            {% for i in 1..4 %}
+                <div class="swiper-slide vertical" data-slide-bg="{{ asset('assets/images/projets/1-conception/duplex-bingerville/' ~ i ~ '.jpg') }}">
+                    <div class="swiper-slide-caption"><div class="container"></div></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination-outer container">
+            <div class="swiper-pagination swiper-pagination-modern swiper-pagination-marked" data-index-bullet="true"></div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer" style="color:#fff;">
+                            <span class="wow slideInRight">Vous avez un projet similaire ? <span class="fw-bold" style="color:#fff;">Parlons-en ensemble</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-lg button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'fr'}) }}" style="border-color:#fff; color:#fff;">Nous contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
