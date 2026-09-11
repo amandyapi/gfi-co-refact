@@ -23,7 +23,7 @@
                                 <article class="post-classic">
                                     {% if post.imageUrl %}
                                         <a class="post-classic-media" href="{{ path('app_blog_single', {_locale: 'fr', slug: post.slug}) }}">
-                                            <img src="{{ asset('assets/uploads/blog/' ~ post.imageUrl) }}" alt="{{ post.title }}" width="370" height="264"/>
+                                            <img src="{{ asset('uploads/blog/' ~ post.imageUrl) }}" alt="{{ post.title }}" width="370" height="264"/>
                                         </a>
                                     {% endif %}
                                     <ul class="post-classic-meta">

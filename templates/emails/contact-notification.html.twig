@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouveau message de contact</title>
+</head>
+<body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+        <h2 style="color: #fdb900; border-bottom: 2px solid #fdb900; padding-bottom: 10px;">
+            {% if locale == 'en' %}New contact message{% else %}Nouveau message de contact{% endif %}
+        </h2>
+
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="padding: 8px 0; font-weight: bold; width: 140px;">
+                    {% if locale == 'en' %}First name{% else %}Prénoms{% endif %} :
+                </td>
+                <td style="padding: 8px 0;">{{ data.firstname }}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 0; font-weight: bold;">
+                    {% if locale == 'en' %}Last name{% else %}Nom{% endif %} :
+                </td>
+                <td style="padding: 8px 0;">{{ data.lastname }}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 0; font-weight: bold;">E-mail :</td>
+                <td style="padding: 8px 0;">
+                    <a href="mailto:{{ data.email }}">{{ data.email }}</a>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 0; font-weight: bold;">
+                    {% if locale == 'en' %}Phone{% else %}Téléphone{% endif %} :
+                </td>
+                <td style="padding: 8px 0;">{{ data.phone ?: '—' }}</td>
+            </tr>
+        </table>
+
+        <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+
+        <h3 style="color: #333;">
+            {% if locale == 'en' %}Message{% else %}Message{% endif %}
+        </h3>
+        <div style="background: #f9f9f9; padding: 15px; border-radius: 6px; white-space: pre-wrap;">{{ data.message }}</div>
+
+        <p style="font-size: 12px; color: #999; margin-top: 30px;">
+            {% if locale == 'en' %}
+                This message was sent from the GFI-CO GROUP website contact form.
+            {% else %}
+                Ce message a été envoyé depuis le formulaire de contact du site GFI-CO GROUP.
+            {% endif %}
+        </p>
+    </div>
+</body>
+</html>

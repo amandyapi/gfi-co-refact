@@ -464,7 +464,8 @@
                     landSize: document.getElementById('landSize').value,
                     budget: document.getElementById('budget').value,
                     finishLevel: document.getElementById('finishLevel').value,
-                    message: document.getElementById('message').value
+                    message: document.getElementById('message').value,
+                    locale: '{{ app.request.locale|default("fr") }}'  // ✅ Ajout de la locale
                 };
                 
                 // Envoyer via fetch
@@ -478,16 +479,16 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        alert('✅ {% if current_locale == 'en' %}Your request has been sent successfully! We will contact you within 48 hours.{% else %}Votre demande a été envoyée avec succès ! Nous vous contacterons sous 48h.{% endif %}');
+                        alert('✅ {% if current_locale == "en" %}Your request has been sent successfully! We will contact you within 48 hours.{% else %}Votre demande a été envoyée avec succès ! Nous vous contacterons sous 48h.{% endif %}');
                         closeQuoteModal();
                         document.getElementById('quoteForm').reset();
                     } else {
-                        alert('❌ {% if current_locale == 'en' %}An error occurred. Please try again.{% else %}Une erreur est survenue. Veuillez réessayer.{% endif %}');
+                        alert('❌ ' + (data.message || '{% if current_locale == "en" %}An error occurred. Please try again.{% else %}Une erreur est survenue. Veuillez réessayer.{% endif %}'));
                     }
                 })
                 .catch(error => {
                     console.error('Erreur:', error);
-                    alert('❌ {% if current_locale == 'en' %}An error occurred. Please try again.{% else %}Une erreur est survenue. Veuillez réessayer.{% endif %}');
+                    alert('❌ {% if current_locale == "en" %}An error occurred. Please try again.{% else %}Une erreur est survenue. Veuillez réessayer.{% endif %}');
                 });
             }
         </script>

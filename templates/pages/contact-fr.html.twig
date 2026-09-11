@@ -22,7 +22,7 @@
                     <div class="layout-bordered-item-inner wow slideInUp">
                         <div class="icon icon-lg mdi mdi-phone text-primary"></div>
                         <ul class="list-0">
-                            <li><a class="link-default" href="tel:+2250143100250">(+225) 01 43 100 250 / (+225) 07 58 835 008</a></li>
+                            <li><a class="link-default" href="tel:+2250143100250">(+225) 07 58 835 008 /</a></li>
                             <li><a class="link-default" href="tel:+2250143100250">(+225) 01 431 00 250</a></li>
                         </ul>
                     </div>
@@ -53,6 +53,25 @@
                             <h3 class="wow-outer">
                                 <span class="wow slideInDown">Nous contacter</span>
                             </h3>
+
+                            <!-- Flash Messages -->
+                            {% for type, messages in app.flashes %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ type == 'error' ? 'danger' : type }} alert-dismissible fade show" role="alert" style="margin: 20px auto; max-width: 900px;">
+                                        {% if type == 'success' %}
+                                            <i class="fa-solid fa-circle-check" style="margin-right: 8px;"></i>
+                                        {% elseif type == 'error' or type == 'danger' %}
+                                            <i class="fa-solid fa-circle-exclamation" style="margin-right: 8px;"></i>
+                                        {% elseif type == 'warning' %}
+                                            <i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i>
+                                        {% else %}
+                                            <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i>
+                                        {% endif %}
+                                        {{ message }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float: right; background: none; border: none; font-size: 18px; cursor: pointer;">&times;</button>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
                             
                             <!-- RD Mailform -->
                             <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ path('app_contact_submit') }}">
@@ -94,8 +113,8 @@
                                     </div>
                                     <p>ou utilisez</p>
                                     <div class="wow-outer">
-                                        <a class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" href="#">
-                                            <span class="icon mdi mdi-facebook-messenger"></span>Messenger
+                                        <a class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" href="https://wa.me/2250758835008">
+                                            <span class="icon mdi mdi-whatsapp"></span>Whatsapp
                                         </a>
                                     </div>
                                 </div>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% if locale == 'en' %}New quote request{% else %}Nouvelle demande de devis{% endif %}
+    </title>
+</head>
+<body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; background: #f5f5f5; padding: 20px;">
+    <div style="max-width: 600px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        
+        <div style="border-bottom: 3px solid #fdb900; padding-bottom: 15px; margin-bottom: 25px;">
+            <h2 style="color: #1a1a2e; margin: 0;">
+                {% if locale == 'en' %}New quote request{% else %}Nouvelle demande de devis{% endif %}
+            </h2>
+            <p style="color: #999; font-size: 13px; margin: 5px 0 0;">
+                {% if locale == 'en' %}From the GFI-CO GROUP website{% else %}Depuis le site GFI-CO GROUP{% endif %}
+            </p>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px;">
+            <tr>
+                <td style="padding: 10px 0; font-weight: 600; width: 180px; border-bottom: 1px solid #f0f0f0;">
+                    {% if locale == 'en' %}Full name{% else %}Prénom & Nom{% endif %} :
+                </td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                    {{ data.fullName }}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 0; font-weight: 600; border-bottom: 1px solid #f0f0f0;">
+                    {% if locale == 'en' %}Phone / WhatsApp{% else %}Téléphone / WhatsApp{% endif %} :
+                </td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                    <a href="tel:{{ data.phone }}" style="color: #fdb900; text-decoration: none; font-weight: 600;">
+                        {{ data.phone }}
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 0; font-weight: 600; border-bottom: 1px solid #f0f0f0;">
+                    {% if locale == 'en' %}Project type{% else %}Type de projet{% endif %} :
+                </td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                    {{ data.projectType }}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 0; font-weight: 600; border-bottom: 1px solid #f0f0f0;">
+                    {% if locale == 'en' %}Land area{% else %}Superficie du terrain{% endif %} :
+                </td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                    {{ data.landSize }}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 0; font-weight: 600; border-bottom: 1px solid #f0f0f0;">
+                    {% if locale == 'en' %}Estimated budget{% else %}Budget estimé{% endif %} :
+                </td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                    {{ data.budget }}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px 0; font-weight: 600; border-bottom: 1px solid #f0f0f0;">
+                    {% if locale == 'en' %}Finish level{% else %}Niveau de finition{% endif %} :
+                </td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                    {{ data.finishLevel }}
+                </td>
+            </tr>
+        </table>
+
+        {% if data.message is defined and data.message is not empty %}
+            <h3 style="color: #1a1a2e; margin-bottom: 10px;">
+                {% if locale == 'en' %}Additional message{% else %}Message complémentaire{% endif %}
+            </h3>
+            <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #fdb900; border-radius: 4px; white-space: pre-wrap; color: #555;">
+                {{ data.message }}
+            </div>
+        {% endif %}
+
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #f0f0f0;">
+            <p style="font-size: 13px; color: #999; margin: 0;">
+                {% if locale == 'en' %}
+                    You can contact this person directly at 
+                    <a href="tel:{{ data.phone }}" style="color: #fdb900;">{{ data.phone }}</a>.
+                {% else %}
+                    Vous pouvez contacter cette personne directement au 
+                    <a href="tel:{{ data.phone }}" style="color: #fdb900;">{{ data.phone }}</a>.
+                {% endif %}
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -8,8 +8,8 @@ parameters:
     file.allowed.extensions: '%env(FILE_ALLOWED_EXTENSIONS)%'
     file.max.size: '%env(FILE_MAX_SIZE)%'
     #CONTACT FORM
-    contact.mail.from: '%env(CONTACT_FROM)%'
-    contact.mail.to: '%env(CONTACT_TO)%'
+    $adminEmail: '%env(CONTACT_ADMIN_EMAIL)%'
+    $senderEmail: '%env(CONTACT_SENDER_EMAIL)%'
     
 services:
     # default configuration for services in *this* file

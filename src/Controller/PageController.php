@@ -2,12 +2,21 @@
 
 namespace App\Controller;
 
+use App\Service\ContactService;
+use App\Service\QuoteService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PageController extends AbstractController
 {
+    public function __construct(
+        public ContactService $contactService,
+        public QuoteService $quoteService
+    ){}
+
     #[Route('/{_locale}/home', name: 'app_home', requirements: ['_locale' => 'fr|en'])]
     public function index(string $_locale = 'fr'): Response
     {
@@ -57,11 +66,34 @@ class PageController extends AbstractController
     }
 
     #[Route('/{_locale}/contact-submit', name: 'app_contact_submit', methods: ['POST'], requirements: ['_locale' => 'fr|en'])]
-    public function contactSubmit(string $_locale = 'fr'): Response
+    public function contactSubmit(Request $request, string $_locale = 'fr'): Response
     {
-        // Traitement du formulaire
-        $message = $_locale === 'en' ? 'Your message has been sent!' : 'Votre message a été envoyé !';
-        $this->addFlash('success', $message);
+        // Récupération des données du formulaire
+        $data = [
+            'firstname' => trim($request->request->get('firstname', '')),
+            'lastname'  => trim($request->request->get('lastname', '')),
+            'email'     => trim($request->request->get('email', '')),
+            'phone'     => trim($request->request->get('phone', '')),
+            'message'   => trim($request->request->get('message', '')),
+        ];
+
+        // Traitement via le service
+        $success = $this->contactService->processContactForm($data, $_locale);
+
+        if ($success) {
+            $message = $_locale === 'en'
+                ? 'Your message has been sent successfully! We will contact you within 48 hours.'
+                : 'Votre message a été envoyé avec succès ! Nous vous contacterons sous 48h.';
+
+            $this->addFlash('success', $message);
+        } else {
+            $message = $_locale === 'en'
+                ? 'An error occurred while sending your message. Please try again.'
+                : 'Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer.';
+
+            $this->addFlash('error', $message);
+        }
+
         return $this->redirectToRoute('app_contact', ['_locale' => $_locale]);
     }
 
@@ -108,10 +140,43 @@ class PageController extends AbstractController
     }
 
     #[Route('/devis', name: 'app_quote_submit', methods: ['POST'])]
-    public function devis(): Response
+    public function devis(Request $request): JsonResponse
     {
-        // Traitement du formulaire de devis
-        return $this->json(['success' => true]);
+        // Récupération des données JSON envoyées par fetch
+        $content = json_decode($request->getContent(), true) ?? [];
+
+        // On détermine la locale depuis les données ou l'URL
+        // (la route n'a pas _locale, on peut la passer dans les données)
+        $locale = $content['locale'] ?? $request->getLocale() ?? 'fr';
+
+        // Validation basique
+        if (empty($content['fullName']) || empty($content['phone'])) {
+            return $this->json([
+                'success' => false,
+                'message' => $locale === 'en' 
+                    ? 'Please fill in the required fields.' 
+                    : 'Veuillez remplir les champs obligatoires.',
+            ], 400);
+        }
+
+        // Traitement via le service
+        $success = $this->quoteService->processQuoteRequest($content, $locale);
+
+        if ($success) {
+            return $this->json([
+                'success' => true,
+                'message' => $locale === 'en'
+                    ? 'Your quote request has been sent successfully!'
+                    : 'Votre demande de devis a été envoyée avec succès !',
+            ]);
+        }
+
+        return $this->json([
+            'success' => false,
+            'message' => $locale === 'en'
+                ? 'An error occurred while sending your request. Please try again.'
+                : 'Une erreur est survenue lors de l\'envoi de votre demande. Veuillez réessayer.',
+        ], 500);
     }
 
     // Route de redirection pour la racine (redirige vers FR par défaut)
