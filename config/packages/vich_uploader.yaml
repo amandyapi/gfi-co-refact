@@ -1,0 +1,10 @@
+# config/packages/vich_uploader.yaml
+vich_uploader:
+    db_driver: orm
+    metadata:
+        type: attribute  # ou 'annotation' pour l'ancien style
+    mappings:
+        blog_image:
+            uri_prefix: /uploads/blog
+            upload_destination: '%kernel.project_dir%/public/uploads/blog'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
-use App\Utils\Constants;
+use App\Entity\Blog;
+use App\Form\BlogType;
+use App\Service\BlogService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,22 +13,18 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/{_locale}/actualites', name: 'app_blog_', requirements: ['_locale' => 'fr|en'])]
 class BlogController extends AbstractController
 {
+    public function __construct(
+        private BlogService $blogService
+    ) {
+    }
+
     #[Route('/', name: 'index')]
     public function index(Request $request, string $_locale = 'fr'): Response
     {
-        // Récupérer le numéro de page
-        $page = (int) $request->query->get('page', 1);
+        $page = max(1, (int) $request->query->get('page', 1));
         $limit = 6;
-        
-        // Récupérer les articles paginés
-        $posts = Constants::getBlogPostsPaginated($page, $limit);
-        $total = Constants::getTotalBlogPosts();
-        $totalPages = ceil($total / $limit);
-        
-        // Récupérer les catégories et tags pour la sidebar
-        $categories = Constants::getBlogCategories();
-        $tags = Constants::getBlogTags();
-        $archives = $this->getArchives();
+
+        $pagination = $this->blogService->getPaginatedPosts($_locale, $page, $limit);
 
         $data = $_locale === 'en' ? [
             'bread_subtitle' => 'Our news',
@@ -37,56 +35,54 @@ class BlogController extends AbstractController
         ];
 
         return $this->render('pages/blog/blog-' . $_locale . '.html.twig', array_merge($data, [
-            'posts' => $posts,
-            'currentPage' => $page,
-            'totalPages' => $totalPages,
-            'categories' => $categories,
-            'tags' => $tags,
-            'archives' => $archives,
+            'posts' => $pagination['posts'],
+            'currentPage' => $pagination['currentPage'],
+            'totalPages' => $pagination['totalPages'],
+            'total' => $pagination['total'],
+            'categories' => $this->blogService->getCategories($_locale),
+            'archives' => $this->blogService->getArchives($_locale),
         ]));
     }
 
-    #[Route('/{slug}', name: 'single')]
-    public function single(string $_locale = 'fr', string $slug): Response
+    #[Route('/{slug}', name: 'single', requirements: ['slug' => '[a-z0-9-]+'])]
+    public function single(string $_locale = 'fr', string $slug = ''): Response
     {
-        // Récupérer l'article par son slug
-        $post = Constants::getBlogPost($slug);
-        
-        // Vérifier si l'article existe
+        $post = $this->blogService->getPostBySlug($slug, $_locale);
+
         if (!$post) {
-            throw $this->createNotFoundException($_locale === 'en' ? 'Article not found' : 'Article non trouvé');
+            throw $this->createNotFoundException(
+                $_locale === 'en' ? 'Article not found' : 'Article non trouvé'
+            );
         }
-        
-        // Récupérer les articles récents pour la sidebar
-        $recentPosts = array_slice(Constants::getBlogPosts(), 0, 3, true);
+
+        $recentPosts = $this->blogService->getRecentPosts($_locale, 4, $post->getId());
 
         $data = $_locale === 'en' ? [
             'bread_subtitle' => 'Article',
-            'bread_title' => 'Read article',
+            'bread_title' => $post->getTitle(),
         ] : [
             'bread_subtitle' => 'Article',
-            'bread_title' => 'Lire l\'article',
+            'bread_title' => $post->getTitle(),
         ];
 
         return $this->render('pages/blog/blog-single-' . $_locale . '.html.twig', array_merge($data, [
             'post' => $post,
             'slug' => $slug,
             'recentPosts' => $recentPosts,
+            'categories' => $this->blogService->getCategories($_locale),
         ]));
     }
 
     #[Route('/categorie/{category}', name: 'category')]
-    public function category(string $_locale = 'fr', string $category): Response
+    public function category(string $_locale = 'fr', string $category = ''): Response
     {
-        $posts = Constants::getBlogPostsByCategory($category);
-        
-        if (empty($posts)) {
-            throw $this->createNotFoundException($_locale === 'en' ? 'Category not found' : 'Catégorie non trouvée');
-        }
+        $posts = $this->blogService->getPostsByCategory($category, $_locale);
 
-        $categories = Constants::getBlogCategories();
-        $tags = Constants::getBlogTags();
-        $archives = $this->getArchives();
+        if (empty($posts)) {
+            throw $this->createNotFoundException(
+                $_locale === 'en' ? 'Category not found' : 'Catégorie non trouvée'
+            );
+        }
 
         $data = $_locale === 'en' ? [
             'bread_subtitle' => 'Category',
@@ -99,41 +95,8 @@ class BlogController extends AbstractController
         return $this->render('pages/blog/blog-' . $_locale . '.html.twig', array_merge($data, [
             'posts' => $posts,
             'category' => $category,
-            'categories' => $categories,
-            'tags' => $tags,
-            'archives' => $archives,
-            'currentPage' => 1,
-            'totalPages' => 1,
-        ]));
-    }
-
-    #[Route('/tag/{tag}', name: 'tag')]
-    public function tag(string $_locale = 'fr', string $tag): Response
-    {
-        $posts = Constants::getBlogPostsByTag($tag);
-        
-        if (empty($posts)) {
-            throw $this->createNotFoundException($_locale === 'en' ? 'Tag not found' : 'Tag non trouvé');
-        }
-
-        $categories = Constants::getBlogCategories();
-        $tags = Constants::getBlogTags();
-        $archives = $this->getArchives();
-
-        $data = $_locale === 'en' ? [
-            'bread_subtitle' => 'Tag',
-            'bread_title' => 'Articles tagged "' . $tag . '"',
-        ] : [
-            'bread_subtitle' => 'Tag',
-            'bread_title' => 'Articles tagués "' . $tag . '"',
-        ];
-
-        return $this->render('pages/blog/blog-' . $_locale . '.html.twig', array_merge($data, [
-            'posts' => $posts,
-            'tag' => $tag,
-            'categories' => $categories,
-            'tags' => $tags,
-            'archives' => $archives,
+            'categories' => $this->blogService->getCategories($_locale),
+            'archives' => $this->blogService->getArchives($_locale),
             'currentPage' => 1,
             'totalPages' => 1,
         ]));
@@ -143,22 +106,7 @@ class BlogController extends AbstractController
     public function search(Request $request, string $_locale = 'fr'): Response
     {
         $query = $request->query->get('s', '');
-        $posts = [];
-        
-        if (!empty($query)) {
-            $allPosts = Constants::getBlogPosts();
-            foreach ($allPosts as $slug => $post) {
-                if (stripos($post['title'], $query) !== false || 
-                    stripos($post['content'], $query) !== false ||
-                    stripos($post['excerpt'], $query) !== false) {
-                    $posts[$slug] = $post;
-                }
-            }
-        }
-
-        $categories = Constants::getBlogCategories();
-        $tags = Constants::getBlogTags();
-        $archives = $this->getArchives();
+        $posts = $this->blogService->searchPosts($query, $_locale);
 
         $data = $_locale === 'en' ? [
             'bread_subtitle' => 'Search',
@@ -171,25 +119,78 @@ class BlogController extends AbstractController
         return $this->render('pages/blog/blog-' . $_locale . '.html.twig', array_merge($data, [
             'posts' => $posts,
             'searchQuery' => $query,
-            'categories' => $categories,
-            'tags' => $tags,
-            'archives' => $archives,
+            'categories' => $this->blogService->getCategories($_locale),
+            'archives' => $this->blogService->getArchives($_locale),
             'currentPage' => 1,
             'totalPages' => 1,
         ]));
     }
 
-    /**
-     * Génère les archives par année/mois (statique)
-     */
-    private function getArchives(): array
+    // ============================================
+    // ADMIN - CRUD Articles
+    // ============================================
+
+    #[Route('/admin/new', name: 'admin_new', priority: 10)]
+    public function adminNew(Request $request, string $_locale = 'fr'): Response
     {
-        return [
-            ['label' => 'Décembre 2021', 'count' => 6],
-            ['label' => 'Novembre 2021', 'count' => 0],
-            ['label' => 'Octobre 2021', 'count' => 0],
-            ['label' => 'Septembre 2021', 'count' => 0],
-            ['label' => 'Août 2021', 'count' => 0],
-        ];
+        $blog = new Blog();
+        $blog->setLocale($_locale);
+
+        $form = $this->createForm(BlogType::class, $blog);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $form->get('imageFile')->getData();
+            if ($imageFile) {
+                $blog->setImageFile($imageFile);
+            }
+
+            $this->blogService->createPost($blog);
+            $this->addFlash('success', 'Article créé avec succès');
+
+            return $this->redirectToRoute('app_blog_index', ['_locale' => $_locale]);
+        }
+
+        return $this->render('pages/blog/admin/form-' . $_locale . '.html.twig', [
+            'form' => $form->createView(),
+            'blog' => $blog,
+            'isEdit' => false,
+        ]);
+    }
+
+    #[Route('/admin/{id}/edit', name: 'admin_edit', requirements: ['id' => '\d+'], priority: 10)]
+    public function adminEdit(Request $request, Blog $blog, string $_locale = 'fr'): Response
+    {
+        $form = $this->createForm(BlogType::class, $blog);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $form->get('imageFile')->getData();
+            if ($imageFile) {
+                $blog->setImageFile($imageFile);
+            }
+
+            $this->blogService->updatePost($blog);
+            $this->addFlash('success', 'Article modifié avec succès');
+
+            return $this->redirectToRoute('app_blog_index', ['_locale' => $_locale]);
+        }
+
+        return $this->render('pages/blog/admin/form-' . $_locale . '.html.twig', [
+            'form' => $form->createView(),
+            'blog' => $blog,
+            'isEdit' => true,
+        ]);
+    }
+
+    #[Route('/admin/{id}/delete', name: 'admin_delete', requirements: ['id' => '\d+'], methods: ['POST'], priority: 10)]
+    public function adminDelete(Request $request, Blog $blog, string $_locale = 'fr'): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $blog->getId(), $request->request->get('_token'))) {
+            $this->blogService->deletePost($blog);
+            $this->addFlash('success', 'Article supprimé avec succès');
+        }
+
+        return $this->redirectToRoute('app_blog_index', ['_locale' => $_locale]);
     }
 }
