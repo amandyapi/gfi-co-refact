@@ -1,0 +1,56 @@
+{% extends 'layout-admin.html.twig' %}
+
+{% block title %}Utilisateurs - Administration GFI-CO{% endblock %}
+{% block page_title %}Gestion des utilisateurs{% endblock %}
+
+{% block body %}
+    <div class="admin-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <h5 style="margin:0;">Liste des utilisateurs</h5>
+            <a href="{{ path('app_admin_user_new') }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Nouvel utilisateur</a>
+        </div>
+
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Rôles</th>
+                    <th>Statut</th>
+                    <th>Créé le</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.fullName }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            {% for role in user.roles %}
+                                {% if role == 'ROLE_ADMIN' %}
+                                    <span class="badge" style="background:#f68b1e; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.75rem;">Admin</span>
+                                {% elseif role == 'ROLE_USER' %}
+                                    <span class="badge" style="background:#ecf0f1; color:#2c3e50; padding:2px 8px; border-radius:12px; font-size:0.75rem;">User</span>
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>{{ user.isActive ? 'Actif' : 'Inactif' }}</td>
+                        <td>{{ user.createdAt|date('d/m/Y') }}</td>
+                        <td>
+                            <a href="{{ path('app_admin_user_edit', {id: user.id}) }}" class="btn btn-secondary btn-sm"><i class="fa-solid fa-pen"></i></a>
+                            {% if user != app.user %}
+                                <form method="post" action="{{ path('app_admin_user_delete', {id: user.id}) }}" style="display:inline;" onsubmit="return confirm('Supprimer cet utilisateur ?');">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete_user_' ~ user.id) }}">
+                                    <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr><td colspan="6" style="text-align:center;">Aucun utilisateur.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

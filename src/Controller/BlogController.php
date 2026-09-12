@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Blog;
-use App\Form\BlogType;
 use App\Service\BlogService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -124,73 +122,5 @@ class BlogController extends AbstractController
             'currentPage' => 1,
             'totalPages' => 1,
         ]));
-    }
-
-    // ============================================
-    // ADMIN - CRUD Articles
-    // ============================================
-
-    #[Route('/admin/new', name: 'admin_new', priority: 10)]
-    public function adminNew(Request $request, string $_locale = 'fr'): Response
-    {
-        $blog = new Blog();
-        $blog->setLocale($_locale);
-
-        $form = $this->createForm(BlogType::class, $blog);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $imageFile = $form->get('imageFile')->getData();
-            if ($imageFile) {
-                $blog->setImageFile($imageFile);
-            }
-
-            $this->blogService->createPost($blog);
-            $this->addFlash('success', 'Article créé avec succès');
-
-            return $this->redirectToRoute('app_blog_index', ['_locale' => $_locale]);
-        }
-
-        return $this->render('pages/blog/admin/form-' . $_locale . '.html.twig', [
-            'form' => $form->createView(),
-            'blog' => $blog,
-            'isEdit' => false,
-        ]);
-    }
-
-    #[Route('/admin/{id}/edit', name: 'admin_edit', requirements: ['id' => '\d+'], priority: 10)]
-    public function adminEdit(Request $request, Blog $blog, string $_locale = 'fr'): Response
-    {
-        $form = $this->createForm(BlogType::class, $blog);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $imageFile = $form->get('imageFile')->getData();
-            if ($imageFile) {
-                $blog->setImageFile($imageFile);
-            }
-
-            $this->blogService->updatePost($blog);
-            $this->addFlash('success', 'Article modifié avec succès');
-
-            return $this->redirectToRoute('app_blog_index', ['_locale' => $_locale]);
-        }
-
-        return $this->render('pages/blog/admin/form-' . $_locale . '.html.twig', [
-            'form' => $form->createView(),
-            'blog' => $blog,
-            'isEdit' => true,
-        ]);
-    }
-
-    #[Route('/admin/{id}/delete', name: 'admin_delete', requirements: ['id' => '\d+'], methods: ['POST'], priority: 10)]
-    public function adminDelete(Request $request, Blog $blog, string $_locale = 'fr'): Response
-    {
-        if ($this->isCsrfTokenValid('delete' . $blog->getId(), $request->request->get('_token'))) {
-            $this->blogService->deletePost($blog);
-            $this->addFlash('success', 'Article supprimé avec succès');
-        }
-
-        return $this->redirectToRoute('app_blog_index', ['_locale' => $_locale]);
     }
 }

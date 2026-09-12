@@ -1,0 +1,31 @@
+{% extends 'layout-admin.html.twig' %}
+
+{% block title %}Tableau de bord - Administration GFI-CO{% endblock %}
+{% block page_title %}Vue d'ensemble{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="admin-card">
+                <h5>Articles de blog</h5>
+                <p style="font-size:2rem; font-weight:700; color:#f68b1e;">{{ totalPosts }}</p>
+                <a href="{{ path('app_admin_blog_index') }}" class="btn btn-primary btn-sm">Gérer</a>
+            </div>
+        </div>
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="col-md-4">
+                <div class="admin-card">
+                    <h5>Utilisateurs</h5>
+                    <p style="font-size:2rem; font-weight:700; color:#1e2a3a;">{{ totalUsers }}</p>
+                    <a href="{{ path('app_admin_user_index') }}" class="btn btn-primary btn-sm">Gérer</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="admin-card">
+                    <h5>Administrateurs</h5>
+                    <p style="font-size:2rem; font-weight:700; color:#1e2a3a;">{{ totalAdmins }}</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

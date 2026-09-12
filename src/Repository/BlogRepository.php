@@ -156,4 +156,6 @@ class BlogRepository extends ServiceEntityRepository
         
         return $result->fetchAllAssociative();
     }
+
+    
 }

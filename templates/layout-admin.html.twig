@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Administration - GFI-CO{% endblock %}</title>
+
+    <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+
+    <style>
+        body { background: #f4f6f9; font-family: 'Roboto', sans-serif; margin: 0; }
+        .admin-wrapper { display: flex; min-height: 100vh; }
+        .admin-sidebar { width: 260px; background: #1e2a3a; color: #cfd8e3; display: flex; flex-direction: column; }
+        .admin-sidebar .brand { padding: 20px; font-size: 1.2rem; font-weight: 700; color: #fff; border-bottom: 1px solid #2c3e50; }
+        .admin-sidebar .brand img { max-width: 110px; }
+        .admin-sidebar nav { flex: 1; padding: 15px 0; }
+        .admin-sidebar nav a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #cfd8e3; text-decoration: none; font-size: 0.95rem; transition: background .2s; }
+        .admin-sidebar nav a:hover, .admin-sidebar nav a.active { background: #2c3e50; color: #fff; }
+        .admin-sidebar nav a i { width: 18px; text-align: center; }
+        .admin-sidebar .section-title { padding: 15px 20px 5px; font-size: 0.75rem; text-transform: uppercase; color: #7f8c9b; }
+        .admin-main { flex: 1; display: flex; flex-direction: column; }
+        .admin-topbar { background: #fff; padding: 15px 25px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+        .admin-topbar .user-info { display: flex; align-items: center; gap: 10px; }
+        .admin-topbar .user-info .badge { background: #f68b1e; color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; }
+        .admin-content { padding: 25px; }
+        .admin-card { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+        .admin-flash { padding: 12px 16px; border-radius: 6px; margin-bottom: 15px; }
+        .admin-flash.success { background: #e6f7ed; color: #1e7e34; }
+        .admin-flash.error { background: #fdecea; color: #b71c1c; }
+        .admin-table { width: 100%; border-collapse: collapse; }
+        .admin-table th, .admin-table td { padding: 10px; border-bottom: 1px solid #eef1f5; text-align: left; }
+        .admin-table th { background: #f8fafc; font-weight: 600; }
+        .btn { display: inline-block; padding: 8px 14px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; font-size: 0.9rem; }
+        .btn-primary { background: #f68b1e; color: #fff; }
+        .btn-danger { background: #e74c3c; color: #fff; }
+        .btn-secondary { background: #ecf0f1; color: #2c3e50; }
+        .btn-sm { padding: 5px 10px; font-size: 0.8rem; }
+    </style>
+
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<div class="admin-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="brand">
+            <a href="{{ path('app_admin_dashboard') }}" style="color:#fff; text-decoration:none;">GFI-CO Admin</a>
+        </div>
+        <nav>
+            <div class="section-title">Tableau de bord</div>
+            <a href="{{ path('app_admin_dashboard') }}" class="{{ app.request.attributes.get('_route') == 'app_admin_dashboard' ? 'active' : '' }}">
+                <i class="fa-solid fa-gauge"></i> Vue d'ensemble
+            </a>
+
+            <div class="section-title">Contenu</div>
+            <a href="{{ path('app_admin_blog_index') }}" class="{{ app.request.attributes.get('_route') starts with 'app_admin_blog_' ? 'active' : '' }}">
+                <i class="fa-solid fa-newspaper"></i> Articles de blog
+            </a>
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="section-title">Administration</div>
+                <a href="{{ path('app_admin_user_index') }}" class="{{ app.request.attributes.get('_route') starts with 'app_admin_user_' ? 'active' : '' }}">
+                    <i class="fa-solid fa-users"></i> Utilisateurs
+                </a>
+            {% endif %}
+
+            <div class="section-title">Site</div>
+            <a href="{{ path('app_home', {_locale: 'fr'}) }}" target="_blank">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
+            </a>
+            <a href="{{ path('app_admin_logout') }}">
+                <i class="fa-solid fa-right-from-bracket"></i> Déconnexion
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main -->
+    <div class="admin-main">
+        <div class="admin-topbar">
+            <div>{% block page_title %}Administration{% endblock %}</div>
+            <div class="user-info">
+                <span>{{ app.user.fullName }}</span>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <span class="badge">Admin</span>
+                {% else %}
+                    <span class="badge">User</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="admin-content">
+            {% for type, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="admin-flash {{ type }}">{{ message }}</div>
+                {% endfor %}
+            {% endfor %}
+
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>
