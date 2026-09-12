@@ -1,0 +1,92 @@
+{# templates/pages/projets/immobilier/index-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Real estate program{% endblock %}
+
+{% block description %}Discover our real estate programs: Eco-Terra City in Guinea and the Nestlé CI program in Songon. Large-scale projects for a sustainable future.{% endblock %}
+
+{% block bread_subtitle %}Projects{% endblock %}
+{% block bread_title %}Real estate program{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'en'}) }}">Projects</a></li>
+    <li class="active">Real estate program</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Project 1: Eco-Terra City -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Eco-Terra City — Redefining housing in sub-Saharan Africa</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Real estate program · Republic of Guinea</h5>
+                        <p style="text-align: justify;">What if tomorrow's housing were built today, with compressed earth? That is the challenge of Eco-Terra City, an ambitious real estate program that aims to redefine housing standards in sub-Saharan Africa. Designed around mixed villas: single-storey F4 and duplex F4/F5, the project mainly uses stabilised compressed earth bricks (BTCS) to combine energy performance, contemporary aesthetics and respect for the environment.</p>
+                        <br>
+                        <a href="{{ path('app_projets_immobilier_eco_terra', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/2-immobilier/eco-terra-city/9.jpg') }}" alt="Eco-Terra City Project" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Fixed image section with parallax effect -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-1-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Real estate program</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">Large-scale real estate programs for a sustainable future</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 2: Nestlé CI Real Estate Program -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Nestlé CI Real Estate Program - 300 homes for MUNEST employees</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Real estate program · Songon, Côte d'Ivoire · 250 to 300 homes</h5>
+                        <p style="text-align: justify;">When a major company trusts GFI-CO to house its teams, an entire real estate program takes shape. Named "Belle Côte", this residential project was developed under project management on behalf of the mutual fund of Nestlé CI employees (MUNEST), in Songon, under a notarised agreement signed in 2022.</p>
+                        <br>
+                        <a href="{{ path('app_projets_immobilier_nestle', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/2-immobilier/nestle/5.jpg') }}" alt="Nestlé CI Real Estate Program" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer">
+                            <span class="wow slideInRight">Do you have a real estate project? <span class="fw-bold">Let's talk about it together</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'en'}) }}">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

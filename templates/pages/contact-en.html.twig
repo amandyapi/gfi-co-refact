@@ -1,0 +1,144 @@
+{# templates/pages/contact-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Contact us - Quotes and information{% endblock %}
+
+{% block description %}Contact GFI-CO GROUP for your real estate projects in Côte d'Ivoire and Guinea. Request a quote, information or book an appointment.{% endblock %}
+
+{% block bread_subtitle %}Contact us{% endblock %}
+{% block bread_title %}Get in touch{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_contact') }}">Contact</a></li>
+    <li class="active">Write to us</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Contact details -->
+    <section class="section section-sm">
+        <div class="container">
+            <div class="layout-bordered">
+                <div class="layout-bordered-item wow-outer">
+                    <div class="layout-bordered-item-inner wow slideInUp">
+                        <div class="icon icon-lg mdi mdi-phone text-primary"></div>
+                        <ul class="list-0">
+                            <li><a class="link-default" href="tel:+2250143100250">(+225) 07 58 835 008 /</a></li>
+                            <li><a class="link-default" href="tel:+2250143100250">(+225) 01 431 00 250</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="layout-bordered-item wow-outer">
+                    <div class="layout-bordered-item-inner wow slideInUp">
+                        <div class="icon icon-lg mdi mdi-email text-primary"></div>
+                        <a class="link-default" href="mailto:contact@gfi-co.net">contact@gfi-co.net</a>
+                    </div>
+                </div>
+                <div class="layout-bordered-item wow-outer">
+                    <div class="layout-bordered-item-inner wow slideInUp">
+                        <div class="icon icon-lg mdi mdi-map-marker text-primary"></div>
+                        <a class="link-default" href="#">LT 18 IL 1 AKOUEDO TRIANGLE, Quartier 09 Secteur Palmeraie, Abidjan, Côte d'Ivoire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact form + Map -->
+    <section class="section bg-gray-100">
+        <div class="range justify-content-xl-between">
+            <div class="cell-xl-6 align-self-center container">
+                <div class="row">
+                    <div class="col-lg-9 cell-inner">
+                        <div class="section-lg">
+                            <h3 class="wow-outer">
+                                <span class="wow slideInDown">Contact us</span>
+                            </h3>
+
+                            <!-- Flash Messages -->
+                            {% for type, messages in app.flashes %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ type == 'error' ? 'danger' : type }} alert-dismissible fade show" role="alert" style="margin: 20px auto; max-width: 900px;">
+                                        {% if type == 'success' %}
+                                            <i class="fa-solid fa-circle-check" style="margin-right: 8px;"></i>
+                                        {% elseif type == 'error' or type == 'danger' %}
+                                            <i class="fa-solid fa-circle-exclamation" style="margin-right: 8px;"></i>
+                                        {% elseif type == 'warning' %}
+                                            <i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i>
+                                        {% else %}
+                                            <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i>
+                                        {% endif %}
+                                        {{ message }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float: right; background: none; border: none; font-size: 18px; cursor: pointer;">&times;</button>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                            
+                            <!-- RD Mailform -->
+                            <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ path('app_contact_submit') }}">
+                                <div class="row row-10">
+                                    <div class="col-md-6 wow-outer">
+                                        <div class="form-wrap wow fadeSlideInUp">
+                                            <label class="form-label-outside" for="contact-first-name">First name</label>
+                                            <input class="form-input" id="contact-first-name" type="text" name="firstname" data-constraints="@Required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 wow-outer">
+                                        <div class="form-wrap wow fadeSlideInUp">
+                                            <label class="form-label-outside" for="contact-last-name">Last name</label>
+                                            <input class="form-input" id="contact-last-name" type="text" name="lastname" data-constraints="@Required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 wow-outer">
+                                        <div class="form-wrap wow fadeSlideInUp">
+                                            <label class="form-label-outside" for="contact-email">E-mail</label>
+                                            <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 wow-outer">
+                                        <div class="form-wrap wow fadeSlideInUp">
+                                            <label class="form-label-outside" for="contact-phone">Phone</label>
+                                            <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@PhoneNumber">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 wow-outer">
+                                        <div class="form-wrap wow fadeSlideInUp">
+                                            <label class="form-label-outside" for="contact-message">Your message</label>
+                                            <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="group group-middle">
+                                    <div class="wow-outer">
+                                        <button class="button button-primary button-winona wow slideInRight" type="submit">Send</button>
+                                    </div>
+                                    <p>or use</p>
+                                    <div class="wow-outer">
+                                        <a class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" href="https://wa.me/2250758835008">
+                                            <span class="icon mdi mdi-whatsapp"></span>Whatsapp
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-xl-5 height-fill wow fadeIn">
+                <section class="section">
+                    <div class="google-map-container" 
+                        data-key="AIzaSyCqrqPZOVegy1VIdyIcndxZY9YGoK-x0Yo" 
+                        data-center="LT 18 IL 1 AKOUEDO TRIANGLE, Quartier 09 Secteur Palmeraie, Abidjan, Côte d'Ivoire" 
+                        data-zoom="16" 
+                        data-icon="{{ asset('assets/images/gmap_marker.png') }}" 
+                        data-icon-active="{{ asset('assets/images/gmap_marker_active.png') }}" 
+                        data-styles="[{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:60}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:40},{&quot;visibility&quot;:&quot;on&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;administrative.province&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;lightness&quot;:30}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#ef8c25&quot;},{&quot;lightness&quot;:40}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.stroke&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;poi.park&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#b6c54c&quot;},{&quot;lightness&quot;:40},{&quot;saturation&quot;:-40}]},{}]">
+                        <div class="google-map"></div>
+                        <ul class="google-map-markers">
+                            <li data-location="LT 18 IL 1 AKOUEDO TRIANGLE, Quartier 09 Secteur Palmeraie, Abidjan, Côte d'Ivoire" data-description="GFI-CO - LT 18 IL 1 AKOUEDO TRIANGLE, Abidjan"></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+{% endblock %}

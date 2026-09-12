@@ -1,0 +1,188 @@
+{# templates/pages/about-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | About - Who we are?{% endblock %}
+
+{% block description %}GFI-CO GROUP - Discover our history, our vision and our commitments to sustainable construction in Côte d'Ivoire and Guinea.{% endblock %}
+
+{% block bread_subtitle %}Who we are?{% endblock %}
+{% block bread_title %}About GFI-CO GROUP{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_about') }}">About</a></li>
+    <li class="active">Who we are</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Presentation -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between">
+                <div class="col-md-10 col-lg-6">
+                    <h3 class="wow-outer">
+                        <span class="wow slideInDown">GFI-CO GROUP</span>
+                    </h3>
+                    <p class="font-roboto wow-outer" style="text-align: justify;">
+                        <span class="wow slideInDown" data-wow-delay=".1s">Founded in 2020 from a simple conviction, GFI-CO GROUP is now a recognized player in real estate development and construction in West Africa. Licensed as a real estate developer since July 2024, we support individuals, companies and investors from the first sketch to the handover of keys, with a constant commitment to quality, transparency and environmental sustainability.</span>
+                    </p>
+                    <p class="font-roboto wow-outer" style="text-align: justify;">
+                        <span class="wow slideInDown" data-wow-delay=".15s">From blueprint design to turnkey delivery, including the design office, civil engineering, fit-out and finishing works, we master every stage of a real estate project's life cycle. This end-to-end expertise, already proven on more than <strong>12 projects completed in Côte d'Ivoire and Guinea</strong>, guarantees a single, coherent and responsible point of contact.</span>
+                    </p>
+                    <div class="group group-middle">
+                        <a class="button button-primary button-winona" href="#nos-valeurs">Our values</a>
+                        <a class="button button-black-outline button-winona" href="#notre-fondateur">The founder</a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-5">
+                    <img class="img-responsive" src="{{ asset('assets/images/large-features-1-470x334.jpg') }}" alt="GFI-CO GROUP sustainable construction" width="470" height="334"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our vision -->
+    <section class="section section-lg bg-gray-lighten">
+        <div class="container text-center">
+            <h3 class="wow-outer">
+                <span class="wow slideInDown">Our vision — Horizon 2050</span>
+            </h3>
+            <p class="wow-outer">
+                <span class="wow slideInDown" data-wow-delay=".05s" style="max-width:800px; margin:0 auto;">By 2050, every home we build must be climate-neutral and recyclable. An ambitious goal, with concrete milestones from 2035: less CO₂, more circular economy, a footprint considered from the design stage.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Sustainable commitment -->
+    <section class="section section-lg" id="nos-valeurs">
+        <div class="container">
+            <h3 class="text-center wow-outer">
+                <span class="wow slideInDown">Our sustainable commitment</span>
+            </h3>
+            <div class="row row-30 text-center">
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".05s">
+                        <div class="icon icon-lg fa-solid fa-recycle text-primary"></div>
+                        <h5>Recycled materials</h5>
+                        <p>Recycled and eco-efficient materials for a reduced footprint.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".1s">
+                        <div class="icon icon-lg fa-regular fa-sun text-primary"></div>
+                        <h5>Bioclimatic design</h5>
+                        <p>Natural light and ventilation for optimal comfort.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".15s">
+                        <div class="icon icon-lg fa-solid fa-solar-panel text-primary"></div>
+                        <h5>Renewable energy</h5>
+                        <p>Solar, wind and geothermal integrated into our projects.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".2s">
+                        <div class="icon icon-lg fa-solid fa-trash text-primary"></div>
+                        <h5>Waste management</h5>
+                        <p>Recovery and responsible management of construction waste.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".25s">
+                        <div class="icon icon-lg fa-regular fa-leaf text-primary"></div>
+                        <h5>Healthy indoor air</h5>
+                        <p>Non-toxic materials for a preserved living environment.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".3s">
+                        <div class="icon icon-lg fa-solid fa-users text-primary"></div>
+                        <h5>Local employment</h5>
+                        <p>Social inclusion and continuous sharing of sustainable know-how.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our values -->
+    <section class="section section-lg bg-gray-lighten">
+        <div class="container text-center">
+            <h3 class="wow-outer">
+                <span class="wow slideInDown">Our values</span>
+            </h3>
+            <div class="row row-30">
+                <div class="col-sm-6 col-md-3 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".05s">
+                        <div class="icon icon-lg fa-solid fa-wheelchair text-primary"></div>
+                        <h5>Accessibility for all</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".1s">
+                        <div class="icon icon-lg fa-regular fa-handshake text-primary"></div>
+                        <h5>Respect and transparency</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".15s">
+                        <div class="icon icon-lg fa-regular fa-star text-primary"></div>
+                        <h5>Excellence and innovation</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow-outer">
+                    <div class="wow slideInUp" data-wow-delay=".2s">
+                        <div class="icon icon-lg fa-solid fa-link text-primary"></div>
+                        <h5>Sustainable partnerships</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our founder -->
+    <section class="section section-lg" id="notre-fondateur">
+        <div class="container">
+            <h3 class="wow-outer text-center">
+                <span class="wow slideInDown">Our founder</span>
+            </h3>
+            <div class="row row-50 justify-content-center justify-content-lg-between">
+                <div class="col-md-10 col-lg-6 order-lg-2">
+                    <p class="heading-subtitle wow-outer" style="margin: 15px 0;">
+                        <span class="wow slideInDown" data-wow-delay=".05s">Abdoul Wahab Magassouba</span>
+                    </p>
+                    <p class="font-roboto wow-outer" style="text-align: justify;">
+                        <span class="wow slideInDown" data-wow-delay=".1s">A visionary entrepreneur and committed builder, <strong>Abdoul Wahab Magassouba</strong> is the Founder and CEO of GFI-CO Group, a company dedicated to sustainable, accessible and turnkey real estate solutions in Côte d'Ivoire and the Republic of Guinea.</span>
+                    </p>
+                    <p class="font-roboto wow-outer" style="text-align: justify;">
+                        <span class="wow slideInDown" data-wow-delay=".15s">Holder of an MBA in Banking, Finance and Insurance (IPG/ISTI, Dakar), he brings over 15 years of experience across finance, accounting, communication, insurance and audiovisual production — a global vision serving a clear ambition: to reinvent access to real estate through innovation, technical quality and ecological responsibility.</span>
+                    </p>
+                    <p class="font-roboto wow-outer" style="text-align: justify;">
+                        <span class="wow slideInDown" data-wow-delay=".2s">Under his leadership, GFI-CO Group has already completed more than a dozen projects and continues its growth with the same guiding principle: designing structured, inclusive projects oriented towards genuinely improving people's living environments.</span>
+                    </p>
+                    <blockquote class="wow-outer">
+                        <p class="wow slideInDown" data-wow-delay=".25s" style="font-style:italic; font-size:1.1rem; border-left:4px solid #f68b1e; padding-left:20px;">"Convinced that success is collective, I am committed to building sustainable and accessible projects."</p>
+                    </blockquote>
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-5 order-lg-1">
+                    <img class="img-responsive" src="{{ asset('assets/images/team-1-370x368.png') }}" alt="Abdoul Wahab Magassouba - Founder of GFI-CO GROUP" width="470" height="334" style="border-radius:8px;"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-lg bg-primary text-center" style="background:#f68b1e;">
+        <div class="container">
+            <h3 class="wow-outer" style="color:#fff;">
+                <span class="wow slideInDown">A collaborative approach</span>
+            </h3>
+            <p class="wow-outer" style="color:#fff; font-size:1.1rem; max-width:600px; margin:0 auto;">
+                <span class="wow slideInDown" data-wow-delay=".05s">Are you an investor, strategic partner or project owner? Let's build innovative, responsible and high-value solutions together.</span>
+            </p>
+            <div class="wow-outer" style="margin-top:25px;">
+                <a class="button button-black-outline button-winona wow slideInRight" href="{{ path('app_contact') }}" style="border-color:#fff; color:#fff;">Contact us</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

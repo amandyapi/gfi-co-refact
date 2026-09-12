@@ -1,0 +1,111 @@
+{# templates/pages/projets/construction/harmenien-oci-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | OCI Harmonized Housing Project - 17 telecom tower sites{% endblock %}
+
+{% block description %}Discover the OCI Harmonized Housing project: complete design office and civil engineering mission for the construction of 17 telecom tower sites in Côte d'Ivoire.{% endblock %}
+
+{% block bread_subtitle %}Construction{% endblock %}
+{% block bread_title %}OCI Harmonized Housing Project - 17 telecom tower sites, from design office to works{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'en'}) }}">Projects</a></li>
+    <li><a href="{{ path('app_projets_construction', {_locale: 'en'}) }}">Construction</a></li>
+    <li class="active">OCI Harmonized Housing Project</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Overview -->
+    <section class="section section-sm bg-gray-100">
+        <div class="container">
+            <div class="owl-carousel owl-carousel-centered-pagination" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-dots="true" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
+                <div class="item">
+                    <h4>Client</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">NGSER on behalf of OCI</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Location</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Côte d'Ivoire</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Nature of works</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Design office mission: draft visit, 2D plan design</a></li>
+                        <li><a href="#">Site layout</a></li>
+                        <li><a href="#">Preparation of APD and DQE reports</a></li>
+                        <li><a href="#">Site visit and supervision</a></li>
+                        <li><a href="#">Civil engineering works and erection of 40 and 60 metre towers</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Execution time</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">5 months</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>GFI-CO's role</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Design Office and Civil Engineering</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About This Project -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h3>About this project</h3>
+                        <h5 style="text-align: justify; font-style: italic;">Civil engineering & infrastructure · Côte d'Ivoire · 5-month mission</h5>
+                        <p style="text-align: justify;">Beyond residential real estate, GFI-CO puts its technical expertise at the service of telecom infrastructure. Mandated by NGSER on behalf of OCI, our team carried out a complete design office and civil engineering mission for the construction of 17 tower sites, 40 to 60 metres high.</p>
+                        <p style="text-align: justify;">The mission covered the design of 2D and site layout plans, the preparation of Detailed Preliminary Design (APD) and Detailed Estimated Bill of Quantities (DQE) reports, then the execution of civil engineering works and the erection of 40-metre towers — all in 5 months, with rigorous site supervision guaranteeing quality and compliance.</p>
+                        <p style="text-align: justify; font-weight: 500;">A project that demonstrates GFI-CO's versatility and its ability to work on heavy infrastructure, beyond its real estate core business.</p>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/3-construction/oci/6.jpg') }}" alt="OCI Harmonized Housing Project" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section swiper-container swiper-slider swiper-slider-tiny text-center" data-loop="true" data-slide-effect="fade" data-autoplay="false" data-simulate-touch="true"> 
+        <div class="swiper-wrapper">
+            {% for i in 1..7 %}
+                <div class="swiper-slide vertical" data-slide-bg="{{ asset('assets/images/projets/3-construction/oci/' ~ i ~ '.jpg') }}">
+                    <div class="swiper-slide-caption"><div class="container"></div></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination-outer container">
+            <div class="swiper-pagination swiper-pagination-modern swiper-pagination-marked" data-index-bullet="true"></div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer" style="color:#fff;">
+                            <span class="wow slideInRight">Do you have a similar project? <span class="fw-bold" style="color:#fff;">Let's talk about it together</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-lg button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'en'}) }}" style="border-color:#fff; color:#fff;">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

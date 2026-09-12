@@ -1,0 +1,92 @@
+{# templates/pages/branches/promotion-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO Real Estate Developer | Sustainable real estate development{% endblock %}
+
+{% block description %}GFI-CO Real Estate Developer - Licensed developer. Designing sustainable living environments combining environmental performance, financial accessibility and architectural excellence.{% endblock %}
+
+{% block bread_subtitle %}Our branches{% endblock %}
+{% block bread_title %}GFI-CO Real Estate Developer{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_branches_index', {_locale: 'en'}) }}">Our branches</a></li>
+    <li class="active">Real estate development</li>
+{% endblock %}
+
+{% block page %}
+    <!-- About This Service -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="inset-right-3">
+                        <h3>GFI-CO Real Estate Developer</h3>
+                        <h5 style="text-align: justify;">Tomorrow's real estate can no longer be built on yesterday's models.</h5>
+                        <p style="text-align: justify;">At GFI-CO, we reinvent the art of building in sub-Saharan Africa. A licensed real estate developer since July 2024, we design living environments that reconcile high environmental performance, financial accessibility and architectural excellence.</p>
+                        <p style="text-align: justify;">We prove every day that it is possible to house our populations sustainably while preserving our ecosystem.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive" src="{{ asset('assets/images/branches/developpeur-immobilier/3.jpg') }}" alt="GFI-CO Real Estate Developer" width="551" height="385"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 Pillars -->
+    <section class="section section-lg bg-gray-100">
+        <div class="container">
+            <h3 class="text-center wow-outer">
+                <span class="wow slideInDown">4 pillars that change the game</span>
+            </h3>
+            <div class="row row-30">
+                <div class="col-sm-6 col-lg-3 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-mountain wow fadeIn"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown">Earth as the material of the future</h4>
+                            <p class="wow fadeInUpSmall">Use of local and eco-friendly materials for a reduced carbon footprint.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-3 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-solar-panel wow fadeIn" data-wow-delay=".1s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".1s">Energy autonomy and efficiency</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".1s">Integration of renewable energy solutions for self-sufficient buildings.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-3 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-paint-roller wow fadeIn" data-wow-delay=".2s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".2s">Full control of finishing works</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".2s">Careful finishes and quality execution at every stage of the site.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-3 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-calendar-check wow fadeIn" data-wow-delay=".3s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".3s">A culture of delivery</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".3s">Respect for deadlines and commitments made to our clients.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-md bg-primary text-center">
+        <div class="container">
+            <div class="box-cta-1">
+                <h3>Ready to build your project? <span class="fw-bold">Contact us now</span></h3>
+                <a class="button button-lg button-black-outline button-winona" href="{{ path('app_contact', {_locale: 'en'}) }}">Contact us</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

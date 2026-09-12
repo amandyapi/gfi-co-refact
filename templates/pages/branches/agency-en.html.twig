@@ -1,0 +1,267 @@
+{# templates/pages/branches/agency-en.html.twig #}
+
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | GFI-CO Agency{% endblock %}
+
+{% block description %}
+    GFI-CO Agency supports owners, tenants and investors in their real estate projects: transactions, property search, rental management and after-sales support.
+{% endblock %}
+
+{% block bread_subtitle %}
+    Our branches
+{% endblock %}
+
+{% block bread_title %}
+    GFI-CO Agency
+{% endblock %}
+
+{% block bread_items %}
+
+    <li>
+        <a href="{{ path('app_branches_index', {'_locale': 'en'}) }}">
+            Our branches
+        </a>
+    </li>
+
+    <li class="active">
+        Agency
+    </li>
+
+{% endblock %}
+
+{% block page %}
+
+    <!-- GFI-CO Agency presentation -->
+    <section class="section section-lg">
+        <div class="container">
+
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+
+                <!-- Text -->
+                <div class="col-lg-6 col-xl-5">
+                    <div class="inset-right-3">
+
+                        <h3 class="wow-outer">
+                            <span class="wow slideInDown">
+                                GFI-CO Agency
+                            </span>
+                        </h3>
+
+                        <h5 class="wow-outer" style="text-align: justify;">
+                            <span class="wow slideInDown" data-wow-delay=".05s">
+                                Real estate, simplified
+                            </span>
+                        </h5>
+
+                        <p class="wow-outer" style="text-align: justify;">
+                            <span class="wow fadeInUpSmall">
+                                Transactions, targeted search, rental management, after-sales support:
+                                our agency manages every stage of your real estate journey with attentive
+                                listening and full transparency. Thanks to modern tools and digital
+                                viewings, we make every step smooth, secure and surprise-free.
+                            </span>
+                        </p>
+
+                        <p class="wow-outer" style="text-align: justify;">
+                            <span class="wow fadeInUpSmall" data-wow-delay=".1s">
+                                Whether you are an owner, a tenant or an investor, we put our expertise
+                                and our network at your service to bring your real estate projects to
+                                life under the best conditions.
+                            </span>
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="col-lg-6 wow-outer">
+                    <img
+                        class="img-responsive wow slideInLeft"
+                        src="{{ asset('assets/images/branches/agency/1.jpg') }}"
+                        alt="GFI-CO Agency"
+                        width="551"
+                        height="385"
+                    />
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Our services -->
+    <section class="section section-lg bg-gray-100">
+        <div class="container">
+
+            <h3 class="text-center wow-outer">
+                <span class="wow slideInDown">
+                    Our services
+                </span>
+            </h3>
+
+            <div class="row row-30">
+
+                <!-- Transaction management -->
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+
+                        <div class="box-minimal-icon fa-solid fa-handshake wow fadeIn"></div>
+
+                        <div class="box-minimal-main wow-outer">
+
+                            <h4 class="box-minimal-title wow slideInDown">
+                                Transaction management
+                            </h4>
+
+                            <p class="wow fadeInUpSmall">
+                                Personalized support for every real estate transaction,
+                                from negotiation to signing, with complete peace of mind.
+                            </p>
+
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- Targeted property search -->
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+
+                        <div
+                            class="box-minimal-icon fa-solid fa-magnifying-glass-location wow fadeIn"
+                            data-wow-delay=".1s">
+                        </div>
+
+                        <div class="box-minimal-main wow-outer">
+
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".1s">
+                                Targeted property search
+                            </h4>
+
+                            <p class="wow fadeInUpSmall" data-wow-delay=".1s">
+                                A tailor-made search to find the property that perfectly matches
+                                your criteria and expectations.
+                            </p>
+
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- Personalization -->
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+
+                        <div
+                            class="box-minimal-icon fa-solid fa-user-gear wow fadeIn"
+                            data-wow-delay=".2s">
+                        </div>
+
+                        <div class="box-minimal-main wow-outer">
+
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".2s">
+                                Personalization according to client needs
+                            </h4>
+
+                            <p class="wow fadeInUpSmall" data-wow-delay=".2s">
+                                A tailor-made approach that takes your specific needs into account
+                                to offer you suitable solutions.
+                            </p>
+
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- After-sales support -->
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+
+                        <div
+                            class="box-minimal-icon fa-solid fa-headset wow fadeIn"
+                            data-wow-delay=".3s">
+                        </div>
+
+                        <div class="box-minimal-main wow-outer">
+
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".3s">
+                                After-sales support
+                            </h4>
+
+                            <p class="wow fadeInUpSmall" data-wow-delay=".3s">
+                                Ongoing support even after the transaction to ensure
+                                your complete satisfaction.
+                            </p>
+
+                        </div>
+
+                    </article>
+                </div>
+
+
+                <!-- Digital viewings -->
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+
+                        <div
+                            class="box-minimal-icon fa-solid fa-laptop wow fadeIn"
+                            data-wow-delay=".4s">
+                        </div>
+
+                        <div class="box-minimal-main wow-outer">
+
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".4s">
+                                Digital viewings and modern technologies
+                            </h4>
+
+                            <p class="wow fadeInUpSmall" data-wow-delay=".4s">
+                                Innovative tools to discover properties remotely and simplify
+                                every step of your real estate project.
+                            </p>
+
+                        </div>
+
+                    </article>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="section section-md bg-primary text-center">
+        <div class="container">
+
+            <div class="box-cta-1">
+
+                <h3 class="wow-outer">
+                    <span class="wow slideInDown">
+                        Looking for a property or want to sell?
+                        <span class="fw-bold">
+                            Make your life easier with us
+                        </span>
+                    </span>
+                </h3>
+
+                <div class="wow-outer">
+                    <a
+                        class="button button-lg button-black-outline button-winona wow slideInRight"
+                        href="{{ path('app_contact', {'_locale': 'en'}) }}"
+                    >
+                        Contact us
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

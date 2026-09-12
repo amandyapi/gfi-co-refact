@@ -1,0 +1,98 @@
+{# templates/pages/blog/blog-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | News{% endblock %}
+
+{% block description %}Find all the latest news from GFI-CO GROUP: real estate projects, partnerships, events and innovations.{% endblock %}
+
+{% block bread_subtitle %}News{% endblock %}
+{% block bread_title %}News{% endblock %}
+
+{% block bread_items %}
+    <li class="active">News</li>
+{% endblock %}
+
+{% block page %}
+    <section class="section section-lg">
+        <div class="container">
+            <article class="blog-layout">
+                <div class="blog-layout-main">
+                    <div class="row row-50 row-xxl-70">
+                        {% for post in posts %}
+                            <div class="col-sm-6">
+                                <article class="post-classic">
+                                    {% if post.imageUrl %}
+                                        <a class="post-classic-media" href="{{ path('app_blog_single', {_locale: 'en', slug: post.slug}) }}">
+                                            <img src="{{ asset('uploads/blog/' ~ post.imageUrl) }}" alt="{{ post.title }}" width="370" height="264"/>
+                                        </a>
+                                    {% endif %}
+                                    <ul class="post-classic-meta">
+                                        {% if post.category %}
+                                            <li><a class="button-winona" href="{{ path('app_blog_category', {_locale: 'en', category: post.category}) }}">{{ post.category }}</a></li>
+                                        {% endif %}
+                                        {% if post.publishedAt %}
+                                            <li><time datetime="{{ post.publishedAt|date('Y-m-d') }}">{{ post.publishedAt|date('d M Y') }}</time></li>
+                                        {% endif %}
+                                    </ul>
+                                    <h4 class="post-classic-title">
+                                        <a href="{{ path('app_blog_single', {_locale: 'en', slug: post.slug}) }}">{{ post.title }}</a>
+                                    </h4>
+                                </article>
+                            </div>
+                        {% else %}
+                            <div class="col-12 text-center">
+                                <p>No articles available at the moment.</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    {% if totalPages > 1 %}
+                        <div class="pagination">
+                            {% for p in 1..totalPages %}
+                                <div class="page-item {{ p == currentPage ? 'active' : '' }}">
+                                    <a class="page-link button-winona" href="{{ path('app_blog_index', {_locale: 'en', page: p}) }}">{{ p }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="blog-layout-aside">
+                    <div class="blog-layout-aside-item">
+                        <p class="blog-layout-aside-title">Search</p>
+                        <form class="rd-form rd-search rd-search-classic" action="{{ path('app_blog_search', {_locale: 'en'}) }}" method="GET">
+                            <div class="form-wrap">
+                                <input class="form-input" id="rd-search-form-input" type="text" name="s" autocomplete="off">
+                                <label class="form-label" for="rd-search-form-input">Search</label>
+                            </div>
+                            <button class="rd-search-submit" type="submit"></button>
+                        </form>
+                    </div>
+
+                    <div class="blog-layout-aside-item">
+                        <p class="blog-layout-aside-title">Archives</p>
+                        <ul class="list-marked">
+                            {% for archive in archives %}
+                                <li><a href="#">{{ archive.label }} ({{ archive.count }})</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="blog-layout-aside-item">
+                        <p class="blog-layout-aside-title">About</p>
+                        <p>GFI-CO GROUP is a major player in sustainable real estate development and construction in Côte d'Ivoire and Guinea. Discover our news and achievements.</p>
+                    </div>
+
+                    <div class="blog-layout-aside-item">
+                        <p class="blog-layout-aside-title">Categories</p>
+                        <ul class="list-marked">
+                            {% for category in categories %}
+                                <li><a href="{{ path('app_blog_category', {_locale: 'en', category: category}) }}">{{ category }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+{% endblock %}

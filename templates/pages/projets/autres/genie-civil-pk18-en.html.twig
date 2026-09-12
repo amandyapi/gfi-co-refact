@@ -1,0 +1,110 @@
+{# templates/pages/projets/autres/genie-civil-pk18-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | PK18 Civil Engineering - Platform delivered in 6 days{% endblock %}
+
+{% block description %}Discover the PK18 civil engineering project: 3,000 m² platform delivered in 6 days for an official ceremony. Earthworks, levelling and compaction.{% endblock %}
+
+{% block bread_subtitle %}Finishing Works & Fit-outs{% endblock %}
+{% block bread_title %}PK18 Civil Engineering - A platform delivered in 6 days for an official ceremony{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'en'}) }}">Projects</a></li>
+    <li><a href="{{ path('app_projets_autres', {_locale: 'en'}) }}">Finishing Works & Fit-outs</a></li>
+    <li class="active">PK18 Civil Engineering</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Overview -->
+    <section class="section section-sm bg-gray-100">
+        <div class="container">
+            <div class="owl-carousel owl-carousel-centered-pagination" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-dots="true" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
+                <div class="item">
+                    <h4>Client</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Le Bâtisseur on behalf of PARU</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Location</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Abobo PK18, Abidjan - Côte d'Ivoire</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Nature of works</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Levelling of a 3,000 m² platform</a></li>
+                        <li><a href="#">Earthworks of the platform</a></li>
+                        <li><a href="#">Compaction of the platform</a></li>
+                        <li><a href="#">Reshaping of access roads</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Services</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Civil engineering works for the foundation stone laying ceremony</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>GFI-CO's role</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Execution company</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About This Project -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h3>About this project</h3>
+                        <h5 style="text-align: justify; font-style: italic;">Civil engineering · Abobo, PK18 · Deadline: 6 days</h5>
+                        <p style="text-align: justify;">Some sites allow no delay. Mandated by the company Le Bâtisseur on behalf of PARU, GFI-CO carried out the civil engineering works in preparation for the foundation stone laying ceremony of a wastewater treatment unit in Abobo PK18, chaired by His Excellency the Prime Minister, Mr. Patrick Achi.</p>
+                        <p style="text-align: justify;">Earthworks, levelling and compaction of a 3,000 m² platform, reshaping of access roads: all the works were executed in just 6 days, in the middle of the rainy season, to allow the official ceremony to take place smoothly.</p>
+                        <p style="text-align: justify; font-weight: 500;">A project that proves GFI-CO's ability to carry out civil engineering works under tight deadlines, for high-profile institutional events.</p>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/4-autres/pk18/7.jpeg') }}" alt="PK18 Civil Engineering Works" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section swiper-container swiper-slider swiper-slider-tiny text-center" data-loop="true" data-slide-effect="fade" data-autoplay="false" data-simulate-touch="true"> 
+        <div class="swiper-wrapper">
+            {% for i in 1..9 %}
+                <div class="swiper-slide vertical" data-slide-bg="{{ asset('assets/images/projets/4-autres/pk18/' ~ i ~ '.jpeg') }}">
+                    <div class="swiper-slide-caption"><div class="container"></div></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination-outer container">
+            <div class="swiper-pagination swiper-pagination-modern swiper-pagination-marked" data-index-bullet="true"></div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer" style="color:#fff;">
+                            <span class="wow slideInRight">Do you have a similar project? <span class="fw-bold" style="color:#fff;">Let's talk about it together</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-lg button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'en'}) }}" style="border-color:#fff; color:#fff;">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

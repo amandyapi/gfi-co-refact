@@ -1,0 +1,193 @@
+{# templates/pages/projets/immobilier/nestle-ci-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Nestlé CI Real Estate Program - 300 MUNEST homes{% endblock %}
+
+{% block description %}Discover the Nestlé CI real estate program: 250 to 300 homes for MUNEST employees in Songon. Full structuring by GFI-CO.{% endblock %}
+
+{% block bread_subtitle %}Real estate program project{% endblock %}
+{% block bread_title %}Nestlé CI Real Estate Program - 300 homes for MUNEST employees{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'en'}) }}">Projects</a></li>
+    <li><a href="{{ path('app_projets_immobilier', {_locale: 'en'}) }}">Real estate program</a></li>
+    <li class="active">Nestlé CI Real Estate Program</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Overview -->
+    <section class="section section-sm bg-gray-100">
+        <div class="container">
+            <div class="owl-carousel owl-carousel-centered-pagination" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-dots="true" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
+                <div class="item">
+                    <h4>Nature</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Residential and affordable real estate development</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Project owner</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">MUNEST (Mutual fund of Nestlé CI employees)</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Typologies</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">F4 semi-detached simplex villa (200 m²)</a></li>
+                        <li><a href="#">F3 semi-detached villa (160 m²)</a></li>
+                        <li><a href="#">F3 terraced villa (150 m²)</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Built areas</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">65 m² to 97 m² per unit</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Mission</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Structuring of the 250-home residential real estate program in Songon, project transferred to Interbat-CI in 2023.</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Positioning</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Secure residence, green spaces, parking – harmonious living environment</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>GFI-CO's role</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Project management</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About This Project -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h3>About this project</h3>
+                        <h5 style="text-align: justify; font-style: italic;">Real estate program · Songon, Côte d'Ivoire · 250 to 300 homes</h5>
+                        <p style="text-align: justify;">When a major company trusts GFI-CO to house its teams, an entire real estate program takes shape. Named "Belle Côte", this residential project was developed under project management on behalf of the mutual fund of Nestlé CI employees (MUNEST), in Songon, under a notarised agreement signed in 2022.</p>
+                        <p style="text-align: justify;">Between 250 and 300 homes of varied typologies: semi-detached F4 simplex villas, semi-detached and terraced F3 villas spread over surfaces of 65 to 97 m², were fully structured by GFI-CO before being transferred to the developer Interbat-CI in 2023 for their completion.</p>
+                        <p style="text-align: justify; font-weight: 500;">A large-scale project positioning GFI-CO as a trusted partner for corporate residential programs, from design to transfer.</p>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/2-immobilier/nestle/5.jpg') }}" alt="Nestlé CI Real Estate Program" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project videos section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="text-center">
+                <h3 class="video-title">Project videos</h3>
+                <p style="color:#666; max-width:600px; margin:0 auto 30px;">Discover the achievements and key milestones of the project through these videos.</p>
+            </div>
+            <div class="row">
+                <!-- Video 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls style="width:100%; height:100%; background:#000;">
+                                <source src="{{ asset('assets/vieos/projets/2-immobilier/nestle/1.mp4') }}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                        <div class="video-caption">Belle Côte MAD project</div>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls style="width:100%; height:100%; background:#000;">
+                                <source src="{{ asset('assets/vieos/projets/2-immobilier/nestle/2.mp4') }}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                        <div class="video-caption">Presentation of the Adiopodoumé Belle Côte site</div>
+                    </div>
+                </div>
+                <!-- Video 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls style="width:100%; height:100%; background:#000;">
+                                <source src="{{ asset('assets/vieos/projets/2-immobilier/nestle/3.mp4') }}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                        <div class="video-caption">F3 terraced villa</div>
+                    </div>
+                </div>
+                <!-- Video 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls style="width:100%; height:100%; background:#000;">
+                                <source src="{{ asset('assets/vieos/projets/2-immobilier/nestle/4.mp4') }}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                        <div class="video-caption">F3 semi-detached villa</div>
+                    </div>
+                </div>
+                <!-- Video 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls style="width:100%; height:100%; background:#000;">
+                                <source src="{{ asset('assets/vieos/projets/2-immobilier/nestle/5.mp4') }}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                        <div class="video-caption">F4 semi-detached villa</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section swiper-container swiper-slider swiper-slider-tiny text-center" data-loop="true" data-slide-effect="fade" data-autoplay="false" data-simulate-touch="true"> 
+        <div class="swiper-wrapper">
+            {% for i in 1..6 %}
+                <div class="swiper-slide vertical" data-slide-bg="{{ asset('assets/images/projets/2-immobilier/nestle/' ~ i ~ '.jpg') }}">
+                    <div class="swiper-slide-caption"><div class="container"></div></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination-outer container">
+            <div class="swiper-pagination swiper-pagination-modern swiper-pagination-marked" data-index-bullet="true"></div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer" style="color:#fff;">
+                            <span class="wow slideInRight">Do you have a similar project? <span class="fw-bold" style="color:#fff;">Let's talk about it together</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-lg button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'en'}) }}" style="border-color:#fff; color:#fff;">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

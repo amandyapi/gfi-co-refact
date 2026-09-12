@@ -1,0 +1,165 @@
+{# templates/pages/projets/autres/index-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Finishing Works & Fit-outs{% endblock %}
+
+{% block description %}Discover our finishing works and fit-out projects: high-end finishes, custom kitchens, wardrobes, office fit-outs.{% endblock %}
+
+{% block bread_subtitle %}Projects{% endblock %}
+{% block bread_title %}Finishing Works & Fit-outs{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'en'}) }}">Projects</a></li>
+    <li class="active">Finishing Works & Fit-outs</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Project 0: Villas Palmera -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Villas Palmera — High-end finishes for 5 duplex villas in Grand-Bassam</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Finishing works · Grand-Bassam · 5 duplex villas</h5>
+                        <p style="text-align: justify;">Mandated by the JC Architecture firm on behalf of SIDI Immobilier, GFI-CO carried out all the finishing works for 5 duplex villas of the Villas Palmera program, in Grand-Bassam.</p>
+                        <p style="text-align: justify;">Drywall, wall and floor coverings, wood and aluminium joinery, custom-fitted kitchens, wardrobes and cupboards: each villa received high-end finishes, delivered on time and in line with the project owner's requirements.</p>
+                        <br>
+                        <a href="{{ path('app_projets_autres_palmera', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/3-construction/villa-palmera/1.jpg') }}" alt="Villa Palmera Project" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed image section with parallax effect -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-2-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Finishing Works & Fit-outs</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">Diversified construction services, delivered with excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 1: Custom Doors, Kitchens and Wardrobes -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>Custom Doors, Kitchens and Wardrobes - Tailor-made fit-out in Abatta and Grand-Bassam</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Finishing works & fit-out · Abatta, Grand-Bassam</h5>
+                        <p style="text-align: justify;">Across a set of duplex villas located in Abatta and Grand-Bassam, GFI-CO orchestrated the finishing and interior fit-out works: drywall installation, wood and aluminium joinery, as well as the full fit-out of custom-equipped kitchens and the making of wardrobes and cupboards.</p>
+                        <br>
+                        <a href="{{ path('app_projets_autres_confection', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/4-autres/confection/1.jpg') }}" alt="Custom Doors, Kitchens and Wardrobes" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Fixed image section with parallax effect -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-2-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Finishing Works & Fit-outs</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">Diversified construction services, delivered with excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 2: GIZ Office Fit-out Works -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>GIZ Office Fit-out - A complete renovation for Invest For Jobs, Riviera 2</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Office fit-out · Riviera 2, Abidjan</h5>
+                        <p style="text-align: justify;">Following a call for tenders, we were selected for the complete renovation of the new Invest For Jobs offices, in Riviera 2, Abidjan. An office project carried out to meet the functional and aesthetic requirements of an international organisation.</p>
+                        <br>
+                        <a href="{{ path('app_projets_autres_giz', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/4-autres/giz/9.jpg') }}" alt="GIZ Office Fit-out Works" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed image section with parallax effect 2 -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-3-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Finishing Works & Fit-outs</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">Diversified construction services, delivered with excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 3: PK18 Civil Engineering Works -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>PK18 Civil Engineering - A platform delivered in 6 days for an official ceremony</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Civil engineering · Abobo, PK18 · Deadline: 6 days</h5>
+                        <p style="text-align: justify;">Some sites allow no delay. Mandated by the company Le Bâtisseur on behalf of PARU, GFI-CO carried out the civil engineering works in preparation for the foundation stone laying ceremony of a wastewater treatment unit in Abobo PK18, chaired by His Excellency the Prime Minister, Mr. Patrick Achi.</p>
+                        <br>
+                        <a href="{{ path('app_projets_autres_pk18', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/4-autres/pk18/7.jpeg') }}" alt="PK18 Civil Engineering Works" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer">
+                            <span class="wow slideInRight">Do you have a construction project? <span class="fw-bold">Let's talk about it together</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'en'}) }}">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,106 @@
+{# templates/pages/blog/blog-single-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | {{ post.title }}{% endblock %}
+
+{% block description %}{{ post.excerpt|default(post.title) }}{% endblock %}
+
+{% block bread_subtitle %}News{% endblock %}
+{% block bread_title %}{{ post.title }}{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_blog_index', {_locale: 'en'}) }}">News</a></li>
+    <li class="active">{{ post.title|slice(0, 40) }}{% if post.title|length > 40 %}...{% endif %}</li>
+{% endblock %}
+
+{% block page %}
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50">
+                <div class="col-lg-8">
+                    <article class="post-creative">
+                        <h3 class="post-creative-title">{{ post.title }}</h3>
+                        <ul class="post-creative-meta">
+                            {% if post.publishedAt %}
+                                <li><span class="icon mdi mdi-calendar-clock"></span>
+                                    <time datetime="{{ post.publishedAt|date('Y-m-d') }}">{{ post.publishedAt|date('d F Y') }}</time>
+                                </li>
+                            {% endif %}
+                            {% if post.category %}
+                                <li><span class="icon mdi mdi-tag-multiple"></span><a href="{{ path('app_blog_category', {_locale: 'en', category: post.category}) }}">{{ post.category }}</a></li>
+                            {% endif %}
+                        </ul>
+
+                        {% if post.excerpt %}
+                            <h4>{{ post.excerpt }}</h4>
+                        {% endif %}
+
+                        {# Image displayed just before the main content #}
+                        {% if post.imageUrl %}
+                            <div class="post-creative-image" style="margin: 30px 0;">
+                                <img src="{{ asset('uploads/blog/' ~ post.imageUrl) }}" 
+                                     alt="{{ post.title }}" 
+                                     style="width:100%; height:auto; border-radius:8px;"/>
+                            </div>
+                        {% endif %}
+
+                        <div class="post-creative-content">
+                            {{ post.content|raw }}
+                        </div>
+
+                        <ul class="post-creative-footer">
+                            <li>Share this article</li>
+                            <li>
+                                <div class="group group-xs group-middle">
+                                    <a class="icon icon-sm icon-creative mdi mdi-facebook" href="#"></a>
+                                    <a class="icon icon-sm icon-creative fa-brands fa-x-twitter" href="#"></a>
+                                    <a class="icon icon-sm icon-creative mdi mdi-instagram" href="#"></a>
+                                    <a class="icon icon-sm icon-creative mdi mdi-linkedin" href="#"></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </article>
+
+                    {# Comments section (static for now) #}
+                    <div class="section-sm">
+                        <h3>Comments</h3>
+                        <p>No comments yet.</p>
+                    </div>
+                </div>
+
+                {# Sidebar #}
+                <div class="col-lg-4">
+                    <article class="profile-thin">
+                        <div class="profile-thin-aside">
+                            <img class="profile-thin-image" src="{{ asset('assets/images/profile-thin-1-168x168.jpg') }}" alt="GFI-CO" width="168" height="168"/>
+                        </div>
+                        <div class="profile-thin-main">
+                            <p class="profile-thin-title">GFI-CO GROUP</p>
+                            <p class="profile-thin-subtitle">Real Estate Development & Construction</p>
+                            <p>A major player in sustainable real estate development and construction in Côte d'Ivoire and Guinea. Building to last.</p>
+                            <a class="button button-sm button-primary-outline button-winona" href="{{ path('app_about', {_locale: 'en'}) }}">Learn more</a>
+                        </div>
+                    </article>
+
+                    <div class="blog-layout-aside-item" style="margin-top:30px;">
+                        <p class="blog-layout-aside-title">Categories</p>
+                        <ul class="list-marked">
+                            {% for category in categories %}
+                                <li><a href="{{ path('app_blog_category', {_locale: 'en', category: category}) }}">{{ category }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="blog-layout-aside-item" style="margin-top:30px;">
+                        <p class="blog-layout-aside-title">Recent posts</p>
+                        <ul class="list-marked">
+                            {% for recent in recentPosts %}
+                                <li><a href="{{ path('app_blog_single', {_locale: 'en', slug: recent.slug}) }}">{{ recent.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

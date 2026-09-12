@@ -1,0 +1,110 @@
+{# templates/pages/branches/construction-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO Construction | Tailor-made construction and civil engineering{% endblock %}
+
+{% block description %}GFI-CO Construction supports you from design to turnkey delivery. Architectural design, civil engineering, finishing works and quality finishes.{% endblock %}
+
+{% block bread_subtitle %}Our branches{% endblock %}
+{% block bread_title %}GFI-CO Construction{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_branches_index', {_locale: 'en'}) }}">Our branches</a></li>
+    <li class="active">Construction</li>
+{% endblock %}
+
+{% block page %}
+    <!-- About This Service -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="inset-right-3">
+                        <h3>GFI-CO Construction</h3>
+                        <h5 style="text-align: justify;">From blueprint to keys</h5>
+                        <p style="text-align: justify;">Architectural design, project management, careful execution: we turn every specification into a building that reflects you. From tailor-made construction to finishing works and civil engineering, our multidisciplinary team guarantees high-quality execution, rigorous material selection and an exceptional client experience at every stage.</p>
+                        <p style="text-align: justify;">Our approach is based on close collaboration with our clients, proven technical expertise and a constant demand for quality. Every project is carried out with the same rigour, from the first sketch to the handover of keys.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive" src="{{ asset('assets/images/branches/construction/1.jpg') }}" alt="GFI-CO Construction" width="551" height="385"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our mission -->
+    <section class="section section-lg bg-gray-100">
+        <div class="container">
+            <h3 class="text-center wow-outer">
+                <span class="wow slideInDown">Our mission</span>
+            </h3>
+            <div class="row row-30">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-pencil-ruler wow fadeIn"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown">Custom design</h4>
+                            <p class="wow fadeInUpSmall">Every project is unique. We design tailor-made solutions that perfectly match your needs and vision.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-clipboard-list wow fadeIn" data-wow-delay=".1s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".1s">Technical package studies</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".1s">An in-depth analysis of technical aspects to guarantee the feasibility and performance of every project.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-cubes wow fadeIn" data-wow-delay=".2s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".2s">Selection of materials and finishes</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".2s">A rigorous selection of durable materials and careful finishes for a result that meets your expectations.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-helmet-safety wow fadeIn" data-wow-delay=".3s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".3s">Execution and site supervision</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".3s">Rigorous site supervision to ensure deadlines, budget and quality are respected.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-handshake wow fadeIn" data-wow-delay=".4s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".4s">Project management assistance</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".4s">Personalized support to guide you through all your decisions and give you complete peace of mind.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-star wow fadeIn" data-wow-delay=".5s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".5s">Exceptional client experience</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".5s">A relationship of trust built on listening, transparency and unwavering commitment.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-md bg-primary text-center">
+        <div class="container">
+            <div class="box-cta-1">
+                <h3>Do you have a construction project? <span class="fw-bold">Let's talk about it together</span></h3>
+                <a class="button button-lg button-black-outline button-winona" href="{{ path('app_contact', {_locale: 'en'}) }}">Contact us</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

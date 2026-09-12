@@ -1,0 +1,84 @@
+{# templates/pages/branches/design-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO Design & Architecture | Interior architecture and design{% endblock %}
+
+{% block description %}GFI-CO Design & Architecture creates memorable interiors combining tradition, craftsmanship and modernity. Plans, sketches and 3D designs for unique spaces.{% endblock %}
+
+{% block bread_subtitle %}Our branches{% endblock %}
+{% block bread_title %}GFI-CO Design & Architecture{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_branches_index', {_locale: 'en'}) }}">Our branches</a></li>
+    <li class="active">Design & Architecture</li>
+{% endblock %}
+
+{% block page %}
+    <!-- About This Service -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="inset-right-3">
+                        <h3>GFI-CO Design & Architecture</h3>
+                        <h5 style="text-align: justify;">Emotion in every space</h5>
+                        <p style="text-align: justify;">Between tradition, craftsmanship and modernity, our studio creates memorable interiors, designed to be lived in, not just inhabited. Plans, sketches and 3D designs give shape to a strong cultural identity, combined with contemporary and functional design.</p>
+                        <p style="text-align: justify;">We believe that every space tells a story. Our approach consists in revealing the soul of each place by creating atmospheres that reflect the personality and aspirations of our clients.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive" src="{{ asset('assets/images/branches/design-architecture/1.jpg') }}" alt="GFI-CO Design & Architecture" width="551" height="385"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design services -->
+    <section class="section section-lg bg-gray-100">
+        <div class="container">
+            <h3 class="text-center wow-outer">
+                <span class="wow slideInDown">Our architecture & design services</span>
+            </h3>
+            <div class="row row-30">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-draw-polygon wow fadeIn" data-wow-delay=".1s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".1s">Plans and sketches</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".1s">Precise drawings that translate your vision into concrete spaces, with particular attention to every detail.</p>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-cube wow fadeIn" data-wow-delay=".2s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".2s">3D design</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".2s">Immersive 3D renderings that allow you to visualize your project even before work begins.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-minimal">
+                        <div class="box-minimal-icon fa-solid fa-couch wow fadeIn" data-wow-delay=".3s"></div>
+                        <div class="box-minimal-main wow-outer">
+                            <h4 class="box-minimal-title wow slideInDown" data-wow-delay=".3s">Interior layout</h4>
+                            <p class="wow fadeInUpSmall" data-wow-delay=".3s">A comprehensive approach to layout that integrates the choice of materials, colours and furniture.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-md bg-primary text-center">
+        <div class="container">
+            <div class="box-cta-1">
+                <h3>Do you have an interior design project? <span class="fw-bold">Let's bring your spaces to life</span></h3>
+                <a class="button button-lg button-black-outline button-winona" href="{{ path('app_contact', {_locale: 'en'}) }}">Contact us</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

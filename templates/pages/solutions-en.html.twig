@@ -1,0 +1,98 @@
+{# templates/pages/solutions-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Our solutions - Construction, renovation & fit-out{% endblock %}
+
+{% block description %}GFI-CO GROUP offers turnkey solutions for your real estate projects: construction, renovation, interior design, high-end finishes.{% endblock %}
+
+{% block bread_subtitle %}Our services{% endblock %}
+{% block bread_title %}Our solutions{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_solutions') }}">Our solutions</a></li>
+    <li class="active">All our services</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Solutions -->
+    <section class="section section-lg text-center">
+        <div class="container">
+            <h3 class="wow-outer">
+                <span class="wow slideInUp">Our solutions</span>
+            </h3>
+            <div class="row row-50">
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft">
+                        <div class="box-creative-icon linearicons-home"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Turnkey project</a>
+                        </h4>
+                        <p>Building or renovating is a life project. With GFI-CO, it becomes simple: a single point of contact, a controlled budget, a 100% personalized result — ready to live in, ready to operate, with real-time tracking via GFI-CO Life.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".1s">
+                        <div class="box-creative-icon linearicons-hammer"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Renovation & Rehabilitation</a>
+                        </h4>
+                        <p>Villa, building, office, retail: we restore the shine, value and compliance of your property, with the same care as for a new construction.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".2s">
+                        <div class="box-creative-icon linearicons-layers"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Wall & Floor Covering</a>
+                        </h4>
+                        <p>Tiling, marble, parquet, painting: high-end finishes installed with precision, for walls and floors that tell your story.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft">
+                        <div class="box-creative-icon linearicons-apartment"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Custom Kitchens & Wardrobes</a>
+                        </h4>
+                        <p>The heart of the home, designed for you. 3D design, noble materials, perfect ergonomics: elegance serving everyday life.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".1s">
+                        <div class="box-creative-icon linearicons-picture"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Plaster & Drywall</a>
+                        </h4>
+                        <p>Decorative ceilings, cornices, partitions: our craftsmen sculpt light and volume for interiors that are both refined and functional.</p>
+                    </article>
+                </div>
+                <div class="col-sm-6 col-lg-4 wow-outer">
+                    <article class="box-creative wow slideInLeft" data-wow-delay=".2s">
+                        <div class="box-creative-icon linearicons-wrench"></div>
+                        <h4 class="box-creative-title">
+                            <a href="#">Plumbing & Electricity</a>
+                        </h4>
+                        <p>Comfort starts in the foundations. Reliable, secure, standards-compliant installations — from structural work to the last outlet.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-lg bg-primary text-center" style="background:#f68b1e;">
+        <div class="container">
+            <h3 class="wow-outer" style="color:#fff;">
+                <span class="wow slideInDown">Interested in our solutions?</span>
+            </h3>
+            <p class="wow-outer" style="color:#fff; font-size:1.1rem; max-width:650px; margin:0 auto;">
+                <span class="wow slideInDown" data-wow-delay=".05s">Contact us for all your real estate projects.</span>
+            </p>
+            <div class="wow-outer" style="margin-top:30px;">
+                <a class="button button-lg button-black-outline button-winona wow slideInRight" href="{{ path('app_contact') }}" style="border-color:#fff; color:#fff; padding:12px 40px;">
+                    <i class="fa-solid fa-file-invoice" style="margin-right:10px;"></i> Request a quote
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

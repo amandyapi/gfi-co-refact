@@ -1,0 +1,109 @@
+{# templates/pages/projets/autres/confection-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Custom Doors, Kitchens and Wardrobes{% endblock %}
+
+{% block description %}Discover the custom doors, kitchens and wardrobes project in Abatta and Grand-Bassam by GFI-CO. Joinery and interior fit-out.{% endblock %}
+
+{% block bread_subtitle %}Finishing Works & Fit-outs{% endblock %}
+{% block bread_title %}Custom Doors, Kitchens and Wardrobes - Tailor-made fit-out in Abatta and Grand-Bassam{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'en'}) }}">Projects</a></li>
+    <li><a href="{{ path('app_projets_autres', {_locale: 'en'}) }}">Finishing Works & Fit-outs</a></li>
+    <li class="active">Custom Doors, Kitchens and Wardrobes</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Overview -->
+    <section class="section section-sm bg-gray-100">
+        <div class="container">
+            <div class="owl-carousel owl-carousel-centered-pagination" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-dots="true" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
+                <div class="item">
+                    <h4>Client</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">JC Architecture</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Location</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Abatta - Grand-Bassam, Côte d'Ivoire</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Nature of works</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Drywall, wood and aluminium joinery</a></li>
+                        <li><a href="#">Fit-out of custom-equipped kitchens</a></li>
+                        <li><a href="#">Making of wardrobes and cupboards</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Duration</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">5 months</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>GFI-CO's role</h4>
+                    <ul class="list-inline-comma list-inline-comma-default">
+                        <li><a href="#">Execution company</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About This Project -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h3>About this project</h3>
+                        <h5 style="text-align: justify; font-style: italic;">Finishing works & fit-out · Abatta, Grand-Bassam</h5>
+                        <p style="text-align: justify;">Across a set of duplex villas located in Abatta and Grand-Bassam, GFI-CO orchestrated the finishing and interior fit-out works: drywall installation, wood and aluminium joinery, as well as the full fit-out of custom-equipped kitchens and the making of wardrobes and cupboards.</p>
+                        <p style="text-align: justify;">Every element was designed to combine aesthetics, functionality and durability — a GFI-CO signature where detail makes all the difference.</p>
+                        <p style="text-align: justify; font-weight: 500;">This project highlights GFI-CO's expertise in high-end finishes and tailor-made interior fit-out.</p>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/4-autres/confection/1.jpg') }}" alt="Custom Doors, Kitchens and Wardrobes" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section swiper-container swiper-slider swiper-slider-tiny text-center" data-loop="true" data-slide-effect="fade" data-autoplay="false" data-simulate-touch="true"> 
+        <div class="swiper-wrapper">
+            {% for i in 1..8 %}
+                <div class="swiper-slide vertical" data-slide-bg="{{ asset('assets/images/projets/4-autres/confection/' ~ i ~ '.jpg') }}">
+                    <div class="swiper-slide-caption"><div class="container"></div></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination-outer container">
+            <div class="swiper-pagination swiper-pagination-modern swiper-pagination-marked" data-index-bullet="true"></div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer" style="color:#fff;">
+                            <span class="wow slideInRight">Do you have a similar project? <span class="fw-bold" style="color:#fff;">Let's talk about it together</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-lg button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'en'}) }}" style="border-color:#fff; color:#fff;">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

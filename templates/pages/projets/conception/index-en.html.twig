@@ -1,0 +1,286 @@
+{# templates/pages/projets/conception/index-en.html.twig #}
+{% extends 'layout-pages.html.twig' %}
+
+{% block title %}GFI-CO GROUP | Design and project planning{% endblock %}
+
+{% block description %}Discover our design projects: plans, sketches, technical studies and 3D design. GFI-CO turns your ideas into reality.{% endblock %}
+
+{% block bread_subtitle %}Projects{% endblock %}
+{% block bread_title %}Design and project planning{% endblock %}
+
+{% block bread_items %}
+    <li><a href="{{ path('app_projets_index', {_locale: 'en'}) }}">Projects</a></li>
+    <li class="active">Design and project planning</li>
+{% endblock %}
+
+{% block page %}
+    <!-- Project 1: THE PEARL single-storey villa -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4>The Pearl — The single-storey villa reinventing the art of sustainable living</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Residential project · Pearl City Program</h5>
+                        <p style="text-align: justify;">Anchored to the ground, The Pearl embodies a new way of living: single-storey, with no compromise on style or environmental performance. This signature villa of the THE PEARL CITY program is aimed at those seeking the simplicity of a home accessible at every stage of life, without ever giving up architectural standards.</p>
+                        <br>
+                        <a href="{{ path('app_projets_conception_pearl', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <div class="thumbnail-video-1 bg-gray-700">
+                        <div class="ratio ratio-16x9">
+                            <video width="570" height="320" controls>
+                                <source src="{{ asset('assets/images/projets/1-conception/the-pearl/1.mp4') }}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                        <div class="thumbnail-video__overlay video-overlay" style="background-image: url({{ asset('assets/images/projets/1-conception/the-pearl/1.jpg') }})">
+                            <div class="button-video"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Fixed image section with parallax effect 1 -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-2-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Design and project planning</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">From idea to realization, GFI-CO turns your dreams into reality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 2: THE BIG PEARL CITY -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4 style="white-space: wrap;">The Big Pearl — The R+1 duplex that gives space to your ambitions</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Residential project · Pearl City Program</h5>
+                        <p style="text-align: justify;">Over two levels, The Big Pearl unfolds the full potential of the THE PEARL CITY program for families seeking space, ceiling height and perspective. Its R+1 architecture frees up generous volumes and enhanced privacy between living areas and bedrooms, without ever departing from the eco-design that is the program's signature.</p>
+                        <br>
+                        <a href="{{ path('app_projets_conception_big_pearl', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <div class="thumbnail-video-1 bg-gray-700">
+                        <div class="ratio ratio-16x9">
+                            <video width="570" height="320" controls>
+                                <source src="{{ asset('assets/images/projets/1-conception/the-big-pearl/2.mp4') }}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                        <div class="thumbnail-video__overlay video-overlay" style="background-image: url({{ asset('assets/images/projets/1-conception/the-big-pearl/1.jpg') }})">
+                            <div class="button-video"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed image section with parallax effect 2 -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-1-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Design and project planning</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">From idea to realization, GFI-CO turns your dreams into reality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 3: Duplex Villa in Bingerville -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4 style="white-space: wrap;">Duplex Villa in Bingerville - Turnkey support for the diaspora</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Delegated project management · Bingerville</h5>
+                        <p style="text-align: justify;">Managing a real estate project from abroad is no obstacle course when GFI-CO handles the project management. For this diaspora client, our team took charge of the entire process: from land acquisition to the turnkey delivery of the R+1 duplex villa.</p>
+                        <br>
+                        <a href="{{ path('app_projets_conception_duplex_bingerville', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <img src="{{ asset('assets/images/projets/1-conception/duplex-bingerville/2.jpg') }}" alt="Duplex Villa Project in Bingerville" style="width:100%; height:auto; border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed image section with parallax effect 3 -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-3-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Design and project planning</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">From idea to realization, GFI-CO turns your dreams into reality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 4: Duplex Villa R+1 in Bingerville -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4 style="white-space: wrap;">Duplex Villa R+1 in Bingerville - 500 m² of architectural excellence</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Studies & design · Bingerville · 8 rooms · 500 m²</h5>
+                        <p style="text-align: justify;">Eight rooms, 500 m² of land, one ambition: to design a duplex residence meeting international standards. For this premium project in Bingerville, GFI-CO's teams carried out a complete study, from the Preliminary Design (APS) to the Detailed Estimated Bill of Quantities (DQE), to precisely define volumes, materials and budget.</p>
+                        <br>
+                        <a href="{{ path('app_projets_conception_duplex_r1_bingerville', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <div class="thumbnail-video-1 bg-gray-700">
+                        <div class="ratio ratio-16x9">
+                            <video width="570" height="320" controls>
+                                <source src="{{ asset('assets/images/projets/1-conception/duplex-r+1-bingerville/3.mp4') }}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                        <div class="thumbnail-video__overlay video-overlay" style="background-image: url({{ asset('assets/images/projets/1-conception/the-pearl/1.jpg') }})">
+                            <div class="button-video"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed image section with parallax effect 4 -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-2-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Design and project planning</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">From idea to realization, GFI-CO turns your dreams into reality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 5: Single-storey Villa in Bingerville -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4 style="white-space: wrap;">Single-storey Villa in Bingerville - Living to the rhythm of a private pool</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Studies & design · Bingerville · 7 rooms · 500 m²</h5>
+                        <p style="text-align: justify;">Seven rooms, 500 m² of land and outdoor landscaping designed as an art of living: this premium single-storey villa integrates a private pool at the heart of its architectural project. GFI-CO carried out all the studies, architectural plans, APS and DQE to design a living environment where indoor and outdoor spaces interact continuously.</p>
+                        <br>
+                        <a href="{{ path('app_projets_conception_plain_pied_bingerville', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <div class="thumbnail-video-1 bg-gray-700">
+                        <div class="ratio ratio-16x9">
+                            <video width="570" height="320" controls>
+                                <source src="{{ asset('assets/images/projets/1-conception/villa-plain-pieds-bingerville/4.mp4') }}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                        <div class="thumbnail-video__overlay video-overlay" style="background-image: url({{ asset('assets/images/projets/1-conception/villa-plain-pieds-bingerville/1.jpg') }})">
+                            <div class="button-video"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed image section with parallax effect 5 -->
+    <section class="section swiper-container text-center" style="position: relative; overflow: hidden; height: 50vh; background-attachment: fixed; background-image: url('{{ asset('assets/images/single-project-slide-3-1920x760.jpg') }}'); background-size: cover; background-position: center;"> 
+        <div class="swiper-wrapper" style="height: 100%;">
+            <div class="swiper-slide" style="height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.4);">
+                <div class="swiper-slide-caption" style="width: 100%;">
+                    <div class="container">
+                        <h2 style="color:#fff; font-size:2.5rem; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Design and project planning</h2>
+                        <p style="color:#fff; font-size:1.1rem; max-width:600px; margin:15px auto 0;">From idea to realization, GFI-CO turns your dreams into reality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 6: Single-storey Villa -->
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row">
+                <div class="col-md-10 col-lg-6 col-xl-6">
+                    <div class="inset-left-2"> 
+                        <h4 style="white-space: wrap;">Prestige Single-storey Villa - The elegant sobriety of controlled architecture</h4>
+                        <h5 style="text-align: justify; font-style: italic;">Studies & design · Bingerville · 7 rooms · 500 m²</h5>
+                        <p style="text-align: justify;">Commissioned to design a prestige single-storey villa in Bingerville, GFI-CO took up the challenge of an elegant and sober architecture, where every line serves functionality as much as aesthetics. Seven rooms spread over 500 m² of land, designed to combine family comfort and refinement.</p>
+                        <br>
+                        <a href="{{ path('app_projets_conception_villa_plain_pied', {_locale: 'en'}) }}">
+                            <span style="color:#fdb900; font-weight:400; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px;">Learn more →</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-6">
+                    <div class="thumbnail-video-1 bg-gray-700">
+                        <div class="ratio ratio-16x9">
+                            <video width="570" height="320" controls>
+                                <source src="{{ asset('assets/videos/projets/1-conception/villa-plain-pied/5.mp4') }}" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                        </div>
+                        <div class="thumbnail-video__overlay video-overlay" style="background-image: url({{ asset('assets/images/projets/1-conception/villa-plain-pied/7.jpg') }})">
+                            <div class="button-video"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-xs bg-primary text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-12">
+                    <div class="box-cta-thin">
+                        <h4 class="wow-outer">
+                            <span class="wow slideInRight">Do you have a design project? <span class="fw-bold">Let's talk about it together</span></span>
+                        </h4>
+                        <div class="wow-outer button-outer">
+                            <a class="button button-black-outline button-winona wow slideInLeft" href="{{ path('app_contact', {_locale: 'en'}) }}">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
