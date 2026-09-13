@@ -157,5 +157,78 @@ class BlogRepository extends ServiceEntityRepository
         return $result->fetchAllAssociative();
     }
 
-    
+    /**
+     * Nombre d'articles par langue.
+     * Retourne ['fr' => X, 'en' => Y]
+     */
+    public function countGroupedByLocale(): array
+    {
+        $rows = $this->createQueryBuilder('b')
+            ->select('b.locale AS locale, COUNT(b.id) AS total')
+            ->groupBy('b.locale')
+            ->getQuery()
+            ->getArrayResult();
+
+        $result = ['fr' => 0, 'en' => 0];
+        foreach ($rows as $row) {
+            $result[$row['locale']] = (int) $row['total'];
+        }
+        return $result;
+    }
+
+    /**
+     * Nombre d'articles par catégorie.
+     * Retourne [['category' => 'Projets', 'total' => 5], ...]
+     */
+    public function countGroupedByCategory(int $limit = 5): array
+    {
+        return $this->createQueryBuilder('b')
+            ->select('b.category AS category, COUNT(b.id) AS total')
+            ->where('b.category IS NOT NULL')
+            ->andWhere('b.category != :empty')
+            ->setParameter('empty', '')
+            ->groupBy('b.category')
+            ->orderBy('total', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getArrayResult();
+    }
+
+    /**
+     * Articles publiés depuis une date.
+     */
+    public function countPublishedSince(\DateTimeImmutable $since): int
+    {
+        return (int) $this->createQueryBuilder('b')
+            ->select('COUNT(b.id)')
+            ->andWhere('b.publishedAt >= :since')
+            ->setParameter('since', $since)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    /**
+     * Articles programmés (date de publication dans le futur).
+     */
+    public function countScheduled(): int
+    {
+        return (int) $this->createQueryBuilder('b')
+            ->select('COUNT(b.id)')
+            ->andWhere('b.publishedAt > :now')
+            ->setParameter('now', new \DateTimeImmutable())
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    /**
+     * Derniers articles créés.
+     */
+    public function findLatest(int $limit = 5): array
+    {
+        return $this->createQueryBuilder('b')
+            ->orderBy('b.createdAt', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult();
+    }
 }
