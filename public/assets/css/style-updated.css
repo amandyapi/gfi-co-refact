@@ -19555,8 +19555,8 @@ body:not(.lg-from-hash)
 }
 
 .floating-btn {
-  background: linear-gradient(135deg, #1a5276, #2e86c1);
-  color: white;
+  background: linear-gradient(135deg, #f68b1e, #eaaf44);
+  color: #05224b;
   border: none;
   padding: 15px 20px;
   border-radius: 50px;
