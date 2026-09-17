@@ -4,14 +4,14 @@
 {% block main %}
     <!-- Breadcrumbs -->
     <section class="breadcrumbs-custom bg-image context-dark bg-overlay" 
-             style="background-image: url({{ asset('assets/images/bg-breadcrumbs.jpg') }});">
+             style="background-image: url({% block bread_image %}{{ asset('assets/images/bg-breadcrumbs.jpg') }}{% endblock %});">
         <div class="breadcrumbs-custom-inner">
             <div class="container breadcrumbs-custom-container">
                 <div class="breadcrumbs-custom-main">
                     <h6 class="breadcrumbs-custom-subtitle title-decorated">
                         {% block bread_subtitle %}Qui sommes-nous ?{% endblock %}
                     </h6>
-                    <h1 class="breadcrumbs-custom-title">
+                    <h1 class="breadcrumbs-custom-title" style="font-size: 45px">
                         {% block bread_title %}À propos{% endblock %}
                     </h1>
                 </div>

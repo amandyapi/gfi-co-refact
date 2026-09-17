@@ -19583,6 +19583,16 @@ body:not(.lg-from-hash)
   background: linear-gradient(135deg, #2e86c1, #1a5276);
 }
 
+@media (max-width: 1024px) {
+  .floating-btn-container {
+    position: fixed;
+    left: 20px;
+    bottom: 10px;
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+}
+
 /*
       bleu: rgba(5, 34, 75, 1);
       jaune: #f68b1e;
@@ -19892,5 +19902,127 @@ body:not(.lg-from-hash)
     .language-select:before {
         content: '🌍';
         font-size: 18px;
+    }
+}
+
+/* ============================================
+   SÉLECTEUR DE LANGUE DANS LE MENU MOBILE
+   (1er élément de la navbar verticale)
+   ============================================ */
+
+/* Caché par défaut (desktop) */
+.mobile-nav-language {
+    display: none;
+}
+
+/* Affiché uniquement sur mobile */
+@media (max-width: 991px) {
+
+    .mobile-nav-language {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 18px;
+        margin: 0 0 10px 0;
+        border-bottom: 1px solid #e8e9ee;
+        background: #f8f9fa;
+    }
+
+    .mobile-nav-lang-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 14px;
+        border-radius: 20px;
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        color: #29293a;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        text-decoration: none;
+        transition: all 0.25s ease;
+    }
+
+    .mobile-nav-lang-item:hover {
+        border-color: #fdb900;
+        color: #fdb900;
+    }
+
+    .mobile-nav-lang-item.active {
+        background: #fdb900;
+        border-color: #fdb900;
+        color: #ffffff;
+    }
+
+    .mobile-nav-lang-item .lang-flag {
+        font-size: 15px;
+        line-height: 1;
+    }
+
+    .mobile-nav-lang-item .lang-label {
+        line-height: 1;
+    }
+}
+
+/* Caché par défaut (desktop >= 1200px) */
+.mobile-nav-language {
+    display: none;
+}
+
+/* Affiché uniquement quand la navbar passe en mode fixed (< 1200px) */
+@media (max-width: 1199.98px) {
+
+    .mobile-nav-language {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 18px;
+        margin: 0 0 10px 0;
+        border-bottom: 1px solid #e8e9ee;
+        background: #f8f9fa;
+    }
+
+    .mobile-nav-lang-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 14px;
+        border-radius: 20px;
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        color: #29293a;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        text-decoration: none;
+        transition: all 0.25s ease;
+    }
+
+    .mobile-nav-lang-item:hover {
+        border-color: #fdb900;
+        color: #fdb900;
+    }
+
+    .mobile-nav-lang-item.active {
+        background: #fdb900;
+        border-color: #fdb900;
+        color: #ffffff;
+    }
+
+    .mobile-nav-lang-item .lang-flag {
+        font-size: 15px;
+        line-height: 1;
+    }
+
+    .mobile-nav-lang-item .lang-label {
+        line-height: 1;
+    }
+
+    /* Cacher le select desktop dès qu'on passe en mode fixed */
+    .rd-navbar-main-element .rd-navbar-language {
+        display: none !important;
     }
 }

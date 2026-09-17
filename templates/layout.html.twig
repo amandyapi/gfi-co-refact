@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/style-updated.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style-16092026.css') }}">
         
         {% block stylesheets %}{% endblock %}
     </head>
@@ -86,6 +86,41 @@
                                 </div>
                                 <div class="rd-navbar-main-element">
                                     <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                                        <!-- ✅ Sélecteur de langue mobile — 1er élément du menu vertical -->
+                                        <div class="mobile-nav-language">
+                                            {% set current_route = app.request.attributes.get('_route') %}
+                                            {% set current_params = app.request.attributes.get('_route_params')|default({}) %}
+                                            {% set current_locale = app.request.locale|default('fr') %}
+
+                                            {% set filtered_params = {} %}
+                                            {% for key, value in current_params %}
+                                                {% if key != '_locale' %}
+                                                    {% set filtered_params = filtered_params|merge({(key): value}) %}
+                                                {% endif %}
+                                            {% endfor %}
+
+                                            {% if current_route is null or current_route == '' %}
+                                                {% set current_route = 'app_home' %}
+                                                {% set filtered_params = {} %}
+                                            {% endif %}
+
+                                            {% set allowed_routes = ['app_home', 'app_about', 'app_solutions', 'app_blog', 'app_contact', 'app_legal', 'app_privacy', 'app_search', 'app_branches_index', 'app_projets_index'] %}
+                                            {% if current_route not in allowed_routes and current_route starts with 'app_branches_' == false and current_route starts with 'app_projets_' == false %}
+                                                {% set current_route = 'app_home' %}
+                                                {% set filtered_params = {} %}
+                                            {% endif %}
+
+                                            <a href="{{ path(current_route, filtered_params|merge({_locale: 'fr'})) }}"
+                                            class="mobile-nav-lang-item {{ current_locale == 'fr' ? 'active' : '' }}">
+                                                <span class="lang-flag">🇫🇷</span>
+                                                <span class="lang-label">Français</span>
+                                            </a>
+                                            <a href="{{ path(current_route, filtered_params|merge({_locale: 'en'})) }}"
+                                            class="mobile-nav-lang-item {{ current_locale == 'en' ? 'active' : '' }}">
+                                                <span class="lang-flag">🇬🇧</span>
+                                                <span class="lang-label">English</span>
+                                            </a>
+                                        </div>
                                         <!-- RD Navbar Nav -->
                                         {% set current_locale = app.request.locale|default('fr') %}
                                         <ul class="rd-navbar-nav">
