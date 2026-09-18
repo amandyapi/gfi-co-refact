@@ -1,6 +1,8 @@
 {# templates/layout-pages.html.twig #}
 {% extends 'layout.html.twig' %}
 
+{% block stylesheets %}{% endblock %}
+
 {% block main %}
     <!-- Breadcrumbs -->
     <section class="breadcrumbs-custom bg-image context-dark bg-overlay" 
@@ -28,3 +30,4 @@
     <!-- Contenu principal de la page -->
     {% block page %}{% endblock %}
 {% endblock %}
+{% block javascripts %}{% endblock %}

@@ -3,6 +3,27 @@
 
 {% block title %}GFI-CO GROUP | Contactez-nous - Devis et informations{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+        #contact-map {
+            width: 100%;
+            /*height: 600px;*/
+            min-height: 600px;
+        }
+
+        .leaflet-container {
+            z-index: 1;
+        }
+    </style>
+{% endblock %}
+
 {% block description %}Contactez GFI-CO GROUP pour vos projets immobiliers en Côte d'Ivoire et en Guinée. Demandez un devis, des informations ou prenez rendez-vous.{% endblock %}
 
 {% block bread_subtitle %}Nous contacter{% endblock %}
@@ -113,7 +134,12 @@
                                     </div>
                                     <p>ou utilisez</p>
                                     <div class="wow-outer">
-                                        <a class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" href="https://wa.me/2250758835008">
+                                        <a 
+                                            id="whatsapp-link"
+                                            class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" 
+                                            target="__blank" 
+                                            rel="noopener noreferrer"
+                                            href="#">
                                             <span class="icon mdi mdi-whatsapp"></span>Whatsapp
                                         </a>
                                     </div>
@@ -125,20 +151,84 @@
             </div>
             <div class="cell-xl-5 height-fill wow fadeIn">
                 <section class="section">
-                    <div class="google-map-container" 
-                        data-key="AIzaSyCqrqPZOVegy1VIdyIcndxZY9YGoK-x0Yo" 
-                        data-center="LT 18 IL 1 AKOUEDO TRIANGLE, Quartier 09 Secteur Palmeraie, Abidjan, Côte d'Ivoire" 
-                        data-zoom="16" 
-                        data-icon="{{ asset('assets/images/gmap_marker.png') }}" 
-                        data-icon-active="{{ asset('assets/images/gmap_marker_active.png') }}" 
-                        data-styles="[{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:60}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:40},{&quot;visibility&quot;:&quot;on&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;administrative.province&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;lightness&quot;:30}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#ef8c25&quot;},{&quot;lightness&quot;:40}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.stroke&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;poi.park&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#b6c54c&quot;},{&quot;lightness&quot;:40},{&quot;saturation&quot;:-40}]},{}]">
-                        <div class="google-map"></div>
-                        <ul class="google-map-markers">
-                            <li data-location="LT 18 IL 1 AKOUEDO TRIANGLE, Quartier 09 Secteur Palmeraie, Abidjan, Côte d'Ivoire" data-description="GFI-CO - LT 18 IL 1 AKOUEDO TRIANGLE, Abidjan"></li>
-                        </ul>
-                    </div>
+                    <div id="contact-map"></div>
                 </section>
             </div>
         </div>
     </section>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mapContainer = document.getElementById('contact-map');
+
+        if (!mapContainer) {
+            console.error('Container contact-map introuvable');
+            return;
+        }
+        const latitude = 5.3809;
+        const longitude = -3.9437;
+        const map = L.map('contact-map').setView(
+            [latitude, longitude],
+            16
+        );
+        L.tileLayer(
+            'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            {
+                maxZoom: 19,
+                attribution: '&copy; OpenStreetMap Contributors'
+            }
+        ).addTo(map);
+
+        L.marker([latitude, longitude])
+            .addTo(map)
+            .bindPopup(`
+                <strong>GFI-CO GROUP</strong><br>
+                LT 18 IL 1 AKOUEDO TRIANGLE<br>
+                Quartier 09 Secteur Palmeraie<br>
+                Abidjan, Côte d'Ivoire
+            `)
+            .openPopup();
+        // utile quand la carte est dans une colonne ou un layout responsive
+        setTimeout(() => {
+            map.invalidateSize();
+        }, 200);
+    });
+</script>
+<script>
+    document.getElementById('whatsapp-link').addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const firstname = document.querySelector('[name="firstname"]').value.trim();
+        const lastname  = document.querySelector('[name="lastname"]').value.trim();
+        const email     = document.querySelector('[name="email"]').value.trim();
+        const phone     = document.querySelector('[name="phone"]').value.trim();
+        const message   = document.querySelector('[name="message"]').value.trim();
+
+        const whatsappMessage = `
+     *Nouveau message du formulaire de contact*
+
+    \`\`\`
+    *Prénoms*   : ${firstname}
+    *Nom*       : ${lastname}
+    *Email*     : ${email}
+    *Téléphone* : ${phone || 'Non renseigné'}
+    \`\`\`
+
+     *Message*
+
+    ${message}
+    `.trim();
+
+        const whatsappNumber = '2250758835008';
+
+        const whatsappUrl =
+            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+        window.open(whatsappUrl, '_blank');
+    });
+</script>
 {% endblock %}
