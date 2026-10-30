@@ -81,9 +81,15 @@ class PageController extends AbstractController
         $success = $this->contactService->processContactForm($data, $_locale);
 
         if ($success) {
-            $message = $_locale === 'en'
-                ? 'Your message has been sent successfully! We will contact you within 48 hours.'
-                : 'Votre message a été envoyé avec succès ! Nous vous contacterons sous 48h.';
+            $firstName = $data['firstname'];
+
+            if ($_locale === 'en') {
+                $greeting = $firstName !== '' ? sprintf('Thank you, %s.', $firstName) : 'Thank you.';
+                $message = $greeting . ' We have received your message. A GFI-CO advisor will reply within 48 business hours. In the meantime, contact us on WhatsApp at (+225) 07 58 83 50 08.';
+            } else {
+                $greeting = $firstName !== '' ? sprintf('Merci %s.', $firstName) : 'Merci.';
+                $message = $greeting . ' Votre demande a bien été reçue. Un conseiller GFI-CO vous répond sous 48 h ouvrées. En attendant, vous pouvez nous joindre sur WhatsApp au (+225) 07 58 83 50 08.';
+            }
 
             $this->addFlash('success', $message);
         } else {
@@ -109,6 +115,12 @@ class PageController extends AbstractController
         ];
         
         return $this->render('pages/legal-' . $_locale . '.html.twig', $data);
+    }
+
+    #[Route('/{_locale}/conditions-generales-utilisation', name: 'app_terms', requirements: ['_locale' => 'fr|en'])]
+    public function terms(string $_locale = 'fr'): Response
+    {
+        return $this->render('pages/terms-' . $_locale . '.html.twig');
     }
 
     #[Route('/{_locale}/politique-de-confidentialite', name: 'app_privacy', requirements: ['_locale' => 'fr|en'])]
