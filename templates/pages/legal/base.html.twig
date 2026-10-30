@@ -1,0 +1,25 @@
+{% extends 'layout-pages.html.twig' %}
+
+{% block stylesheets %}
+    <style>
+        .legal-document h2 { margin-top: 2rem; }
+        .legal-document h2:first-child { margin-top: 0; }
+        .legal-document h3 { margin-top: 1.5rem; }
+        .legal-document li { margin-bottom: .35rem; }
+    </style>
+{% endblock %}
+
+{% block page %}
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-9">
+                    {% block draft_notice %}{% endblock %}
+                    <div class="legal-document">
+                        {% block document_content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

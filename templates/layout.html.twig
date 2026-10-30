@@ -103,7 +103,7 @@
                                                 {% set filtered_params = {} %}
                                             {% endif %}
 
-                                            {% set allowed_routes = ['app_home', 'app_about', 'app_solutions', 'app_blog', 'app_contact', 'app_legal', 'app_privacy', 'app_search', 'app_branches_index', 'app_projets_index'] %}
+                                            {% set allowed_routes = ['app_home', 'app_about', 'app_solutions', 'app_blog', 'app_contact', 'app_legal', 'app_privacy', 'app_terms', 'app_search', 'app_branches_index', 'app_projets_index'] %}
                                             {% if current_route not in allowed_routes and current_route starts with 'app_branches_' == false and current_route starts with 'app_projets_' == false %}
                                                 {% set current_route = 'app_home' %}
                                                 {% set filtered_params = {} %}
@@ -213,7 +213,7 @@
                                         {% endif %}
                                         
                                         {# Liste des routes autorisées - éviter les routes qui n'existent pas #}
-                                        {% set allowed_routes = ['app_home', 'app_about', 'app_solutions', 'app_blog', 'app_contact', 'app_legal', 'app_privacy', 'app_search', 'app_branches_index', 'app_projets_index'] %}
+                                        {% set allowed_routes = ['app_home', 'app_about', 'app_solutions', 'app_blog', 'app_contact', 'app_legal', 'app_privacy', 'app_terms', 'app_search', 'app_branches_index', 'app_projets_index'] %}
                                         {% if current_route not in allowed_routes and current_route starts with 'app_branches_' == false and current_route starts with 'app_projets_' == false %}
                                             {% set current_route = 'app_home' %}
                                             {% set filtered_params = {} %}

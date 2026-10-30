@@ -137,9 +137,9 @@
                                         <a 
                                             id="whatsapp-link"
                                             class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" 
-                                            target="__blank" 
+                                            target="_blank"
                                             rel="noopener noreferrer"
-                                            href="#">
+                                            href="https://wa.me/2250758835008?text={{ 'Bonjour GFI-CO, je vous contacte depuis votre site au sujet d\'un projet de [villa / programme / investissement]. Je réside à [ville, pays].'|url_encode }}">
                                             <span class="icon mdi mdi-whatsapp"></span>Whatsapp
                                         </a>
                                     </div>
@@ -209,7 +209,7 @@
         const message   = document.querySelector('[name="message"]').value.trim();
 
         const whatsappMessage = `
-     *Nouveau message du formulaire de contact*
+    Bonjour GFI-CO, je vous contacte depuis votre site au sujet d'un projet de [villa / programme / investissement]. Je réside à [ville, pays].
 
     \`\`\`
     *Prénoms*   : ${firstname}
@@ -228,7 +228,7 @@
         const whatsappUrl =
             `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-        window.open(whatsappUrl, '_blank');
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     });
 </script>
 {% endblock %}

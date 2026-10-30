@@ -134,7 +134,7 @@
                                     </div>
                                     <p>or use</p>
                                     <div class="wow-outer">
-                                        <a class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" href="https://wa.me/2250758835008">
+                                        <a id="whatsapp-link" class="button button-primary-outline button-icon button-icon-left button-winona wow slideInLeft" target="_blank" rel="noopener noreferrer" href="https://wa.me/2250758835008?text={{ 'Hello GFI-CO, I am contacting you through your website about a [villa / real estate development / investment] project. I live in [city, country].'|url_encode }}">
                                             <span class="icon mdi mdi-whatsapp"></span>Whatsapp
                                         </a>
                                     </div>
@@ -201,13 +201,13 @@
         const message   = document.querySelector('[name="message"]').value.trim();
 
         const whatsappMessage = `
-     *New message from the contact form*
+    Hello GFI-CO, I am contacting you through your website about a [villa / real estate development / investment] project. I live in [city, country].
 
     \`\`\`
     *Firstname*   : ${firstname}
     *Lastname*       : ${lastname}
     *Email*     : ${email}
-    *Phone* : ${phone || 'Non renseigné'}
+    *Phone* : ${phone || 'Not provided'}
     \`\`\`
 
      *Message*
@@ -220,7 +220,7 @@
         const whatsappUrl =
             `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-        window.open(whatsappUrl, '_blank');
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     });
 </script>
 {% endblock %}
