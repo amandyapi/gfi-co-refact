@@ -9623,6 +9623,10 @@ html:not(.lt-ie10) .not-animated {
   backface-visibility: hidden;
 }
 
+html.wow-animation .wow {
+  visibility: visible !important;
+}
+
 /*
 *
 * Preloader
