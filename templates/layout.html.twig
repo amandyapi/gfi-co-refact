@@ -314,8 +314,8 @@
                                 <select id="budget" name="budget" required>
                                     <option value="">{% if current_locale == 'en' %}Choose...{% else %}Choisir...{% endif %}</option>
                                     <option value="Moins de 30 millions">{% if current_locale == 'en' %}Less than 30 million{% else %}Moins de 30 millions{% endif %}</option>
-                                    <option value="30 à 60 millions">30 – 60 million</option>
-                                    <option value="60 à 100 millions">60 – 100 million</option>
+                                    <option value="30 à 60 millions">{% if current_locale == 'en' %}30 – 60 million{% else %}30 à 60 millions{% endif %}</option>
+                                    <option value="60 à 100 millions">{% if current_locale == 'en' %}60 – 100 million{% else %}60 à 100 millions{% endif %}</option>
                                     <option value="100 à 200 millions">100 – 200 million</option>
                                     <option value="Plus de 200 millions">{% if current_locale == 'en' %}More than 200 million{% else %}Plus de 200 millions{% endif %}</option>
                                     <option value="Je ne sais pas encore">{% if current_locale == 'en' %}I don't know yet{% else %}Je ne sais pas encore{% endif %}</option>
@@ -336,7 +336,7 @@
                             
                             <div class="form-group col-sm-12">
                                 <label for="message">
-                                    {% if current_locale == 'en' %}Your message (optional){% else %}Votre message (optionnel){% endif %}
+                                    {% if current_locale == 'en' %}Your message (optional){% else %}Votre message (facultatif){% endif %}
                                 </label>
                                 <textarea id="message" name="message" rows="4" 
                                           placeholder="{% if current_locale == 'en' %}Briefly describe your project...{% else %}Décrivez brièvement votre projet...{% endif %}"></textarea>
