@@ -279,6 +279,12 @@ class ProjetController extends AbstractController
         return $this->render('pages/projets/autres/villa-palmera-' . $_locale . '.html.twig', $data);
     }
 
+    #[Route('/construction/villa-palmera', name: 'construction_palmera_legacy')]
+    public function constructionPalmeraLegacy(string $_locale = 'fr'): Response
+    {
+        return $this->redirectToRoute('app_projets_autres_palmera', ['_locale' => $_locale], Response::HTTP_MOVED_PERMANENTLY);
+    }
+
     #[Route('/second-oeuvre-amenagements/confection-portes-cuisines-dressing', name: 'autres_confection')]
     public function autresConfection(string $_locale = 'fr'): Response
     {
