@@ -412,7 +412,8 @@
                             <span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span>
                             <span>GFI-CO GROUP - {% if current_locale == 'en' %}All rights reserved.{% else %}Tous droits réservés.{% endif %}</span>
                             <span>&nbsp;</span><br class="d-sm-none"/>
-                            <a class="link-default" href="{{ path('app_privacy', {_locale: current_locale}) }}">
+                            {# {{ path('app_privacy', {_locale: current_locale}) }} #}
+                            <a class="link-default" href="#">
                                 {% if current_locale == 'en' %}Privacy policy{% else %}Politique de confidentialité{% endif %}
                             </a>
                         </p>
